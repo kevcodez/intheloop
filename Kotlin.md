@@ -14,7 +14,6 @@ Docs: https://kotlinlang.org/docs/reference/
 Playground: https://play.kotlinlang.org/
 IssueTracker: 
 Creator:
-    Type: Company
     Name: Jetbrains
     Website: https://www.jetbrains.com/
 SocialAccounts:
