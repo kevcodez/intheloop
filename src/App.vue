@@ -4,7 +4,7 @@
   <div>
     <BaseInfo class="container" :info="kotlin" />
 
-    <!--div style="height: 150px; overflow: hidden">
+    <div style="height: 150px; overflow: hidden">
       <svg
         viewBox="0 0 500 150"
         preserveAspectRatio="none"
@@ -15,7 +15,7 @@
           style="stroke: none; fill: #08f"
         ></path>
       </svg>
-    </div -->
+    </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-24 container">
       <div class="col-span-2">
@@ -95,7 +95,7 @@ export default defineComponent({
         version: "1.4.30",
         releaseNotesUrl:
           "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30",
-        publishedAt: "2021-02-04",
+        publishedAt: "2021-02-03",
       },
       website: "https://kotlinlang.org",
       documentation: "https://kotlinlang.org/docs/reference/",
@@ -193,19 +193,19 @@ export default defineComponent({
           version: "1.4.30",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30",
-          publishedAt: "2021-02-04",
+          publishedAt: "2021-02-03",
         },
         {
           version: "1.4.21",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.21",
-          publishedAt: "2021-02-04",
+          publishedAt: "2020-12-09",
         },
         {
           version: "1.4.20",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.20",
-          publishedAt: "2021-02-04",
+          publishedAt: "2020-11-19",
         },
       ],
       communities: [
