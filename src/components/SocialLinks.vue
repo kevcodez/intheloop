@@ -3,13 +3,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+import { SocialLink } from '../lib/SocialLink'
 
 export default defineComponent({
   name: "SocialLinks",
   props: {
       links: {
-          type: Array,
+          type: Object as PropType<SocialLink[]>,
           required: true
       }
   }

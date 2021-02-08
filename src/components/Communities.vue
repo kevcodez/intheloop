@@ -50,13 +50,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
+import { Community } from "../lib/Community";
 
 export default defineComponent({
   name: "Communities",
   props: {
     communities: {
-      type: Array,
+      type: Object as PropType<Community[]>,
       required: true,
     },
   },

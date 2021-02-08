@@ -27,7 +27,7 @@
       <div class="flex space-y-2 flex-col items-center">
         <a
           class="cursor-pointer grow"
-          :href="info.latestRelease.url"
+          :href="info.latestRelease.releaseNotesUrl"
           target="_blank"
         >
           <span class="px-3 py-2 bg-indigo-500 text-white">{{
@@ -92,13 +92,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
+import { Topic } from "../lib/Topic";
 
 export default defineComponent({
   name: "BaseInfo",
   props: {
     info: {
-      type: Object,
+      type: Object as PropType<Topic>,
       required: true,
     },
   },

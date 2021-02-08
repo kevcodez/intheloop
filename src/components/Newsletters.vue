@@ -18,13 +18,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
+import { Newsletter } from "../lib/Newsletter";
 
 export default defineComponent({
   name: "Newsletters",
   props: {
     newsletters: {
-      type: Array,
+      type: Object as PropType<Newsletter[]>,
       required: true,
     },
   },

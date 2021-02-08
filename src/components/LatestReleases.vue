@@ -3,13 +3,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+import { Release } from '../lib/Topic'
 
 export default defineComponent({
   name: "LatestReleases",
   props: {
       releases: {
-          type: Array,
+          type: Object as PropType<Release[]>,
           required: true
       }
   }

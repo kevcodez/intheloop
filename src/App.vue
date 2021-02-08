@@ -1,10 +1,23 @@
 <template>
   <Nav />
 
-  <div class="mx-auto max-w-7xl px-4 mt-8 sm:mt-16">
-    <BaseInfo :info="kotlin" />
+  <div>
+    <BaseInfo class="container" :info="kotlin" />
 
-    <div class="grid grid-cols-3 gap-16 mt-24">
+    <!--div style="height: 150px; overflow: hidden">
+      <svg
+        viewBox="0 0 500 150"
+        preserveAspectRatio="none"
+        style="height: 100%; width: 100%"
+      >
+        <path
+          d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #08f"
+        ></path>
+      </svg>
+    </div -->
+
+    <div class="grid grid-cols-3 gap-16 mt-24 container">
       <div class="col-span-2">
         <LatestReleases :releases="kotlin.releases" />
 
@@ -38,6 +51,7 @@ import Newsletters from "./components/Newsletters.vue";
 import Podcasts from "./components/Podcasts.vue";
 import SocialLinks from "./components/SocialLinks.vue";
 import Footer from "./components/Footer.vue";
+import { Topic } from "./lib/Topic";
 
 export default defineComponent({
   name: "App",
@@ -54,7 +68,7 @@ export default defineComponent({
     Footer,
   },
   setup() {
-    const kotlin = reactive({
+    const kotlin: Topic = reactive({
       name: "Kotlin",
       description:
         "Kotlin is an open-source statically typed programming language that targets the JVM, Android, JavaScript and Native. It’s developed by JetBrains. The project started in 2010 and was open source from very early on. The first official 1.0 release was in February 2016.",
@@ -77,7 +91,8 @@ export default defineComponent({
       },
       latestRelease: {
         version: "1.4.30",
-        url: "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30",
+        releaseNotesUrl:
+          "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30",
         publishedAt: "2021-02-04",
       },
       website: "https://kotlinlang.org",
@@ -94,10 +109,14 @@ export default defineComponent({
       ],
       social: [
         { type: "Twitter", label: "Kotlin", url: "https://twitter.com/kotlin" },
-        { type: "Twitter", label: "JetBrains", url: "https://twitter.com/jetbrains" },
+        {
+          type: "Twitter",
+          label: "JetBrains",
+          url: "https://twitter.com/jetbrains",
+        },
         {
           type: "Youtube",
-          label: 'Kotlin by JetBrains',
+          label: "Kotlin by JetBrains",
           url: "https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw",
         },
       ],
@@ -152,17 +171,19 @@ export default defineComponent({
         {
           name: "Medium",
           url: "https://medium.com/androiddevelopers/tagged/kotlin",
+          latestPosts: [],
         },
         {
           name: "dev.to",
           url: "https://dev.to/t/kotlin",
+          latestPosts: [],
         },
       ],
       newsletters: [
         {
           name: "KotlinWeekly",
           url: "http://www.kotlinweekly.net/",
-          description: 'Your weekly dose of Kotlin'
+          description: "Your weekly dose of Kotlin",
         },
       ],
       releases: [
@@ -170,16 +191,19 @@ export default defineComponent({
           version: "1.4.30",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30",
+            publishedAt: ''
         },
         {
           version: "1.4.21",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.21",
+            publishedAt: ''
         },
         {
           version: "1.4.20",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.20",
+            publishedAt: ''
         },
       ],
       communities: [
@@ -227,3 +251,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.container {
+  @apply mx-auto max-w-7xl px-4 mt-8 sm:mt-16;
+}
+</style>
