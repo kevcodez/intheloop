@@ -2,7 +2,9 @@
   <div>
     <h3 class="font-semibold text-xl">Podcasts</h3>
     <div class="space-y-2 mt-4">
-      <div
+      <a
+        :href="podcast.url"
+        target="_blank"
         class="flex flex-row justify-between"
         v-for="podcast in podcasts"
         :key="podcast.url"
@@ -12,17 +14,17 @@
 
           <span>{{ podcast.name }}</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { Podcast } from '../lib/Podcast'
+import { Podcast } from "../lib/Podcast";
 
 export default defineComponent({
-  name: "Newsletters",
+  name: "Podcasts",
   props: {
     podcasts: {
       type: Object as PropType<Podcast[]>,

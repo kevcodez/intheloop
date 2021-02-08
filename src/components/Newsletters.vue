@@ -2,7 +2,9 @@
   <div>
     <h3 class="font-semibold text-xl">Newsletters</h3>
     <div class="space-y-2 mt-4">
-      <div
+      <a
+        :href="newsletter.url"
+        target="_blank"
         class="justify-between"
         v-for="newsletter in newsletters"
         :key="newsletter.url"
@@ -12,7 +14,7 @@
 
           <span>{{ newsletter.name }}</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </template>

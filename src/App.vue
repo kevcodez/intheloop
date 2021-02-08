@@ -21,9 +21,11 @@
       <div class="col-span-2">
         <LatestReleases :releases="kotlin.releases" />
 
-        <Blogs :blogs="kotlin.blogs" />
+        <div class="grid grid-cols-2 mt-10 gap-6">
+          <Blogs :blogs="kotlin.blogs" />
 
-        <Books :books="kotlin.books" />
+          <Books :books="kotlin.books" />
+        </div>
       </div>
 
       <div class="space-y-4">
@@ -191,19 +193,19 @@ export default defineComponent({
           version: "1.4.30",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30",
-            publishedAt: ''
+          publishedAt: "2021-02-04",
         },
         {
           version: "1.4.21",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.21",
-            publishedAt: ''
+          publishedAt: "2021-02-04",
         },
         {
           version: "1.4.20",
           releaseNotesUrl:
             "https://github.com/JetBrains/kotlin/releases/tag/v1.4.20",
-            publishedAt: ''
+          publishedAt: "2021-02-04",
         },
       ],
       communities: [
@@ -211,7 +213,7 @@ export default defineComponent({
           type: "Forum",
           url: "https://discuss.kotlinlang.org/",
           official: true,
-          name: "Forum",
+          name: "Kotlin Discussions",
         },
         {
           type: "Slack",
@@ -219,7 +221,7 @@ export default defineComponent({
           official: true,
           name: "Slack",
         },
-        { type: "Discord", url: "https://kotlindiscord.com/", name: "Discord" },
+        { type: "Discord", url: "https://kotlindiscord.com/", name: "Kotlin Discord" },
         {
           type: "Stackoverflow",
           url: "https://stackoverflow.com/questions/tagged/kotlin",

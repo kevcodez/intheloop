@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h3 class="text-2xl">Books</h3>
-    <div class="space-y-4">
-      <div class="flex" v-for="book in books" :key="book.url">
+    <h3 class="text-2xl mb-4">Books</h3>
+    <div class="space-y-8">
+      <a target="_blank" :href="book.url" class="flex grow" v-for="book in books" :key="book.url">
         <img class="w-20 mr-5" :src="book.image" />
         <div>
           <span class="font-semibold">{{ book.title }}</span>
           <p class="">{{ truncate(book.description) }}</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 a:hover {
-    @apply text-indigo-400;
+    @apply text-indigo-400 cursor-pointer;
 }
 
 .grow { transition: all .2s ease-in-out; }

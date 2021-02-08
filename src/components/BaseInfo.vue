@@ -21,6 +21,16 @@
       <p class="mt-4 text-base">
         {{ info.description }}
       </p>
+
+      <div class="mt-4 flex flex-row">
+        <span class="mr-2">Developed by</span>
+        <div v-for="developer in info.developers" :key="developer.website">
+          <a :href="developer.website" target="_blank" class="flex flex-row">
+            <img :src="developer.logoUrl" class="h-6 w-6 mr-2" />
+            <span>{{ developer.name }}</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div>
@@ -37,7 +47,7 @@
         </a>
         <span>Published {{ info.latestRelease.publishedAt }}</span>
       </div>
-      <div class="grid grid-cols-2 gap-8 mt-4">
+      <div class="grid grid-cols-2 gap-8 mt-8">
         <div class="space-y-1">
           <div class="flex flex-row">
             <img src="/@/assets/icons/github.svg" class="h-5 w-5 mr-2" />
