@@ -45,7 +45,7 @@
           }}</span>
           <span class="px-3 py-2 bg-gray-700 text-gray-50">Current</span>
         </a>
-        <span>Published {{ info.latestRelease.publishedAt }}</span>
+        <span>Published {{  $filters.relative(info.latestRelease.publishedAt) }}</span>
       </div>
       <div class="grid grid-cols-2 gap-8 mt-8">
         <div class="space-y-1">
