@@ -10,7 +10,7 @@
         :key="podcast.url"
       >
         <div class="flex flex-row">
-          <img class="h-6 w-6 mr-2" src="/@/assets/icons/mic-line.svg" />
+          <mic-line-icon class="h-6 w-6 mr-2" />
 
           <span>{{ podcast.name }}</span>
         </div>
@@ -22,9 +22,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Podcast } from "../lib/Podcast";
+import MicLineIcon from '../assets/icons/mic-line.svg'
 
 export default defineComponent({
   name: "Podcasts",
+  components: {
+    MicLineIcon
+  },
   props: {
     podcasts: {
       type: Object as PropType<Podcast[]>,

@@ -12,7 +12,7 @@
       >
         <path
           d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-          style="stroke: none; fill: #08f"
+          :style="`stroke: none; fill: ${kotlin.color}`"
         ></path>
       </svg>
     </div>
@@ -71,6 +71,7 @@ export default defineComponent({
   },
   setup() {
     const kotlin: Topic = reactive({
+      color: '#ea9035',
       name: "Kotlin",
       description:
         "Kotlin is an open-source statically typed programming language that targets the JVM, Android, JavaScript and Native. It’s developed by JetBrains. The project started in 2010 and was open source from very early on. The first official 1.0 release was in February 2016.",
@@ -135,6 +136,15 @@ export default defineComponent({
             "Kotlin in Action guides experienced Java developers from the language basics of Kotlin all the way through building applications to run on the JVM and Android devices.",
           image:
             "https://images.manning.com/360/480/resize/book/3/9458a37-9793-4e67-a23f-585da31dff55/Jemerov-Kotlin-HI.png",
+          authors: [
+            {
+              name: "Svetlana Isakova",
+            },
+            {
+              name: "Dmitry Jemerov",
+            },
+          ],
+          publishedAt: "2017-02-01",
         },
         {
           title: "Head First Kotlin",
@@ -144,7 +154,26 @@ export default defineComponent({
             "Head First Kotlin is a complete introduction to coding in Kotlin. This hands-on book helps you learn the Kotlin language with a unique method that goes beyond syntax and how-to manuals and teaches you how to think like a great Kotlin developer. You’ll learn everything from language fundamentals to collections, generics, lambdas, and higher-order functions. Along the way, you’ll get to play with both object-oriented and functional programming. If you want to really understand Kotlin, this is the book for you.",
           image:
             "https://learning.oreilly.com/library/cover/9781491996683/250w/",
+          publishedAt: "2019-02-01",
+          authors: [
+            {
+              name: "Dawn Griffiths",
+            },
+            { name: "David Griffiths" },
+          ],
         },
+        {
+          title: 'Kotlin for Android Developers',
+          url:'https://leanpub.com/kotlin-for-android-developers',
+          description: 'Kotlin is the new official language to write Android Apps, and thanks to this book, you\'ll be writing code in no time. Straight to the point, practical and full of examples, it will show you the language while developing an Android App. Learn the Kotlin and start enjoying Android development again with this powerful and modern language.',
+          image: 'https://d2sofvawe08yqg.cloudfront.net/kotlin-for-android-developers/hero2x?1549463429',
+          publishedAt: '2019-02-11',
+          authors: [
+            {
+              name: 'Antonio Leiva'
+            }
+          ]
+        }
       ],
       blogs: [
         {
@@ -221,7 +250,11 @@ export default defineComponent({
           official: true,
           name: "Slack",
         },
-        { type: "Discord", url: "https://kotlindiscord.com/", name: "Kotlin Discord" },
+        {
+          type: "Discord",
+          url: "https://kotlindiscord.com/",
+          name: "Kotlin Discord",
+        },
         {
           type: "Stackoverflow",
           url: "https://stackoverflow.com/questions/tagged/kotlin",

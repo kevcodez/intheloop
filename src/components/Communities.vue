@@ -7,37 +7,32 @@
       :key="community.url"
     >
       <div class="flex flex-row">
-        <img
+        <reddit-icon
           class="h-6 w-6"
-          src="/@/assets/icons/reddit.svg"
           v-if="community.type === 'Reddit'"
         />
 
-        <img
+        <discord-icon
           class="h-6 w-6"
-          src="/@/assets/icons/discord.svg"
           v-else-if="community.type === 'Discord'"
         />
 
-        <img
+        <stackoverflow-icon
           class="h-6 w-6"
-          src="/@/assets/icons/stackoverflow.svg"
           v-else-if="community.type === 'Stackoverflow'"
         />
 
-        <img
+        <linked-in-icon
           class="h-6 w-6"
-          src="/@/assets/icons/linkedin.svg"
           v-else-if="community.type === 'LinkedIn'"
         />
 
-        <img
+        <slack-icon
           class="h-6 w-6"
-          src="/@/assets/icons/slack.svg"
           v-else-if="community.type === 'Slack'"
         />
 
-        <img class="h-6 w-6" src="/@/assets/icons/link.svg" v-else />
+        <link-icon class="h-6 w-6" v-else />
 
         <a :href="community.url" class="ml-2">{{ community.name }}</a>
       </div>
@@ -52,9 +47,23 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Community } from "../lib/Community";
+import RedditIcon from '../assets/icons/reddit.svg';
+import DiscordIcon from '../assets/icons/discord.svg';
+import StackoverflowIcon from '../assets/icons/stackoverflow.svg';
+import LinkedInIcon from '../assets/icons/linkedin.svg';
+import SlackIcon from '../assets/icons/slack.svg';
+import LinkIcon from '../assets/icons/link.svg';
 
 export default defineComponent({
   name: "Communities",
+  components: {
+    RedditIcon,
+    DiscordIcon,
+    StackoverflowIcon,
+    LinkedInIcon,
+    SlackIcon,
+    LinkIcon
+  },
   props: {
     communities: {
       type: Object as PropType<Community[]>,

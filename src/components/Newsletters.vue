@@ -10,7 +10,7 @@
         :key="newsletter.url"
       >
         <div class="flex flex-row">
-          <img class="h-6 w-6 mr-2" src="/@/assets/icons/mail-line.svg" />
+          <mail-line-icon class="h-6 w-6 mr-2" />
 
           <span>{{ newsletter.name }}</span>
         </div>
@@ -22,9 +22,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Newsletter } from "../lib/Newsletter";
+import MailLineIcon from "../assets/icons/mail-line.svg";
 
 export default defineComponent({
   name: "Newsletters",
+  components: {
+    MailLineIcon,
+  },
   props: {
     newsletters: {
       type: Object as PropType<Newsletter[]>,

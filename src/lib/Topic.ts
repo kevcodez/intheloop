@@ -6,16 +6,17 @@ import { Podcast } from "./Podcast"
 import { SocialLink } from "./SocialLink"
 
 export interface Topic {
-    name: string,
-    description: string,
+    color: string
+    name: string
+    description: string
     logo: string,
-    tags: string[],
+    tags: string[]
     scm: Scm
     latestRelease: Release
-    website: string,
-    documentation: string,
-    playground: string,
-    issueTracker: string,
+    website: string
+    documentation: string
+    playground: string
+    issueTracker: string
     developers: Developer[]
     social: SocialLink[]
     license: License

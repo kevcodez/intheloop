@@ -40,7 +40,7 @@
           :href="info.latestRelease.releaseNotesUrl"
           target="_blank"
         >
-          <span class="px-3 py-2 bg-indigo-500 text-white">{{
+          <span class="px-3 py-2 bg-indigo-500 text-white" :style="`background-color: ${info.color}`">{{
             info.latestRelease.version
           }}</span>
           <span class="px-3 py-2 bg-gray-700 text-gray-50">Current</span>
@@ -50,29 +50,29 @@
       <div class="grid grid-cols-2 gap-8 mt-8">
         <div class="space-y-1">
           <div class="flex flex-row">
-            <img src="/@/assets/icons/github.svg" class="h-5 w-5 mr-2" />
+            <github-icon class="h-5 w-5 mr-2" />
             <a :href="info.scm.url" target="_blank">{{
               info.scm.displayName
             }}</a>
           </div>
 
           <div class="flex flex-row">
-            <img src="/@/assets/icons/link.svg" class="h-5 w-5 mr-2" />
+            <link-icon class="h-5 w-5 mr-2" />
             <a :href="info.website" target="_blank">Official Website</a>
           </div>
 
           <div class="flex flex-row">
-            <img src="/@/assets/icons/link.svg" class="h-5 w-5 mr-2" />
+            <link-icon class="h-5 w-5 mr-2" />
             <a :href="info.documentation" target="_blank">Documentation</a>
           </div>
 
           <div class="flex flex-row">
-            <img src="/@/assets/icons/link.svg" class="h-5 w-5 mr-2" />
+            <link-icon class="h-5 w-5 mr-2" />
             <a :href="info.issueTracker" target="_blank">Issue Tracker</a>
           </div>
 
           <div class="flex flex-row">
-            <img src="/@/assets/icons/play-line.svg" class="h-5 w-5 mr-2" />
+            <play-line-icon class="h-5 w-5 mr-2" />
             <a :href="info.playground" target="_blank">Playground</a>
           </div>
         </div>
@@ -83,14 +83,12 @@
             v-for="social in info.social"
             :key="social.url"
           >
-            <img
+            <twitter-icon
               v-if="social.type === 'Twitter'"
-              src="/@/assets/icons/twitter.svg"
               class="h-6 w-6"
             />
-            <img
+            <youtube-icon
               v-else-if="social.type === 'Youtube'"
-              src="/@/assets/icons/youtube.svg"
               class="h-6 w-6"
             />
             <span class="ml-2">{{ social.label }}</span>
@@ -104,9 +102,21 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Topic } from "../lib/Topic";
+import GithubIcon from '../assets/icons/github.svg'
+import LinkIcon from '../assets/icons/link.svg'
+import TwitterIcon from '../assets/icons/twitter.svg'
+import YoutubeIcon from '../assets/icons/youtube.svg'
+import PlayLineIcon from '../assets/icons/play-line.svg'
 
 export default defineComponent({
   name: "BaseInfo",
+  components: {
+    GithubIcon,
+    LinkIcon,
+    PlayLineIcon,
+    TwitterIcon,
+    YoutubeIcon
+  },
   props: {
     info: {
       type: Object as PropType<Topic>,

@@ -10,7 +10,7 @@
         class="grow"
       >
         <div class="flex flex-row">
-          <img src="/@/assets/icons/tag.svg" class="h-6 w-6" />
+          <tag-icon class="h-6 w-6" />
           <span class="ml-2">{{ release.version }}</span>
         </div>
         <span class="text-xs">{{
@@ -24,9 +24,13 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Release } from "../lib/Topic";
+import TagIcon from "../assets/icons/tag.svg";
 
 export default defineComponent({
   name: "LatestReleases",
+  components: {
+    TagIcon,
+  },
   props: {
     releases: {
       type: Object as PropType<Release[]>,
