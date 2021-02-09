@@ -1,3 +1,5 @@
+import { Author } from "./Author";
+
 export interface Book {
     url: string
     image: string
@@ -5,8 +7,4 @@ export interface Book {
     description: string
     publishedAt: string
     authors: Author[]
-}
-
-export interface Author {
-    name: string
 }

@@ -1,13 +1,18 @@
 <template>
   <div>
     <div class="flex justify-between">
-    <h3 class="text-2xl mb-4">Books</h3>
-<a href="">See all</a>
-
+      <h3 class="text-2xl mb-4">Books</h3>
+      <!--a href="">See all</a-->
     </div>
     <div class="space-y-8">
-      <a target="_blank" :href="book.url" class="flex grow" v-for="book in books" :key="book.url">
-        <img class="w-20 mr-5" :src="book.image" />
+      <a
+        target="_blank"
+        :href="book.url"
+        class="flex grow items-center"
+        v-for="book in books"
+        :key="book.url"
+      >
+        <img class="w-12 h-12 mr-5 object-contain" :src="book.image" />
         <div>
           <span class="font-semibold">{{ book.title }}</span>
           <p class="">{{ truncate(book.description) }}</p>

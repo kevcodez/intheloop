@@ -1,8 +1,8 @@
 <template>
   <div>
     <h3 class="text-2xl mb-4">Blogs</h3>
-    <div class="space-y-2">
-      <div class="space-y-2" v-for="blog in blogs" :key="blog.name">
+    <div class="space-y-8">
+      <div class="space-y-4" v-for="blog in blogs" :key="blog.name">
         <a :href="blog.url" target="_blank" class="flex">
           <dev-dot-to-icon
             v-if="blog.url.includes('dev.to')"
@@ -13,12 +13,11 @@
             class="h-6 w-6 mr-2"
           />
           <link-icon v-else class="h-6 w-6 mr-2" />
-          {{ blog.name }}
+          <span class="font-semibold">{{ blog.name }}</span>
         </a>
 
         <div v-for="post in blog.latestPosts" :key="post.link">
-          <a :href="post.link" target="_blank" class="flex flex-row grow">
-            <img :src="post.image" class="h-12 w-12 mr-4" />
+          <a :href="post.link" target="_blank" class="flex flex-row grow items-center">
             <div>
               <p>{{ post.title }}</p>
               <p class="text-sm text-gray-700">

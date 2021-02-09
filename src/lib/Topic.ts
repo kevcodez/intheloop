@@ -1,6 +1,7 @@
 import { Blog } from "./Blog"
 import { Book } from "./Book"
 import { Community } from "./Community"
+import { Course } from "./Course"
 import { Newsletter } from "./Newsletter"
 import { Podcast } from "./Podcast"
 import { SocialLink } from "./SocialLink"
@@ -26,6 +27,7 @@ export interface Topic {
     releases: Release[]
     communities: Community[]
     podcasts: Podcast[]
+    courses: Course[]
 }
 
 export interface Developer {
