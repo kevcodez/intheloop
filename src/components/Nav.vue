@@ -1,6 +1,6 @@
 <template>
   <header class="relative">
-    <div class="bg-gray-50 pt-6">
+    <div class="bg-gray-100 pt-6">
       <nav
         class="relative max-w-7xl mx-auto flex items-center justify-between px-4"
         aria-label="Global"
