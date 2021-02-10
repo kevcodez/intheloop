@@ -2,7 +2,7 @@
   <div>
     <div class="flex justify-between">
       <h3 class="text-2xl mb-4">Books</h3>
-      <!--a href="">See all</a-->
+      <router-link :to="`/topics/kotlin/books`">See all</router-link>
     </div>
     <div class="space-y-8">
       <a

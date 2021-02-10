@@ -11,5 +11,5 @@
     "lib": ["esnext", "dom"],
     "types": ["vite-svg-loader", "vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/components/Podcasts.vue", "src/components/Books.vue", "src/components/Podcast.vue", "src/components/Book.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/components/Podcasts.vue", "src/components/Books.vue", "src/components/Podcast.vue", "src/components/Book.vue", "src/pages/topics.vue", "src/pages/topics/kotlin.vue", "src/pages/topics/[id].vue", "src/pages/kotlin.vue", "src/pages/topics/[topicId].vue", "src/pages/topics/[id].vue"]
 }
