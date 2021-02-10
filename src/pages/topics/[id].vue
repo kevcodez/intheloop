@@ -318,7 +318,7 @@ export default defineComponent({
         {
           name: "Introduction to Kotlin Programming",
           publishedAt: "2016-01-10",
-          price: "Freemium",
+          price: "$50",
           url:
             "https://www.oreilly.com/library/view/introduction-to-kotlin/9781491964125/",
           image: "https://learning.oreilly.com/library/cover/9781491964125/",

@@ -8,11 +8,15 @@
       <a
         target="_blank"
         :href="course.url"
-        class="flex flex-grow"
+        class="flex flex-grow items-center"
         v-for="course in courses"
         :key="course.url"
       >
+      <div class="flex flex-col justify-center text-center">
         <img :src="course.image" class="h-12 w-12 object-contain" />
+          <span class="mt-2 text-gray-50 py-1 px-2 rounded bg-gray-800 text-xs">{{ course.price }}</span>
+
+      </div>
         <div class="flex flex-col ml-4">
           <span>{{ course.name }}</span>
           <span class="text-sm text-gray-700"
