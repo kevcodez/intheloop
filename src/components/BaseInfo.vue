@@ -2,16 +2,16 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-14">
     <div class="col-span-2">
       <div class="flex flex-row items-center">
-        <img :src="info.logo" class="h-16 w-16" />
+        <img :src="topic.info.logo" class="h-16 w-16" />
         <h1 class="ml-5 text-5xl font-semibold tracking-wide">
-          {{ info.name }}
+          {{ topic.info.name }}
         </h1>
       </div>
 
       <div class="space-x-1 space-y-2 mt-4">
         <a
           class="rounded inline-block px-2 py-1 bg-indigo-100"
-          v-for="tag in info.tags"
+          v-for="tag in topic.info.tags"
           :key="tag"
         >
           {{ tag }}
@@ -19,12 +19,12 @@
       </div>
 
       <p class="mt-4 text-base">
-        {{ info.description }}
+        {{ topic.info.description }}
       </p>
 
       <div class="mt-4 flex flex-row">
         <span class="mr-2">Developed by</span>
-        <div v-for="developer in info.developers" :key="developer.website">
+        <div v-for="developer in topic.developers" :key="developer.website">
           <a :href="developer.website" target="_blank" class="flex flex-row">
             <img :src="developer.logoUrl" class="h-6 w-6 mr-2" />
             <span>{{ developer.name }}</span>
@@ -37,50 +37,50 @@
       <div class="flex space-y-2 flex-col items-center">
         <a
           class="cursor-pointer grow"
-          :href="info.latestRelease.releaseNotesUrl"
+          :href="topic.info.latestRelease.releaseNotesUrl"
           target="_blank"
         >
-          <span class="px-3 py-2 bg-indigo-500 text-white" :style="`background-color: ${info.color}`">{{
-            info.latestRelease.version
+          <span class="px-3 py-2 bg-indigo-500 text-white" :style="`background-color: ${topic.info.color}`">{{
+            topic.info.latestRelease.version
           }}</span>
           <span class="px-3 py-2 bg-gray-700 text-gray-50">Current</span>
         </a>
-        <span>Published {{  $filters.relative(info.latestRelease.publishedAt) }}</span>
+        <span>Published {{  $filters.relative(topic.info.latestRelease.publishedAt) }}</span>
       </div>
       <div class="grid grid-cols-2 gap-8 mt-8">
         <div class="space-y-1">
           <div class="flex flex-row">
             <github-icon class="h-5 w-5 mr-2" />
-            <a :href="info.scm.url" target="_blank">{{
-              info.scm.displayName
+            <a :href="topic.info.scm.url" target="_blank">{{
+              topic.info.scm.displayName
             }}</a>
           </div>
 
           <div class="flex flex-row">
             <link-icon class="h-5 w-5 mr-2" />
-            <a :href="info.website" target="_blank">Official Website</a>
+            <a :href="topic.info.website" target="_blank">Official Website</a>
           </div>
 
           <div class="flex flex-row">
             <link-icon class="h-5 w-5 mr-2" />
-            <a :href="info.documentation" target="_blank">Documentation</a>
+            <a :href="topic.info.documentation" target="_blank">Documentation</a>
           </div>
 
           <div class="flex flex-row">
             <link-icon class="h-5 w-5 mr-2" />
-            <a :href="info.issueTracker" target="_blank">Issue Tracker</a>
+            <a :href="topic.info.issueTracker" target="_blank">Issue Tracker</a>
           </div>
 
           <div class="flex flex-row">
             <play-line-icon class="h-5 w-5 mr-2" />
-            <a :href="info.playground" target="_blank">Playground</a>
+            <a :href="topic.info.playground" target="_blank">Playground</a>
           </div>
         </div>
         <div class="space-y-2">
           <a
             class="flex flex-row"
             :href="social.url"
-            v-for="social in info.social"
+            v-for="social in topic.info.social"
             :key="social.url"
           >
             <twitter-icon
@@ -118,7 +118,7 @@ export default defineComponent({
     YoutubeIcon
   },
   props: {
-    info: {
+    topic: {
       type: Object as PropType<Topic>,
       required: true,
     },

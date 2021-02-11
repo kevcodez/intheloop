@@ -7,5 +7,5 @@ import voie from 'vite-plugin-voie';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), svgLoader(), voie()],
-  alias: { '/@': path.resolve(__dirname, './src'), },
+  alias: { '@': path.resolve(__dirname, './src'), },
 })

@@ -14,11 +14,11 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { Topic } from "/@/lib/Topic";
-import Blogs from "/@/components/Blogs.vue";
-import Books from "/@/components/Books.vue";
-import LatestReleases from "/@/components/LatestReleases.vue";
-import Courses from "/@/components/Courses.vue";
+import { Topic } from "@/lib/Topic";
+import Blogs from "@/components/Blogs.vue";
+import Books from "@/components/Books.vue";
+import LatestReleases from "@/components/LatestReleases.vue";
+import Courses from "@/components/Courses.vue";
 
 export default defineComponent({
   name: "TopicBase",

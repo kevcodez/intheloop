@@ -7,6 +7,18 @@ import { Podcast } from "./Podcast"
 import { SocialLink } from "./SocialLink"
 
 export interface Topic {
+    info: TopicInfo
+    developers: Developer[]
+    books: Book[]
+    blogs: Blog[]
+    newsletters: Newsletter[]
+    releases: Release[]
+    communities: Community[]
+    podcasts: Podcast[]
+    courses: Course[]
+}
+
+export interface TopicInfo {
     color: string
     name: string
     description: string
@@ -18,16 +30,8 @@ export interface Topic {
     documentation: string
     playground: string
     issueTracker: string
-    developers: Developer[]
     social: SocialLink[]
     license: License
-    books: Book[]
-    blogs: Blog[]
-    newsletters: Newsletter[]
-    releases: Release[]
-    communities: Community[]
-    podcasts: Podcast[]
-    courses: Course[]
 }
 
 export interface Developer {
