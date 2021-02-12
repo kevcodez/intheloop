@@ -23,11 +23,11 @@
       </div>
 
       <div class="space-y-4">
-        <Communities :communities="topic.communities" />
+        <Communities :communities="topic.communities.filter(it => it)" />
 
-        <Newsletters :newsletters="topic.newsletters" />
+        <Newsletters :newsletters="topic.newsletters.filter(it => it)" />
 
-        <Podcasts :podcasts="topic.podcasts" />
+        <Podcasts :podcasts="topic.podcasts.filter(it => it)" />
       </div>
     </div>
   </div>

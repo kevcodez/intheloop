@@ -25,10 +25,11 @@ export interface TopicInfo {
     logo: string,
     tags: string[]
     scm: Scm
+    changelog?: string
     latestRelease: Release
     website: string
     documentation: string
-    playground: string
+    playground?: string
     issueTracker: string
     social: SocialLink[]
     license: License

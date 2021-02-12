@@ -3,11 +3,11 @@
     <LatestReleases :releases="topic.releases" />
 
     <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-6 mt-24">
-      <Blogs :blogs="topic.blogs" />
+      <Blogs :blogs="topic.blogs.filter(it => it)" />
 
-      <Books :books="topic.books" />
+      <Books :books="topic.books.filter(it => it)" />
 
-      <Courses :courses="topic.courses" />
+      <Courses :courses="topic.courses.filter(it => it)" />
     </div>
   </div>
 </template>

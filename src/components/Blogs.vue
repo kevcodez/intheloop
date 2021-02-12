@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="blogs && blogs.length">
     <h3 class="text-2xl mb-4">Blogs</h3>
     <div class="space-y-8">
       <div class="space-y-4" v-for="blog in blogs" :key="blog.name">

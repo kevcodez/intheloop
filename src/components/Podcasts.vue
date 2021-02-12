@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="podcasts && podcasts.length">
     <h3 class="font-semibold text-xl">Podcasts</h3>
     <div class="space-y-2 mt-4">
       <a

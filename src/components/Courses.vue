@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="courses && courses.length">
     <div class="flex justify-between">
       <h3 class="text-2xl mb-4">Courses</h3>
       <!--a href="">See all</a-->

@@ -71,9 +71,14 @@
             <a :href="topic.info.issueTracker" target="_blank">Issue Tracker</a>
           </div>
 
-          <div class="flex flex-row">
+          <div class="flex flex-row" v-if="topic.info.playground">
             <play-line-icon class="h-5 w-5 mr-2" />
             <a :href="topic.info.playground" target="_blank">Playground</a>
+          </div>
+
+          <div class="flex flex-row" v-if="topic.info.changelog">
+            <file-list-icon class="h-5 w-5 mr-2" />
+            <a :href="topic.info.changelog" target="_blank">Changelog</a>
           </div>
         </div>
         <div class="space-y-2">
@@ -107,6 +112,7 @@ import LinkIcon from '../assets/icons/link.svg'
 import TwitterIcon from '../assets/icons/twitter.svg'
 import YoutubeIcon from '../assets/icons/youtube.svg'
 import PlayLineIcon from '../assets/icons/play-line.svg'
+import FileListIcon from '../assets/icons/file-list.svg'
 
 export default defineComponent({
   name: "BaseInfo",
@@ -115,7 +121,8 @@ export default defineComponent({
     LinkIcon,
     PlayLineIcon,
     TwitterIcon,
-    YoutubeIcon
+    YoutubeIcon,
+    FileListIcon
   },
   props: {
     topic: {
