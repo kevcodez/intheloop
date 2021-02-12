@@ -19,7 +19,7 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-24 container">
       <div class="col-span-2">
-        <router-view :topic="topic"></router-view>
+        <router-view :topic="topic" />
       </div>
 
       <div class="space-y-4">
@@ -73,6 +73,7 @@ export default defineComponent({
     },
   },
   async setup(props) {
+    console.log('hello')
     if (!props.id)
       return
 
