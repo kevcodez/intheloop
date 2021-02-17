@@ -16,6 +16,7 @@ export interface Topic {
     communities: Community[]
     podcasts: Podcast[]
     courses: Course[]
+    latestrelease: Release
 }
 
 export interface TopicInfo {
@@ -26,7 +27,7 @@ export interface TopicInfo {
     tags: string[]
     scm: Scm
     changelog?: string
-    latestRelease: Release
+    latestVersion: string
     website: string
     documentation: string
     playground?: string

@@ -1,6 +1,5 @@
 drop view vw_topic_overview;
-CREATE VIEW vw_topic_overview as 
-
+CREATE VIEW vw_topic_overview as
 SELECT
   topic.id AS id,
   topic.info AS info,
@@ -11,12 +10,22 @@ SELECT
   array_agg(DISTINCT newsletter.info) AS newsletters,
   array_agg(DISTINCT course.info) AS courses,
   (
+    WITH r AS (
+      SELECT
+        distinct info, (info->>'publishedAt')::timestamptz
+      FROM
+        release rt
+      WHERE
+        rt.topic = topic.id
+      ORDER BY
+        (info ->> 'publishedAt') :: timestamptz desc
+      limit
+        6
+    )
     SELECT
-      array_agg(DISTINCT info)
+      json_agg(info)
     FROM
-      RELEASE
-    WHERE
-      topic = topic.id
+      r
   ) AS releases,
   (
     WITH c AS (
@@ -24,17 +33,29 @@ SELECT
         DISTINCT info
       FROM
         community
-        WHERE id=ANY(topic.communities)
+      WHERE
+        id = ANY(topic.communities)
     )
     SELECT
       json_agg(
         info
         ORDER BY
-          (info ->> 'official')::boolean ASC
+          (info ->> 'official') :: boolean ASC
       )
     FROM
       c
-  ) AS communities
+  ) AS communities,
+  (
+    SELECT
+      info
+    FROM
+      release r
+    where
+      r.topic = topic.id
+      AND r.info ->> 'version' = topic.info ->> 'latestVersion'
+    LIMIT
+      1
+  ) as latestRelease
 FROM
   topic topic
   LEFT JOIN developer developer ON developer.id = ANY(topic.developers)

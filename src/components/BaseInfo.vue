@@ -35,17 +35,18 @@
 
     <div>
       <div class="flex space-y-2 flex-col items-center">
-        <a
-          class="cursor-pointer grow"
-          :href="topic.info.latestRelease.releaseNotesUrl"
-          target="_blank"
-        >
-          <span class="px-3 py-2 bg-indigo-500 text-white" :style="`background-color: ${topic.info.color}`">{{
-            topic.info.latestRelease.version
-          }}</span>
+        <div class="flex flex-row">
+          <span
+            class="px-3 py-2 bg-indigo-500 text-white"
+            :style="`background-color: ${topic.info.color}`"
+            >{{ topic.latestrelease.version }}</span
+          >
           <span class="px-3 py-2 bg-gray-700 text-gray-50">Current</span>
-        </a>
-        <span>Published {{  $filters.relative(topic.info.latestRelease.publishedAt) }}</span>
+        </div>
+        <span
+          >Published
+          {{ $filters.relative(topic.latestrelease.publishedAt) }}</span
+        >
       </div>
       <div class="grid grid-cols-2 gap-8 mt-8">
         <div class="space-y-1">
@@ -63,7 +64,9 @@
 
           <div class="flex flex-row">
             <link-icon class="h-5 w-5 mr-2" />
-            <a :href="topic.info.documentation" target="_blank">Documentation</a>
+            <a :href="topic.info.documentation" target="_blank"
+              >Documentation</a
+            >
           </div>
 
           <div class="flex flex-row">
@@ -88,10 +91,7 @@
             v-for="social in topic.info.social"
             :key="social.url"
           >
-            <twitter-icon
-              v-if="social.type === 'Twitter'"
-              class="h-6 w-6"
-            />
+            <twitter-icon v-if="social.type === 'Twitter'" class="h-6 w-6" />
             <youtube-icon
               v-else-if="social.type === 'Youtube'"
               class="h-6 w-6"
@@ -107,12 +107,12 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Topic } from "../lib/Topic";
-import GithubIcon from '../assets/icons/github.svg'
-import LinkIcon from '../assets/icons/link.svg'
-import TwitterIcon from '../assets/icons/twitter.svg'
-import YoutubeIcon from '../assets/icons/youtube.svg'
-import PlayLineIcon from '../assets/icons/play-line.svg'
-import FileListIcon from '../assets/icons/file-list.svg'
+import GithubIcon from "../assets/icons/github.svg";
+import LinkIcon from "../assets/icons/link.svg";
+import TwitterIcon from "../assets/icons/twitter.svg";
+import YoutubeIcon from "../assets/icons/youtube.svg";
+import PlayLineIcon from "../assets/icons/play-line.svg";
+import FileListIcon from "../assets/icons/file-list.svg";
 
 export default defineComponent({
   name: "BaseInfo",
@@ -122,7 +122,7 @@ export default defineComponent({
     PlayLineIcon,
     TwitterIcon,
     YoutubeIcon,
-    FileListIcon
+    FileListIcon,
   },
   props: {
     topic: {
