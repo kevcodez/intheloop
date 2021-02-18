@@ -34,6 +34,12 @@ export interface TopicInfo {
     issueTracker: string
     social: SocialLink[]
     license: License
+    badges: Badge[]
+}
+
+export interface Badge {
+    type: string
+    url: string
 }
 
 export interface Developer {

@@ -39,14 +39,23 @@
           <span
             class="px-3 py-2 bg-indigo-500 text-white"
             :style="`background-color: ${topic.info.color}`"
-            >{{ topic.latestrelease.version }}</span
+            >{{ topic.info.latestVersion }}</span
           >
-          <span class="px-3 py-2 bg-gray-700 text-gray-50">Current</span>
+          <span class="px-3 py-2 bg-gray-700 text-gray-50">
+            {{ $filters.relative(topic.latestrelease.publishedAt) }}</span
+          >
         </div>
-        <span
-          >Published
-          {{ $filters.relative(topic.latestrelease.publishedAt) }}</span
-        >
+        <div class="pt-2">
+          <a
+            :href="badge.url"
+            target="_blank"
+            v-for="badge in topic.info.badges"
+            :key="badge.url"
+          >
+            <npm-icon  v-if="badge.type === 'NPM'" class="grow h-6 w-6" />
+            <apache-maven-icon v-else-if="badge.type === 'MavenCentral'" class="grow h-6 w-6" />
+          </a>
+        </div>
       </div>
       <div class="grid grid-cols-2 gap-8 mt-8">
         <div class="space-y-1">
@@ -113,6 +122,8 @@ import TwitterIcon from "../assets/icons/twitter.svg";
 import YoutubeIcon from "../assets/icons/youtube.svg";
 import PlayLineIcon from "../assets/icons/play-line.svg";
 import FileListIcon from "../assets/icons/file-list.svg";
+import ApacheMavenIcon from "../assets/icons/apachemaven.svg";
+import NpmIcon from "../assets/icons/npm.svg";
 
 export default defineComponent({
   name: "BaseInfo",
@@ -123,6 +134,8 @@ export default defineComponent({
     TwitterIcon,
     YoutubeIcon,
     FileListIcon,
+    ApacheMavenIcon,
+    NpmIcon,
   },
   props: {
     topic: {
