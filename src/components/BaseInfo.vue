@@ -53,6 +53,7 @@
             :key="badge.url"
           >
             <npm-icon  v-if="badge.type === 'NPM'" class="grow h-6 w-6" />
+
             <apache-maven-icon v-else-if="badge.type === 'MavenCentral'" class="grow h-6 w-6" />
           </a>
         </div>

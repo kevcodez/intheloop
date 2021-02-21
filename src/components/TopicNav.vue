@@ -4,12 +4,12 @@
     <select
       id="tabs"
       name="tabs"
-      class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+      class="block w-full px-4 py-2 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
     >
-      <option>My Account</option>
-      <option>Company</option>
-      <option selected>Team Members</option>
-      <option>Billing</option>
+      <option selected>Tweets</option>
+      <option>Blog Posts</option>
+      <option>Latest Releases</option>
+      <option>Books &amp; Courses</option>
     </select>
   </div>
   <div class="hidden sm:block">
