@@ -4,7 +4,7 @@
   <div>
     <BaseInfo class="container" :topic="topic" />
 
-    <div style="height: 150px; overflow: hidden">
+    <div style="height: 150px; overflow: hidden" class="mt-5">
       <svg
         viewBox="0 0 500 150"
         preserveAspectRatio="none"
@@ -19,15 +19,18 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-24 container">
       <div class="col-span-2">
-        <router-view :topic="topic" />
+        <TopicNav :topic="topic" />
+
+        <router-view class="pt-10" :topic="topic" />
       </div>
 
-      <div class="space-y-4">
-        <Communities :communities="topic.communities.filter(it => it)" />
+      <div>
+        <Communities :communities="topic.communities.filter((it) => it)" />
 
-        <Newsletters :newsletters="topic.newsletters.filter(it => it)" />
+        <h3 class="font-medium text-xl mt-8">Newsletters &amp; Podcasts</h3>
+        <Newsletters :newsletters="topic.newsletters.filter((it) => it)" />
 
-        <Podcasts :podcasts="topic.podcasts.filter(it => it)" />
+        <Podcasts :podcasts="topic.podcasts.filter((it) => it)" />
       </div>
     </div>
   </div>
@@ -38,54 +41,28 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import Nav from "@/components/Nav.vue";
-import BaseInfo from "@/components/BaseInfo.vue";
-import Blogs from "@/components/Blogs.vue";
-import Books from "@/components/Books.vue";
-import Communities from "@/components/Communities.vue";
-import LatestReleases from "@/components/LatestReleases.vue";
-import Newsletters from "@/components/Newsletters.vue";
-import Podcasts from "@/components/Podcasts.vue";
-import SocialLinks from "@/components/SocialLinks.vue";
-import Courses from "@/components/Courses.vue";
-import Footer from "@/components/Footer.vue";
 import { Topic } from "@/lib/Topic";
-import { supabase } from '@/lib/supabase';
+import { supabase } from "@/lib/supabase";
 
 export default defineComponent({
   name: "App",
-  components: {
-    BaseInfo,
-    Blogs,
-    Books,
-    Communities,
-    LatestReleases,
-    Newsletters,
-    Podcasts,
-    SocialLinks,
-    Nav,
-    Footer,
-    Courses,
-  },
   props: {
     id: {
       type: String,
     },
   },
   async setup(props) {
-    console.log('hello')
-    if (!props.id)
-      return
+    if (!props.id) return;
 
     const { data, error } = await supabase
-    .from('vw_topic_overview')
-    .select("*")
-    .eq("id", props.id)
-    .single()
+      .from("vw_topic_overview")
+      .select("*")
+      .eq("id", props.id)
+      .single();
 
-    console.log(data)
+    console.log(data);
 
-    const topic = ref<Topic>(data)
+    const topic = ref<Topic>(data);
 
     return {
       topic,

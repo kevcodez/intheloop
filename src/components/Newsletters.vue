@@ -1,6 +1,5 @@
 <template>
   <div v-if="newsletters && newsletters.length">
-    <h3 class="font-semibold text-xl">Newsletters</h3>
     <div class="space-y-2 mt-4">
       <a
         :href="newsletter.url"
@@ -10,7 +9,7 @@
         :key="newsletter.url"
       >
         <div class="flex flex-row">
-          <mail-line-icon class="h-6 w-6 mr-2" />
+          <mail-icon class="h-6 w-6 mr-2" />
 
           <span>{{ newsletter.name }}</span>
         </div>
@@ -22,12 +21,12 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Newsletter } from "../lib/Newsletter";
-import MailLineIcon from "../assets/icons/mail-line.svg";
+import MailIcon from "../assets/icons/mail.svg";
 
 export default defineComponent({
   name: "Newsletters",
   components: {
-    MailLineIcon,
+    MailIcon,
   },
   props: {
     newsletters: {

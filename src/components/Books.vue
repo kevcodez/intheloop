@@ -1,9 +1,5 @@
 <template>
   <div v-if="books && books.length">
-    <div class="flex justify-between">
-      <h3 class="text-2xl mb-4">Books</h3>
-      <router-link :to="`/topics/kotlin/books`">See all</router-link>
-    </div>
     <div class="space-y-8">
       <a
         target="_blank"
@@ -36,8 +32,8 @@ export default defineComponent({
   },
   setup() {
     const truncate = (input: string) => {
-      if (input.length > 120) {
-        return input.substring(0, 120) + "...";
+      if (input.length > 190) {
+        return input.substring(0, 190) + "...";
       }
       return input;
     };

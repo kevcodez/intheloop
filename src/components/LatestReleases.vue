@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3 class="text-2xl mb-2">Latest Releases</h3>
     <div class="grid grid-cols-3 gap-4">
       <a
         :href="release.releaseNotesUrl"

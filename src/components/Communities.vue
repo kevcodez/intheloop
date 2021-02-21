@@ -1,5 +1,5 @@
 <template>
-  <h3 class="font-semibold text-xl">Communities &amp; Help</h3>
+  <h3 class="font-medium text-xl">Communities &amp; Help</h3>
   <div class="space-y-2 mt-4">
     <div
       class="flex flex-row  justify-between"

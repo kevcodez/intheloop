@@ -1,5 +1,9 @@
 <template>
-  <div>books {{ id }}</div>
+  <div class="space-y-10">
+    <Books :books="topic.books.filter((it) => it)" />
+
+    <Courses :courses="topic.courses.filter((it) => it)" />
+  </div>
 </template>
 
 <script lang="ts">

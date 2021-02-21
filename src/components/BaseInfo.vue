@@ -22,7 +22,7 @@
         {{ topic.info.description }}
       </p>
 
-      <div class="mt-4 flex flex-row">
+      <div class="mt-6 flex flex-row">
         <span class="mr-2">Developed by</span>
         <div v-for="developer in topic.developers" :key="developer.website">
           <a :href="developer.website" target="_blank" class="flex flex-row">
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="grid grid-cols-2 gap-8 mt-8">
-        <div class="space-y-1">
+        <div class="space-y-2">
           <div class="flex flex-row">
             <github-icon class="h-5 w-5 mr-2" />
             <a :href="topic.info.scm.url" target="_blank">{{
