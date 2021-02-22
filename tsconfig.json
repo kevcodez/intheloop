@@ -17,5 +17,5 @@
       ]
    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/pages/topics/[id].vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/pages/topics/[id].vue", "src/components/BlogPosts.vue", "src/pages/topics/[id]/blog-posts.vue"]
 }

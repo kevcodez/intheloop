@@ -21,21 +21,21 @@
       >
         Tweets
       </router-link>
-      <a
+      <router-link
         exact-active-class="bg-gray-200 text-gray-700"
         :to="`/topics/${topic.id}/blog-posts`"
         class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-md rounded-md"
       >
         Blog posts
-      </a>
+      </router-link>
       <!-- Current: "bg-gray-100 text-gray-700", Default: "text-gray-500 hover:text-gray-700" -->
-      <a
+      <router-link
         exact-active-class="bg-gray-200 text-gray-700"
         :to="`/topics/${topic.id}/releases`"
         class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-md rounded-md"
       >
         Latest Releases
-      </a>
+      </router-link>
       <router-link
         exact-active-class="bg-gray-200 text-gray-700"
         :to="`/topics/${topic.id}/books-courses`"

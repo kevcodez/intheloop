@@ -7,6 +7,7 @@ import { Podcast } from "./Podcast"
 import { SocialLink } from "./SocialLink"
 
 export interface Topic {
+    id: string
     info: TopicInfo
     developers: Developer[]
     books: Book[]

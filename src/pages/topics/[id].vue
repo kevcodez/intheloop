@@ -27,6 +27,8 @@
       <div>
         <Communities :communities="topic.communities.filter((it) => it)" />
 
+        <Blogs class="mt-8" :blogs="topic.blogs.filter((it) => it)" />
+
         <h3 class="font-medium text-xl mt-8">Newsletters &amp; Podcasts</h3>
         <Newsletters :newsletters="topic.newsletters.filter((it) => it)" />
 

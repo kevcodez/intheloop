@@ -248,17 +248,17 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@supabase/gotrue-js@^1.10.6":
-  version "1.10.6"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.10.6.tgz#156885c30393d04f8d09cf249c6e3208345325a3"
-  integrity sha512-2xtp9N7iQVxPS6k5Umzc3+kwbq3pGA1Wr/IfWTMESW6Xza7sRkfYdq8dveaWE0aMjY9cG+NW6kz6FxIYwaP4JQ==
+"@supabase/gotrue-js@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.11.0.tgz#6bbd5c4d7c8d58e3950eb7c44307395f9f7cca43"
+  integrity sha512-a+90Z3hs2SGWvOoaHtTfEI5U9VGiTQi2AnVCwWO25AaO8O83eayyoyNdIb2Ci26EitIiKBtXHFYwMMsBuAg1gg==
   dependencies:
     cross-fetch "^3.0.6"
 
 "@supabase/postgrest-js@^0.24.1":
-  version "0.24.2"
-  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.24.2.tgz#3d39582d4b6774b259da465e0d1add9d4e97227e"
-  integrity sha512-4dOsjZfetQ9JMzCyak/CyBXjgDuoi6qHVFG3s3JM558+blVuLQqm3n9SbtroM1DhBYrbwi5KF44WBL/JH2HV+A==
+  version "0.24.3"
+  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.24.3.tgz#9f071744f7a611f5c69b0421d0e7fbdf05dbd63e"
+  integrity sha512-o1Ssyrkq6CGoa93HgMtLjDFnPE7gRXPgItIZcsXNZKY7eVEN2yWIanurCgn5M8b6t7Be3O5hEWmh/oaQCrh70Q==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -272,11 +272,11 @@
     websocket "^1.0.31"
 
 "@supabase/supabase-js@^1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.3.4.tgz#4b89379749376482b7fb1a185030282e7d69f0bd"
-  integrity sha512-MU1aJ84htYnwpbwI/L3N0UiczTgMxcfbVAa2fZQLugVbXv/xb+TPrl4yELsyWJwJTl3aWLF6DPn/yGMsaHb/fw==
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.4.0.tgz#6e4116f76f491e9d9f10d505e8b3dcf04f3acfbe"
+  integrity sha512-MgJNd8OhWB1UKiPOX/I6syLa39nCyPkm3oSJ5r1kHdhumBs5Y9Awd6KOZaa+o5R/f0fMzQXhZNmXGOmDteCHnw==
   dependencies:
-    "@supabase/gotrue-js" "^1.10.6"
+    "@supabase/gotrue-js" "^1.11.0"
     "@supabase/postgrest-js" "^0.24.1"
     "@supabase/realtime-js" "^1.0.6"
 
@@ -293,9 +293,9 @@
     "@types/braces" "*"
 
 "@types/node@*":
-  version "14.14.25"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.25.tgz#15967a7b577ff81383f9b888aa6705d43fbbae93"
-  integrity sha512-EPpXLOVqDvisVxtlbvzfyqSsFeQxltFbluZNRndIb8tr9KiBnYNLzrc1N3pyKUCww2RNrfHDViqDWWE1LCJQtQ==
+  version "14.14.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
+  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
 
 "@types/websocket@^1.0.1":
   version "1.0.1"
@@ -1730,9 +1730,9 @@ type@^1.0.1:
   integrity sha512-+5nt5AAniqsCnu2cEQQdpzCAh33kVx8n0VoFidKpB1dVVLAN/F+bgVOqOJqOnEnrhp222clB5p3vUlD+1QAnfg==
 
 type@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/type/-/type-2.2.0.tgz#3edd448793f517d8b9dd108b486a043f5befd91f"
-  integrity sha512-M/u37b4oSGlusaU8ZB96BfFPWQ8MbsZYXB+kXGMiDj6IKinkcNaQvmirBuWj8mAXqP6LYn1rQvbTYum3yPhaOA==
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/type/-/type-2.3.0.tgz#ada7c045f07ead08abf9e2edd29be1a0c0661132"
+  integrity sha512-rgPIqOdfK/4J9FhiVrZ3cveAjRRo5rsQBAIhnylX874y1DX/kEKSVdLsnuHB6l1KTjHyU01VjiMBHgU2adejyg==
 
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"

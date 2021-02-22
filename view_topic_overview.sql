@@ -6,13 +6,13 @@ SELECT
   array_agg(DISTINCT developer.info) AS developers,
   array_agg(DISTINCT book.info) AS books,
   array_agg(DISTINCT podcast.info) AS podcasts,
-  array_agg(DISTINCT blog.info) AS blogs,
   array_agg(DISTINCT newsletter.info) AS newsletters,
   array_agg(DISTINCT course.info) AS courses,
   (
     WITH r AS (
       SELECT
-        distinct info, (info->>'publishedAt')::timestamptz
+        distinct info,
+        (info ->> 'publishedAt') :: timestamptz
       FROM
         release rt
       WHERE
@@ -55,13 +55,30 @@ SELECT
       AND r.info ->> 'version' = topic.info ->> 'latestVersion'
     LIMIT
       1
-  ) as latestRelease
+  ) as latestRelease,
+  (
+    WITH b AS (
+      SELECT
+        DISTINCT info
+      FROM
+        blog
+      WHERE
+        id = ANY(topic.blogs)
+    )
+    SELECT
+      json_agg(
+        info
+        ORDER BY
+          (info ->> 'official') :: boolean ASC
+      )
+    FROM
+      b
+  ) AS blogs
 FROM
   topic topic
   LEFT JOIN developer developer ON developer.id = ANY(topic.developers)
   LEFT JOIN book book ON book.id = ANY(topic.books)
   LEFT JOIN podcast podcast ON podcast.id = ANY(topic.podcasts)
-  LEFT JOIN blog blog ON blog.id = ANY(topic.blogs)
   LEFT JOIN newsletter newsletter ON newsletter.id = ANY(topic.newsletters)
   LEFT JOIN course course ON course.id = ANY(topic.courses)
 GROUP BY

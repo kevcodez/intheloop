@@ -1,6 +1,6 @@
 <template>
   <div>
-    tweets
+    <LatestReleases :releases="topic.releases" />
   </div>
 </template>
 
@@ -9,12 +9,8 @@ import { defineComponent, PropType } from "vue";
 import { Topic } from "@/lib/Topic";
 
 export default defineComponent({
-  name: "TopicBase",
+  name: "TopicReleases",
   props: {
-    id: {
-      type: String,
-      required: true,
-    },
     topic: Object as PropType<Topic>,
   },
 });
