@@ -51,7 +51,7 @@ export interface Developer {
 
 export interface Release {
     version: string
-    releaseNotesUrl: string
+    releaseNotesUrl: string | undefined
     publishedAt: string
 }
 

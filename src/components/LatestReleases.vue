@@ -1,28 +1,32 @@
 <template>
   <div>
-    <div class="grid grid-cols-3 gap-4">
-      <a
-        :href="release.releaseNotesUrl"
-        target="_blank"
-        v-for="release in releases"
-        :key="release.version"
-        class="grow"
-      >
-        <div class="flex flex-row">
-          <tag-icon class="h-6 w-6" />
-          <span class="ml-2">{{ release.version }}</span>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div v-for="release in releases" :key="release.version">
+        <div class="flex justify-between">
+          <div
+            target="_blank"
+            class="flex flex-row"
+          >
+            <tag-icon class="h-6 w-6" :style="`color: ${topic.info.color}`" />
+            <span class="ml-2">{{ release.version }}</span>
+          </div>
+          <div>
+            <span class="text-xs">{{
+              $filters.relative(release.publishedAt)
+            }}</span>
+          </div>
         </div>
-        <span class="text-xs">{{
-          $filters.relative(release.publishedAt)
-        }}</span>
-      </a>
+        <div class="mt-2" v-if="release.releaseNotesUrl">
+          <a :href="release.releaseNotesUrl" target="_blank">View Changelog </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { Release } from "../lib/Topic";
+import { Release, Topic } from "../lib/Topic";
 import TagIcon from "../assets/icons/tag.svg";
 
 export default defineComponent({
@@ -31,6 +35,10 @@ export default defineComponent({
     TagIcon,
   },
   props: {
+    topic: {
+      type: Object as PropType<Topic>,
+      required: true
+    },
     releases: {
       type: Object as PropType<Release[]>,
       required: true,

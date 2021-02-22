@@ -9,13 +9,13 @@
       </div>
 
       <div class="space-x-1 space-y-2 mt-4">
-        <a
+        <span
           class="rounded inline-block px-2 py-1 bg-indigo-100"
           v-for="tag in topic.info.tags"
           :key="tag"
         >
           {{ tag }}
-        </a>
+        </span>
       </div>
 
       <p class="mt-4 text-base">

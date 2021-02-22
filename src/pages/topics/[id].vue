@@ -62,8 +62,6 @@ export default defineComponent({
       .eq("id", props.id)
       .single();
 
-    console.log(data);
-
     const topic = ref<Topic>(data);
 
     return {
