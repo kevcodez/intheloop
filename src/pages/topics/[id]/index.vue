@@ -15,7 +15,7 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    topic: Object as PropType<Topic>,
+    topic: Object as PropType<Topic>
   },
 });
 </script>

@@ -248,10 +248,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@supabase/gotrue-js@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.11.0.tgz#6bbd5c4d7c8d58e3950eb7c44307395f9f7cca43"
-  integrity sha512-a+90Z3hs2SGWvOoaHtTfEI5U9VGiTQi2AnVCwWO25AaO8O83eayyoyNdIb2Ci26EitIiKBtXHFYwMMsBuAg1gg==
+"@supabase/gotrue-js@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.11.2.tgz#51e20124b4740903aa5a33a7d8ade16ac9303d07"
+  integrity sha512-QYrA8wYTwofJcwQ5hWkg7HyDenykxSMUMImo7Um884EPHIhyZMJaCw9DK+p87f7HJ6rdYvCDF20LK1GcsMOB0A==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -272,11 +272,11 @@
     websocket "^1.0.31"
 
 "@supabase/supabase-js@^1.3.4":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.4.0.tgz#6e4116f76f491e9d9f10d505e8b3dcf04f3acfbe"
-  integrity sha512-MgJNd8OhWB1UKiPOX/I6syLa39nCyPkm3oSJ5r1kHdhumBs5Y9Awd6KOZaa+o5R/f0fMzQXhZNmXGOmDteCHnw==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.4.1.tgz#e66686ac175aacd77b600c626870a408deb69337"
+  integrity sha512-kEACt5FJ3Us5mimM/YEKnOZf8UmaH/7Me5/gDE7GQ1uU1nm+cMWL56WoR9Wz/74DiDth1SoZF6QUWaf1S4vedA==
   dependencies:
-    "@supabase/gotrue-js" "^1.11.0"
+    "@supabase/gotrue-js" "^1.11.2"
     "@supabase/postgrest-js" "^0.24.1"
     "@supabase/realtime-js" "^1.0.6"
 
@@ -885,10 +885,10 @@ es6-symbol@^3.1.1, es6-symbol@~3.1.3:
     d "^1.0.1"
     ext "^1.1.2"
 
-esbuild@^0.8.34:
-  version "0.8.44"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.44.tgz#2a74f48fe20579081c9d8fe99be6fb8d2848c887"
-  integrity sha512-m9yyBZMgWuAB7e7tA2g9L4PovoLa5Xb73+Yg9uBBR2w3Fe4P9/nxqj/HLrw1k/rjdjF1eX1kNJRytboqOtRCCQ==
+esbuild@^0.8.47:
+  version "0.8.51"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.51.tgz#1a59f1fee34892f143b7009081f9b4901a564b93"
+  integrity sha512-MVIom8fgL1+B6iGqWtrG7QJ1gqd64BycxounlsX1kR/IcIITaSlTo7gghKpg4a+bnxkpo0dwcikuvk4MVSA9ww==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -1582,9 +1582,9 @@ reusify@^1.0.4:
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
 rollup@^2.38.5:
-  version "2.39.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.39.0.tgz#be4f98c9e421793a8fec82c854fb567c35e22ab6"
-  integrity sha512-+WR3bttcq7zE+BntH09UxaW3bQo3vItuYeLsyk4dL2tuwbeSKJuvwiawyhEnvRdRgrII0Uzk00FpctHO/zB1kw==
+  version "2.39.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.39.1.tgz#7afd4cefd8a332c5102a8063d301fde1f31a9173"
+  integrity sha512-9rfr0Z6j+vE+eayfNVFr1KZ+k+jiUl2+0e4quZafy1x6SFCjzFspfRSO2ZZQeWeX9noeDTUDgg6eCENiEPFvQg==
   optionalDependencies:
     fsevents "~2.3.1"
 
@@ -1810,11 +1810,11 @@ vite-svg-loader@^1.4.2:
     "@vue/compiler-sfc" "^3.0.5"
 
 vite@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.1.tgz#348fc5c0de510aa90bd01ecf87df210ce741b38e"
-  integrity sha512-x7ZfikjNs+6n4cdvwb9L5r5xBCdjmtmHFHaI4JVR3nAkJbMCK/dynfDWky8/NseZ9Ncz1jVxTQ/Bcf+n1ps1Ww==
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.2.tgz#d984528b5a1c8e725d2804245751769b11d671cf"
+  integrity sha512-X+PTIPRt6/5Odf/h0kBkwkck+YC0I6oKH5+ttA9ytoLyC9yeksktVq1KNzImqB+/1CNBiBE2vr7orcgSxAi67w==
   dependencies:
-    esbuild "^0.8.34"
+    esbuild "^0.8.47"
     postcss "^8.2.1"
     resolve "^1.19.0"
     rollup "^2.38.5"

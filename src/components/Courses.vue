@@ -1,6 +1,6 @@
 <template>
   <div v-if="courses && courses.length">
-    <div class="space-y-8">
+    <div class="gap-8 grid md:grid-cols-2">
       <a
         target="_blank"
         :href="course.url"
