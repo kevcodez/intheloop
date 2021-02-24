@@ -4,19 +4,27 @@
       <a
         :href="post.blog_post_info.link"
         target="_blank"
-        class="grid grid-cols-4 grow items-center ring-2 ring-gray-200 "
+        class="grid grid-cols-5 grow items-center ring-2 ring-gray-200"
       >
-        <div class="px-4 py-2 col-span-1">
-          <img
-            :src="post.blog_post_info.image"
-          />
+        <div class="px-4 py-2 col-span-1 flex justify-center items-center">
+          <img v-if="post.blog_post_info.image" class="max-h-20" :src="post.blog_post_info.image" />
+          <ghost-icon class="h-12 text-gray-600" v-else />
         </div>
-        <div class="p-4 col-span-3">
+        <div class="p-4 col-span-4">
           <p>{{ post.blog_post_info.title }}</p>
           <p class="text-sm text-gray-700">
             Published on {{ post.blog_info.name }} -
             {{ $filters.relative(post.blog_post_info.publishedAt) }}
           </p>
+          <div class="flex flex-row flex-wrap gap-2 mt-1" v-if="post.blog_post_info.categories && post.blog_post_info.categories.length > 0">
+            <div
+              v-for="category in post.blog_post_info.categories"
+              :key="category"
+              class="rounded bg-indigo-100 text-gray-900 px-2 py-1 text-xs"
+            >
+              {{ category }}
+            </div>
+          </div>
         </div>
       </a>
     </div>
@@ -27,9 +35,13 @@
 import { defineComponent, onMounted, PropType, reactive, ref } from "vue";
 import { Topic } from "@/lib/Topic";
 import { supabase } from "@/lib/supabase";
+import GhostIcon from '@/assets/icons/ghost.svg'
 
 export default defineComponent({
   name: "TopicBlogPosts",
+  components: {
+    GhostIcon
+  },
   props: {
     topic: Object as PropType<Topic>,
   },

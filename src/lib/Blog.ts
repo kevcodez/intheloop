@@ -1,7 +1,6 @@
 export interface Blog {
     name: string
     url: string
-    latestPosts: BlogPost[]
     official: boolean
 }
 

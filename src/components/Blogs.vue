@@ -16,6 +16,10 @@
             v-else-if="blog.url.includes('medium.com')"
             class="h-6 w-6 mr-2"
           />
+          <hashnode-icon
+            v-else-if="blog.url.includes('hashnode.com')"
+            class="h-6 w-6 mr-2"
+          />
           <link-icon v-else class="h-6 w-6 mr-2" />
           <span class="font-semibold">{{ blog.name }}</span>
         </a>
@@ -33,6 +37,7 @@ import { Blog } from "../lib/Blog";
 import DevDotToIcon from "../assets/icons/dev-dot-to.svg";
 import MediumIcon from "../assets/icons/medium.svg";
 import LinkIcon from "../assets/icons/link.svg";
+import HashnodeIcon from "../assets/icons/hashnode.svg";
 
 export default defineComponent({
   name: "Blogs",
@@ -40,6 +45,7 @@ export default defineComponent({
     DevDotToIcon,
     MediumIcon,
     LinkIcon,
+    HashnodeIcon
   },
   props: {
     blogs: {
