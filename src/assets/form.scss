@@ -1,0 +1,9 @@
+@layer components {
+  .input {
+    @apply px-4 py-2 bg-gray-200 w-full text-gray-700 font-medium rounded-md;
+  }
+
+  .form-label {
+    @apply block text-sm mb-2;
+  }
+}

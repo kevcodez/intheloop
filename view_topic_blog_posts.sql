@@ -6,4 +6,6 @@ select
   unnest(bp.topics) topic_id
 from
   blog_posts bp
-  join blog b ON bp.blog_id = b.id;
+  join blog b ON bp.blog_id = b.id
+ORDER BY
+  (bp.info ->> 'publishedAt') :: timestamptz desc;

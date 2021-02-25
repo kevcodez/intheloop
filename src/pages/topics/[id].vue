@@ -1,6 +1,4 @@
 <template>
-  <Nav />
-
   <div>
     <BaseInfo class="container" :topic="topic" />
 
@@ -36,8 +34,6 @@
       </div>
     </div>
   </div>
-
-  <Footer />
 </template>
 
 

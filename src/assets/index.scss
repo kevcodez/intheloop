@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import 'buttons';
+@import 'form';
 
 a:hover {
     @apply text-indigo-400 cursor-pointer;

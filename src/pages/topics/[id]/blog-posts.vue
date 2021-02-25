@@ -4,7 +4,7 @@
       <a
         :href="post.blog_post_info.link"
         target="_blank"
-        class="grid grid-cols-5 grow items-center ring-2 ring-gray-200"
+        class="rounded-sm grid grid-cols-5 grow items-center ring-2 ring-gray-200"
       >
         <div class="px-4 py-2 col-span-1 flex justify-center items-center">
           <img

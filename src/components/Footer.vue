@@ -35,9 +35,10 @@
             </svg>
           </a>
         </div>
-        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-          © 2021 Kevin Grüneberg
-        </p>
+        <div class="mt-8 text-base text-gray-200 md:mt-0 md:order-1">
+         <router-link  to="/contact">Missing something/Suggestion?</router-link>
+         <p class="mt-3"> Crafted with love and coffee by Kevin Grüneberg - 2021</p>
+        </div>
       </div>
     </div>
   </footer>
