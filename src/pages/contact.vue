@@ -17,10 +17,6 @@
         have suggestions on how to improve this page, let me know
       </div>
       <div>
-        <label class="form-label">Name (optional)</label>
-        <input class="input" type="text" name="name" />
-      </div>
-      <div>
         <label class="form-label">Email (optional)</label>
         <input class="input" type="email" name="email" />
       </div>
@@ -29,7 +25,7 @@
         <textarea
           class="input h-40"
           style="min-height: 150px"
-          name="text"
+          name="message"
           required
           :minlength="30"
         />
