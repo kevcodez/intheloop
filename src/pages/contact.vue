@@ -5,7 +5,6 @@
       name="contact"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      method="POST"
     >
       <p class="hidden">
         <label
