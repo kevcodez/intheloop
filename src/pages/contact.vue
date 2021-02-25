@@ -44,6 +44,9 @@ const submitForm = () => {
 
   ky.post("/", {
     body: formData,
+     headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
   })
     .then((response) => {
       if (response.status === 200) {
