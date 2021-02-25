@@ -7,7 +7,11 @@
         class="grid grid-cols-5 grow items-center ring-2 ring-gray-200"
       >
         <div class="px-4 py-2 col-span-1 flex justify-center items-center">
-          <img v-if="post.blog_post_info.image" class="max-h-20" :src="post.blog_post_info.image" />
+          <img
+            v-if="post.blog_post_info.image"
+            class="max-h-20"
+            :src="post.blog_post_info.image"
+          />
           <ghost-icon class="h-12 text-gray-600" v-else />
         </div>
         <div class="p-4 col-span-4">
@@ -16,7 +20,13 @@
             Published on {{ post.blog_info.name }} -
             {{ $filters.relative(post.blog_post_info.publishedAt) }}
           </p>
-          <div class="flex flex-row flex-wrap gap-2 mt-1" v-if="post.blog_post_info.categories && post.blog_post_info.categories.length > 0">
+          <div
+            class="flex flex-row flex-wrap gap-2 mt-1"
+            v-if="
+              post.blog_post_info.categories &&
+              post.blog_post_info.categories.length > 0
+            "
+          >
             <div
               v-for="category in post.blog_post_info.categories"
               :key="category"
@@ -28,32 +38,45 @@
         </div>
       </a>
     </div>
+
+    <div v-if="hasMore" class="flex justify-center">
+      <button class="button" @click="fetchBlogPosts">Load more</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, PropType, reactive, ref } from "vue";
+import { defineComponent, onMounted, PropType, ref } from "vue";
 import { Topic } from "@/lib/Topic";
 import { supabase } from "@/lib/supabase";
-import GhostIcon from '@/assets/icons/ghost.svg'
+import GhostIcon from "@/assets/icons/ghost.svg";
 
 export default defineComponent({
   name: "TopicBlogPosts",
   components: {
-    GhostIcon
+    GhostIcon,
   },
   props: {
     topic: Object as PropType<Topic>,
   },
   setup(props: any) {
+    const currentPage = ref(0);
     const blogPosts = ref<any>([]);
-    const fetchBlogPosts = async () => {
-      const { data, error } = await supabase
-        .from("vw_topic_blog_posts")
-        .select("*")
-        .eq("topic_id", props.topic.id);
+    const hasMore = ref(true);
 
-      blogPosts.value = data;
+    const fetchBlogPosts = async () => {
+      currentPage.value++;
+      const pageSize = 10;
+      const pageStart = (currentPage.value - 1) * pageSize;
+
+      const { data, error, count } = await supabase
+        .from("vw_topic_blog_posts")
+        .select("*", { count: "exact" })
+        .eq("topic_id", props.topic.id)
+        .range(pageStart, pageStart + pageSize - 1);
+
+      blogPosts.value = blogPosts.value.concat(data);
+      hasMore.value = count!! > blogPosts.value.length;
     };
 
     onMounted(fetchBlogPosts);
@@ -61,6 +84,7 @@ export default defineComponent({
     return {
       blogPosts,
       fetchBlogPosts,
+      hasMore,
     };
   },
 });
