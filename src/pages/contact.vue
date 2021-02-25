@@ -5,7 +5,13 @@
       name="contact"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      method="POST"
     >
+      <p class="hidden">
+        <label
+          >Don’t fill this out if you’re human: <input name="bot-field"
+        /></label>
+      </p>
       <input type="hidden" name="form-name" value="contact" />
       <div>
         If you see any invalid information, would like to see another topic or
