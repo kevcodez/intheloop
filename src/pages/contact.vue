@@ -7,7 +7,8 @@
     >
       <div>
         If you see any invalid information, would like to see another topic or
-        have suggestions on how to improve this page, let me know
+        have suggestions on how to improve this page, let me know. You can also
+        DM me on <a class="text-indigo-500" href="https://twitter.com/kevcodez">Twitter</a>.
       </div>
       <div>
         <label class="form-label">Email (optional)</label>
@@ -23,38 +24,59 @@
           :minlength="20"
         />
       </div>
+      <label class="ohnohoney" for="name"></label>
+      <input
+        class="ohnohoney"
+        autocomplete="off"
+        v-model="honeyName"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name here"
+      />
       <div>
-        <button class="button" type="submit">Send message</button>
+        <Alert v-if="messageSent" severity="success"
+          >Successfully submitted form. Thanks for contacting me!</Alert
+        >
+        <button v-else class="button" type="submit">Send message</button>
       </div>
     </form>
   </div>
 </template>
 
 <script lang="ts" setup>
-import ky from "ky";
+import { supabase } from "@/lib/supabase";
 import { ref } from "vue";
 
 const email = ref("");
 const message = ref("");
+const honeyName = ref("");
+const messageSent = ref(false);
 
-const submitForm = () => {
+const submitForm = async () => {
+  if (honeyName.value) return;
   const formData = new FormData();
-  formData.append("email", email.value);
-  formData.append("message", message.value);
+  formData.set("email", email.value);
+  formData.set("message", message.value);
 
-  ky.post("/", {
-    body: formData,
-     headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
-  })
-    .then((response) => {
-      if (response.status === 200) {
-        alert("E-mail Sent!");
-      } else {
-        throw new Error(response.statusText);
-      }
-    })
-    .catch(() => alert("Failed to sent E-mail"));
+  await supabase.from("contact").insert({
+    email: email.value,
+    message: message.value,
+  });
+  email.value = "";
+  message.value = "";
+  messageSent.value = true;
 };
 </script>
+
+<style>
+.ohnohoney {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+</style>
