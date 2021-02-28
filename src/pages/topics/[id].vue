@@ -16,13 +16,13 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-24 container">
-      <div class="col-span-2">
+      <div class="col-span-2 order-2 lg:order-1">
         <TopicNav :topic="topic" />
 
         <router-view class="pt-10" :topic="topic" />
       </div>
 
-      <div>
+      <div class="order-1 lg:order-2">
         <Communities :communities="communities" />
 
         <Blogs class="mt-8" :blogs="blogs" />
