@@ -24,6 +24,7 @@ export interface TopicInfo {
     color: string
     name: string
     description: string
+    shortDescription: string
     logo: string,
     tags: string[]
     scm: Scm
