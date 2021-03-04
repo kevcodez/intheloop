@@ -27,7 +27,7 @@
 
         <Blogs class="mt-8" :blogs="blogs" />
 
-        <h3 class="font-medium text-xl mt-8">Newsletters &amp; Podcasts</h3>
+        <h3 class="font-medium text-xl mt-8" v-if="newsletters.length || podcasts.length">Newsletters &amp; Podcasts</h3>
         <Newsletters :newsletters="newsletters" />
 
         <Podcasts :podcasts="podcasts" />

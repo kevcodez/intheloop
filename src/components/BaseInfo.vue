@@ -45,16 +45,28 @@
             {{ $filters.relative(topic.latestrelease.publishedAt) }}</span
           >
         </div>
-        <div class="pt-2">
+        <div class="pt-2 flex flex-row space-x-3">
+          <a
+            v-if="topic.info.license"
+            :href="topic.info.license.url"
+            target="_blank"
+            class="flex flex-row text-sm space-x-2 grow"
+          >
+            <scale-icon class="w-6 h-6" />
+            <span>{{ topic.info.license.name }}</span>
+          </a>
           <a
             :href="badge.url"
             target="_blank"
             v-for="badge in topic.info.badges"
             :key="badge.url"
           >
-            <npm-icon  v-if="badge.type === 'NPM'" class="grow h-6 w-6" />
+            <npm-icon v-if="badge.type === 'NPM'" class="grow h-6 w-6" />
 
-            <apache-maven-icon v-else-if="badge.type === 'MavenCentral'" class="grow h-6 w-6" />
+            <apache-maven-icon
+              v-else-if="badge.type === 'MavenCentral'"
+              class="grow h-6 w-6"
+            />
           </a>
         </div>
       </div>
@@ -125,6 +137,7 @@ import PlayLineIcon from "../assets/icons/play-line.svg";
 import FileListIcon from "../assets/icons/file-list.svg";
 import ApacheMavenIcon from "../assets/icons/apachemaven.svg";
 import NpmIcon from "../assets/icons/npm.svg";
+import ScaleIcon from "../assets/icons/scale.svg";
 
 export default defineComponent({
   name: "BaseInfo",
@@ -137,6 +150,7 @@ export default defineComponent({
     FileListIcon,
     ApacheMavenIcon,
     NpmIcon,
+    ScaleIcon,
   },
   props: {
     topic: {
