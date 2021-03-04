@@ -20,9 +20,12 @@
               </span>
             </div>
             <div class="mt-6">
-              <h3 class="text-lg font-medium text-white">Links &amp; Communities</h3>
-              <p class="mt-2 text-base ">
-                Quickly see the most important links and find communities to engage with. 
+              <h3 class="text-lg font-medium text-white">
+                Links &amp; Communities
+              </h3>
+              <p class="mt-2 text-base">
+                Quickly see the most important links and find communities to
+                engage with.
               </p>
             </div>
           </div>
@@ -36,9 +39,7 @@
               </span>
             </div>
             <div class="mt-6">
-              <h3 class="text-lg font-medium text-white">
-                Tweets
-              </h3>
+              <h3 class="text-lg font-medium text-white">Tweets</h3>
               <p class="mt-2 text-base">
                 Don't miss the most discussed, popular or controversial tweets.
               </p>
@@ -60,6 +61,38 @@
               </p>
             </div>
           </div>
+
+          <div>
+            <div>
+              <span
+                class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10"
+              >
+                <rss-icon class="h-6 w-6 text-white" />
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Blog Posts</h3>
+              <p class="mt-2 text-base">
+                See all the related blog posts in one place.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <span
+                class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10"
+              >
+                <book-icon class="h-6 w-6 text-white" />
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Books &amp; Courses</h3>
+              <p class="mt-2 text-base">
+                Dive deep with recommended books &amp; courses.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -77,12 +110,16 @@ import { defineComponent, onMounted, ref } from "vue";
 import LinkIcon from "@/assets/icons/link.svg";
 import TwitterIcon from "@/assets/icons/twitter.svg";
 import TagIcon from "@/assets/icons/tag.svg";
+import BookIcon from "@/assets/icons/book.svg";
+import RssIcon from "@/assets/icons/rss.svg";
 
 export default defineComponent({
   components: {
     LinkIcon,
     TwitterIcon,
     TagIcon,
+    BookIcon,
+    RssIcon,
   },
   setup() {
     const topics = ref<Topic[]>([]);

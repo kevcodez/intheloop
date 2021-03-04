@@ -7,10 +7,10 @@
       >
         <div class="flex items-center flex-1">
           <div class="flex items-center justify-between w-full md:w-auto">
-            <a href="#" class="text-gray-800 text-3xl font-bold">
+            <router-link to="/" class="text-gray-800 text-3xl font-bold">
               <span class="sr-only">In The Loop</span>
               intheloop
-            </a>
+            </router-link>
           </div>
         </div>
       </nav>
