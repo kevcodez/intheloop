@@ -22,10 +22,14 @@
               <div class="ml-2">
                 <p class="text-base leading-6 font-medium text-gray-700">
                   {{ tweet.user.name }}
-                  <span
-                    class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150"
-                  >
-                    <span>@{{ tweet.user.username }}</span> ·
+                  <span class="text-sm leading-5 font-medium text-gray-400">
+                    <a
+                      class="hover:text-purple-500"
+                      :href="`https://twitter.com/${tweet.user.username}`"
+                      target="_blank"
+                      >@{{ tweet.user.username }}</a
+                    >
+                    ·
                     <span>{{ $filters.relative(tweet.created_at) }}</span>
                   </span>
                 </p>
@@ -58,7 +62,9 @@
                         ></path>
                       </g>
                     </svg>
-                    <span class="text-sm">{{ tweet.public_metrics.reply_count }}</span>
+                    <span class="text-sm">{{
+                      tweet.public_metrics.reply_count
+                    }}</span>
                   </div>
                 </div>
 
@@ -100,7 +106,9 @@
                       </g>
                     </svg>
 
-                    <span class="text-sm">{{ tweet.public_metrics.like_count }}</span>
+                    <span class="text-sm">{{
+                      tweet.public_metrics.like_count
+                    }}</span>
                   </div>
                 </div>
               </div>
