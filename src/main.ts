@@ -17,6 +17,9 @@ const app = createApp(App).use(router)
 app.config.globalProperties.$filters = {
     relative(value: string) {
         return dayjs().to(dayjs(value))
+    },
+    formatDate(value: string, format: string) {
+        return dayjs(value).format(format)
     }
 }
 

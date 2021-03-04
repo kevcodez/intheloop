@@ -1,16 +1,17 @@
 <template>
   <div v-if="books && books.length">
-    <div class="space-y-8">
+    <div class="space-y-4">
       <a
         target="_blank"
         :href="book.url"
-        class="flex grow items-center"
+        class="flex grow items-center rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400 px-4 py-4"
         v-for="book in books"
         :key="book.url"
       >
         <img class="w-12 h-12 mr-5 object-contain" :src="book.image" />
         <div>
-          <span class="font-semibold">{{ book.title }}</span>
+          <span class="font-semibold">{{ book.title }} </span>
+          <span class="ml-2 text-gray-500">{{ $filters.formatDate(book.publishedAt, 'MMMM YYYY') }}</span>
           <p class="">{{ truncate(book.description) }}</p>
         </div>
       </a>

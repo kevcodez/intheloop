@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-10">
+  <div class="space-y-5">
     <Books :books="topic.books.filter((it) => it)" />
 
     <Courses :courses="topic.courses.filter((it) => it)" />
