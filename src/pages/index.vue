@@ -8,6 +8,10 @@
         <p class="mt-4 max-w-3xl text-lg">
           Keeping up with the ever-changing developer ecosystem can be tough.
         </p>
+        <p class="mt-4 max-w-3xl text-lg">
+          Intheloop helps stay up2date with the technologies you're interested
+          in.
+        </p>
         <div
           class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16"
         >
@@ -57,7 +61,7 @@
             <div class="mt-6">
               <h3 class="text-lg font-medium text-white">Releases</h3>
               <p class="mt-2 text-base">
-                Get an overview of the latest release and their changelog.
+                Get an overview of the latest releases and their changelog.
               </p>
             </div>
           </div>
@@ -87,7 +91,9 @@
               </span>
             </div>
             <div class="mt-6">
-              <h3 class="text-lg font-medium text-white">Books &amp; Courses</h3>
+              <h3 class="text-lg font-medium text-white">
+                Books &amp; Courses
+              </h3>
               <p class="mt-2 text-base">
                 Dive deep with recommended books &amp; courses.
               </p>
