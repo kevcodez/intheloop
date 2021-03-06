@@ -143,14 +143,8 @@ export default defineComponent({
       currentPage.value++;
 
       const response = await ky
-        .post(
-          "https://europe-west1-intheloop-dev.cloudfunctions.net/getTweetsByTopic",
-          {
-            json: {
-              topic: props.topic.id,
-              page: currentPage.value,
-            },
-          }
+        .get(
+          `https://europe-west1-intheloop-dev.cloudfunctions.net/getTweetsByTopic?topic=${props.topic.id}&page=${currentPage.value}`
         )
         .json<any>();
 
