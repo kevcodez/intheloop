@@ -39,9 +39,11 @@
       </a>
     </div>
 
-    <div v-if="hasMore" class="flex justify-center">
+    <div v-if="hasMore && !loading" class="flex justify-center">
       <button class="button" @click="fetchBlogPosts">Load more</button>
     </div>
+
+    <loading-indicator v-if="loading" class="py-4 text-gray-800" />
   </div>
 </template>
 
@@ -63,11 +65,13 @@ export default defineComponent({
     const currentPage = ref(0);
     const blogPosts = ref<any>([]);
     const hasMore = ref(true);
+    const loading = ref(true)
 
     const fetchBlogPosts = async () => {
       currentPage.value++;
       const pageSize = 10;
       const pageStart = (currentPage.value - 1) * pageSize;
+      loading.value = true
 
       const { data, error, count } = await supabase
         .from("vw_topic_blog_posts")
@@ -76,6 +80,7 @@ export default defineComponent({
         .eq('language', 'en')
         .range(pageStart, pageStart + pageSize - 1);
 
+loading.value = false
       blogPosts.value = blogPosts.value.concat(data);
       hasMore.value = count!! > blogPosts.value.length;
     };
@@ -86,6 +91,7 @@ export default defineComponent({
       blogPosts,
       fetchBlogPosts,
       hasMore,
+      loading
     };
   },
 });
