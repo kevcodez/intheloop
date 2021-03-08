@@ -73,6 +73,7 @@ export default defineComponent({
         .from("vw_topic_blog_posts")
         .select("*", { count: "exact" })
         .eq("topic_id", props.topic.id)
+        .eq('language', 'en')
         .range(pageStart, pageStart + pageSize - 1);
 
       blogPosts.value = blogPosts.value.concat(data);
