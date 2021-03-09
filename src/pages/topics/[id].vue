@@ -35,14 +35,21 @@
       </div>
 
       <div class="order-1 lg:order-2">
-        <Communities :communities="communities" />
+        <topic-quick-links :topic="topic" />
 
-        <Blogs class="mt-8" :blogs="blogs" />
+        <communities class="mt-8" :communities="communities" />
 
-        <h3 class="font-medium text-xl mt-8" v-if="newsletters.length || podcasts.length">Newsletters &amp; Podcasts</h3>
-        <Newsletters :newsletters="newsletters" />
+        <blogs class="mt-8" :blogs="blogs" />
 
-        <Podcasts :podcasts="podcasts" />
+        <h3
+          class="font-medium text-xl mt-8"
+          v-if="newsletters.length || podcasts.length"
+        >
+          Newsletters &amp; Podcasts
+        </h3>
+        <newsletters :newsletters="newsletters" />
+
+        <podcasts :podcasts="podcasts" />
       </div>
     </div>
   </div>
@@ -87,13 +94,15 @@ export default defineComponent({
         podcasts.value = data.podcasts.filter((it: Podcast) => it) || [];
       }
       if (data.newsletters) {
-        newsletters.value = data.newsletters.filter((it: Newsletter) => it) || [];
+        newsletters.value =
+          data.newsletters.filter((it: Newsletter) => it) || [];
       }
       if (data.blogs) {
-        blogs.value = data.blogs.filter((it: Blog) => it) || []
+        blogs.value = data.blogs.filter((it: Blog) => it) || [];
       }
       if (data.communities) {
-        communities.value = data.communities.filter((it: Community) => it) || [];
+        communities.value =
+          data.communities.filter((it: Community) => it) || [];
       }
     };
 
@@ -105,7 +114,7 @@ export default defineComponent({
       podcasts,
       newsletters,
       blogs,
-      communities
+      communities,
     };
   },
 });
