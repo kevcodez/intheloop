@@ -9,7 +9,7 @@
           Keeping up with the ever-changing developer ecosystem can be tough.
         </p>
         <p class="mt-4 max-w-3xl text-lg">
-          Intheloop helps stay up2date with the technologies you're interested
+          Intheloop helps stay up-to-date with the technologies you're interested
           in.
         </p>
         <div

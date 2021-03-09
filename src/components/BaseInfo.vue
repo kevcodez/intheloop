@@ -92,7 +92,7 @@
           </div>
 
           <div class="flex flex-row">
-            <link-icon class="h-5 w-5 mr-2" />
+            <bug-icon class="h-5 w-5 mr-2" />
             <a :href="topic.info.issueTracker" target="_blank">Issue Tracker</a>
           </div>
 
@@ -138,6 +138,7 @@ import FileListIcon from "../assets/icons/file-list.svg";
 import ApacheMavenIcon from "../assets/icons/apachemaven.svg";
 import NpmIcon from "../assets/icons/npm.svg";
 import ScaleIcon from "../assets/icons/scale.svg";
+import BugIcon from "../assets/icons/bug.svg";
 
 export default defineComponent({
   name: "BaseInfo",
@@ -151,6 +152,7 @@ export default defineComponent({
     ApacheMavenIcon,
     NpmIcon,
     ScaleIcon,
+    BugIcon
   },
   props: {
     topic: {
