@@ -14,8 +14,20 @@
         ></path>
       </svg>
     </div>
+    <div style="height: 100px; overflow: hidden">
+      <svg
+        viewBox="0 0 500 100"
+        preserveAspectRatio="none"
+        style="height: 100%; width: 100%"
+      >
+        <path
+          d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,-150.00 L0.00,-150.00 Z"
+          :style="`stroke: none; fill: ${topic.info.color}`"
+        ></path>
+      </svg>
+    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-24 container">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 container">
       <div class="col-span-2 order-2 lg:order-1">
         <TopicNav :topic="topic" />
 

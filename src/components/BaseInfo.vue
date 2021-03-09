@@ -26,7 +26,7 @@
         <span class="mr-2">Developed by</span>
         <div v-for="developer in topic.developers" :key="developer.website">
           <a :href="developer.website" target="_blank" class="flex flex-row">
-            <img :src="developer.logoUrl" class="h-6 w-6 mr-2" />
+            <img :src="developer.logoUrl" class="h-12 w-12 mr-2" />
             <span>{{ developer.name }}</span>
           </a>
         </div>
