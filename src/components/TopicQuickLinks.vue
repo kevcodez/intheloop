@@ -15,7 +15,7 @@
       </div>
 
       <div class="flex flex-row">
-        <link-icon class="h-5 w-5 mr-2" />
+        <academic-cap-icon class="h-5 w-5 mr-2" />
         <a :href="topic.info.documentation" target="_blank">Documentation</a>
       </div>
 
@@ -59,6 +59,7 @@ import YoutubeIcon from "../assets/icons/youtube.svg";
 import PlayLineIcon from "../assets/icons/play-line.svg";
 import FileListIcon from "../assets/icons/file-list.svg";
 import BugIcon from "../assets/icons/bug.svg";
+import AcademicCapIcon from "../assets/icons/academic-cap.svg";
 
 export default defineComponent({
   components: {
@@ -69,6 +70,7 @@ export default defineComponent({
     YoutubeIcon,
     FileListIcon,
     BugIcon,
+    AcademicCapIcon
   },
   props: {
     topic: Object as PropType<Topic>,

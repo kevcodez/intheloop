@@ -27,7 +27,7 @@
         :to="`/topics/${topic.id}/blog-posts`"
         class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-md rounded-md"
       >
-        Blog posts
+        Blog Posts
       </router-link>
       <!-- Current: "bg-gray-100 text-gray-700", Default: "text-gray-500 hover:text-gray-700" -->
       <router-link

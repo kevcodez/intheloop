@@ -262,10 +262,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@supabase/gotrue-js@^1.11.2":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.11.2.tgz#51e20124b4740903aa5a33a7d8ade16ac9303d07"
-  integrity sha512-QYrA8wYTwofJcwQ5hWkg7HyDenykxSMUMImo7Um884EPHIhyZMJaCw9DK+p87f7HJ6rdYvCDF20LK1GcsMOB0A==
+"@supabase/gotrue-js@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.12.0.tgz#79db9634a0bff850e33525f46cd98d5be0e1b43e"
+  integrity sha512-SrOCFmE9s3haX7DwClS3Z9a4M8NfnO06UrnYxlID95r+jyqZYsEcckSUyIUJQRHdeF4UPELrzpVqxOeHiUgkCg==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -286,11 +286,11 @@
     websocket "^1.0.31"
 
 "@supabase/supabase-js@^1.4.2":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.5.0.tgz#66a6c745c5ecbefae92dda954a72c6781980f995"
-  integrity sha512-YduWZPuwl1A86vBzlHUtKWTvDggqLhoDBv+tOzrjb02LUxi8/O6+gpdIdfsMGW5UNCn+W8JZsvQ4jz4l3SIAmw==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.5.1.tgz#5ecf1060e27340e660782944c389eb8a0e1f6c7d"
+  integrity sha512-IHWSndAmdqLXLmetRlzq1YljKQMrNavnYS13xysmBknxGEWN7Tz/99hgMXNYV7EhraSPxw8AzdRphWYHuhT/RA==
   dependencies:
-    "@supabase/gotrue-js" "^1.11.2"
+    "@supabase/gotrue-js" "^1.12.0"
     "@supabase/postgrest-js" "^0.25.0"
     "@supabase/realtime-js" "^1.0.6"
 
@@ -307,9 +307,9 @@
     "@types/braces" "*"
 
 "@types/node@*":
-  version "14.14.32"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.32.tgz#90c5c4a8d72bbbfe53033f122341343249183448"
-  integrity sha512-/Ctrftx/zp4m8JOujM5ZhwzlWLx22nbQJiVqz8/zE15gOeEW+uly3FSX4fGFpcfEvFzXcMCJwq9lGVWgyARXhg==
+  version "14.14.33"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.33.tgz#9e4f8c64345522e4e8ce77b334a8aaa64e2b6c78"
+  integrity sha512-oJqcTrgPUF29oUP8AsUqbXGJNuPutsetaa9kTQAQce5Lx5dTYWV02ScBiT/k1BX/Z7pKeqedmvp39Wu4zR7N7g==
 
 "@types/websocket@^1.0.1":
   version "1.0.2"
@@ -1591,9 +1591,9 @@ postcss@^8.1.6:
     source-map "^0.6.1"
 
 postcss@^8.2.4:
-  version "8.2.7"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.7.tgz#48ed8d88b4de10afa0dfd1c3f840aa57b55c4d47"
-  integrity sha512-DsVLH3xJzut+VT+rYr0mtvOtpTjSyqDwPf5EZWXcb0uAKfitGpTY9Ec+afi2+TgdN8rWS9Cs88UDYehKo/RvOw==
+  version "8.2.8"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.8.tgz#0b90f9382efda424c4f0f69a2ead6f6830d08ece"
+  integrity sha512-1F0Xb2T21xET7oQV9eKuctbM9S7BC0fetoHCc4H13z0PT6haiRLP4T0ZY4XWh7iLP0usgqykT6p9B2RtOf4FPw==
   dependencies:
     colorette "^1.2.2"
     nanoid "^3.1.20"
