@@ -1,25 +1,34 @@
 <template>
-  <footer class="bg-gray-800 mt-20">
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-12 lg:px-8">
+  <footer class="mt-20 bg-gray-800">
+    <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-12 lg:px-8">
       <div class="md:flex md:items-center md:justify-between">
-        <div class="text-white md:order-1">
+        <div class="self-start text-white md:order-2">
           <p>Be notified about updates</p>
           <NewsletterSignupForm class="mt-2" />
         </div>
-        <div class="mt-8 md:mt-0 text-center md:text-left md:order-2 text-white">
+
+        <div
+          class="self-center mt-8 text-center text-white self-stat md:order-1 md:mt-0 md:text-left"
+        >
           <p>
-            <router-link to="/contact"
-              >Missing something/Suggestion?</router-link
-            >
+            <router-link to="/contact">Contact</router-link>
           </p>
-          <div class="flex flex-row space-x-6 mt-3 justify-center">
+          <p>
+            <router-link to="/imprint">Imprint</router-link>
+          </p>
+        </div>
+
+        <div
+          class="self-center mt-8 text-center text-white md:mt-0 md:text-left md:order-3"
+        >
+          <div class="flex flex-row justify-center mt-3 space-x-6">
             <a
               href="https://twitter.com/kevcodez"
               class="text-gray-400 hover:text-gray-300"
             >
               <span class="sr-only">Twitter</span>
               <svg
-                class="h-6 w-6"
+                class="w-6 h-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -36,7 +45,7 @@
             >
               <span class="sr-only">GitHub</span>
               <svg
-                class="h-6 w-6"
+                class="w-6 h-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"

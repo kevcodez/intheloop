@@ -1,13 +1,10 @@
 <template>
   <div>
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid gap-8 md:grid-cols-2">
       <div v-for="release in topic.releases" :key="release.version">
         <div class="flex justify-between">
-          <div
-            target="_blank"
-            class="flex flex-row text-gray-800 font-medium tracking-wide"
-          >
-            <tag-icon class="h-6 w-6 " />
+          <div class="flex flex-row font-medium tracking-wide text-gray-800">
+            <tag-icon class="w-6 h-6" />
             <span class="ml-2">{{ release.version }}</span>
           </div>
           <div>
@@ -37,8 +34,8 @@ export default defineComponent({
   props: {
     topic: {
       type: Object as PropType<Topic>,
-      required: true
-    }
+      required: true,
+    },
   },
 });
 </script>

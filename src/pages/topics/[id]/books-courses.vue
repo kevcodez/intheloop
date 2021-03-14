@@ -12,7 +12,10 @@ import { Topic } from "@/lib/Topic";
 
 export default defineComponent({
   props: {
-    topic: Object as PropType<Topic>,
+    topic: {
+      type: Object as PropType<Topic>,
+      required: true,
+    },
   },
 });
 </script>

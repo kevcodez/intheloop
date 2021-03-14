@@ -1,14 +1,17 @@
 <template>
-  <div class="max-w-7xl mx-auto py-12 px-4 lg:py-12">
+  <div class="px-4 py-12 mx-auto max-w-7xl lg:py-12">
     <form
-      class="space-y-4 max-w-3xl"
+      class="max-w-3xl mb-32 space-y-4"
       name="contact"
       @submit.prevent="submitForm"
     >
       <div>
         If you see any invalid information, would like to see another topic or
         have suggestions on how to improve this page, let me know. You can also
-        DM me on <a class="text-indigo-500" href="https://twitter.com/kevcodez">Twitter</a>.
+        DM me on
+        <a class="text-indigo-500" href="https://twitter.com/kevcodez"
+          >Twitter</a
+        >.
       </div>
       <div>
         <label class="form-label">Email (optional)</label>
@@ -18,7 +21,7 @@
         <label class="form-label">Text</label>
         <textarea
           v-model="message"
-          class="input h-40"
+          class="h-40 input"
           style="min-height: 150px"
           required
           :minlength="20"
@@ -59,13 +62,20 @@ const submitForm = async () => {
   formData.set("email", email.value);
   formData.set("message", message.value);
 
-  await supabase.from("contact").insert({
-    email: email.value,
-    message: message.value,
-  });
+  const { error } = await supabase.from("contact").insert(
+    {
+      email: email.value,
+      message: message.value,
+    },
+    { returning: "minimal" }
+  );
   email.value = "";
   message.value = "";
-  messageSent.value = true;
+  if (error) {
+    console.log(error);
+  } else {
+    messageSent.value = true;
+  }
 };
 </script>
 
