@@ -10,17 +10,16 @@
         target="_blank"
       >
         <div class="flex flex-shrink-0 p-4 pb-0">
-          <a href="#" class="flex-shrink-0 group block">
             <div class="flex items-center">
               <div>
                 <img
-                  class="inline-block h-10 w-10 rounded-full"
+                  class="inline-block h-10 w-10 rounded-full object-contain"
                   :src="tweet.user.profile_image_url"
                   alt=""
                 />
               </div>
               <div class="ml-2">
-                <p class="text-base leading-6 font-medium text-gray-700">
+                <p class="text-sm md:text-base leading-6 font-medium text-gray-700">
                   {{ tweet.user.name }}
                   <span class="text-sm leading-5 font-medium text-gray-400">
                     <a
@@ -30,17 +29,16 @@
                       >@{{ tweet.user.username }}</a
                     >
                     ·
-                    <span>{{ $filters.relative(tweet.created_at) }}</span>
+                    <span class="whitespace-nowrap">{{ $filters.relative(tweet.created_at) }}</span>
                   </span>
                 </p>
               </div>
             </div>
-          </a>
         </div>
 
-        <div class="pl-16">
+        <div>
           <p
-            class="text-base width-auto font-medium text-gray-700 flex-shrink pr-4"
+            class="md:text-base width-auto text-sm font-medium text-gray-700 flex-shrink pr-4 pl-14 md:pl-16"
             v-html="textToHtml(tweet.text)"
           ></p>
 
@@ -52,7 +50,7 @@
                     class="mt-1 group flex items-center text-gray-500 px-3 text-base leading-6 font-medium rounded-full"
                   >
                     <svg
-                      class="text-center h-5 w-5 mr-3"
+                      class="text-center h-4 w-4 md:h-5 md:w-5 mr-3"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -62,7 +60,7 @@
                         ></path>
                       </g>
                     </svg>
-                    <span class="text-sm">{{
+                    <span class="text-xs md:text-sm">{{
                       tweet.public_metrics.reply_count
                     }}</span>
                   </div>
@@ -73,7 +71,7 @@
                     class="mt-1 group flex items-center text-gray-500 px-3 text-base leading-6 font-medium rounded-full"
                   >
                     <svg
-                      class="text-center h-5 w-5 mr-3"
+                      class="text-center h-4 w-4 md:h-5 md:w-5 mr-3"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -83,7 +81,7 @@
                         ></path>
                       </g>
                     </svg>
-                    <span class="text-sm">{{
+                    <span class="text-xs md:text-smm">{{
                       tweet.public_metrics.retweet_count +
                       tweet.public_metrics.quote_count
                     }}</span>
@@ -95,7 +93,7 @@
                     class="mt-1 group flex items-center text-gray-500 px-3 text-base leading-6 font-medium rounded-full"
                   >
                     <svg
-                      class="text-center h-5 w-5 mr-3"
+                      class="text-center h-4 w-4 md:h-5 md:w-5 mr-3"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -106,7 +104,7 @@
                       </g>
                     </svg>
 
-                    <span class="text-sm">{{
+                    <span class="text-xs md:text-sm">{{
                       tweet.public_metrics.like_count
                     }}</span>
                   </div>
