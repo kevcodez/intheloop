@@ -153,7 +153,10 @@ export default defineComponent({
     const topics = ref<Topic[]>([]);
 
     const loadTopics = async () => {
-      const { data } = await supabase.from<Topic>("topic").select("*");
+      const { data } = await supabase
+        .from("topic")
+        .select("*")
+        .eq("info->>live", "true");
 
       topics.value = data!;
     };
