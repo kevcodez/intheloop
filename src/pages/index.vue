@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10">
+  <div class="mt-6">
     <div class="text-white bg-purple-800">
       <div class="container flex flex-col">
         <h2 class="text-3xl font-extrabold tracking-tight text-white">
@@ -101,17 +101,17 @@
           </div>
 
           <div>
-            <div>
+            <div class="flex flex-row justify-between">
               <span
                 class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
               >
                 <robot-icon class="w-6 h-6 text-white" />
               </span>
+              <span class="float-right px-2 bg-purple-900 self-start">SOON</span>
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-medium text-white">
                 Notifications &amp; Digest
-                <span class="float-right px-2 bg-purple-900">SOON</span>
               </h3>
               <p class="mt-2 text-base">
                 Follow topics/developers and get personal digests or

@@ -22,7 +22,7 @@
         </div>
 
         <div
-          class="w-full h-2 absolute bottom-0 -left-3 opacity-50"
+          class="w-full h-2 absolute bottom-0 -left-3 opacity-50 rounded-b-lg"
           :style="`background-color: ${topic.info.color}`"
         ></div>
       </router-link>
