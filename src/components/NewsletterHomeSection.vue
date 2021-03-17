@@ -36,7 +36,7 @@
             type="submit"
             :class="{ 'cursor-wait': loading }"
             :disabled="loading"
-            class="mt-3 w-full flex items-center justify-center px-5 py-3 button primary sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+            class="mt-3 w-full flex items-center justify-center px-5 py-3 button primary sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0 whitespace-nowrap"
           >
             Notify me
           </button>
