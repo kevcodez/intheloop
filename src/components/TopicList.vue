@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-2xl tracking-wide font-medium mb-6">Discover topics</p>
-    <div class="grid md:grid-cols-2 gap-4 md:gap-12">
+    <div class="grid md:grid-cols-3 gap-4 md:gap-12">
       <router-link
         :to="`/topics/${topic.id}`"
         class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"

@@ -3,8 +3,8 @@
     <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-12 lg:px-8">
       <div class="md:flex md:items-center md:justify-between">
         <div class="self-start text-white md:order-2">
-          <p>Be notified about updates</p>
-          <NewsletterSignupForm class="mt-2" />
+          <p>Be notified about updates and new topics</p>
+          <footer-newsletter-signup-form class="mt-2" />
         </div>
 
         <div

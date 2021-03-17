@@ -107,7 +107,9 @@
               >
                 <robot-icon class="w-6 h-6 text-white" />
               </span>
-              <span class="float-right px-2 bg-purple-900 self-start">SOON</span>
+              <span class="float-right px-2 bg-purple-900 self-start"
+                >SOON</span
+              >
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-medium text-white">
@@ -121,6 +123,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="bg-white py-8 lg:py-14">
+      <newsletter-home-section />
     </div>
 
     <div class="container">
