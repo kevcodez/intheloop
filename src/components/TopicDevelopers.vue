@@ -6,8 +6,7 @@
         target="_blank"
         class="flex flex-col items-center"
       >
-        <img :src="developer.logoUrl" class="h-14 w-14 mr-2" />
-        <span class="mt-2 text-center tracking-wide text-gray-700">{{ developer.name }}</span>
+        <img :src="developer.logoUrl" class="h-20 w-20 mr-2 object-contain" />
       </a>
     </div>
   </div>

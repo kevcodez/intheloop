@@ -1,6 +1,6 @@
 <template>
   <div class="flex space-y-2 mt-4 flex-col items-center">
-    <div class="flex flex-row">
+    <div class="flex flex-row" v-if="topic.info.latestVersion">
       <span
         class="px-3 py-2 bg-indigo-500 text-white"
         :style="`background-color: ${topic.info.color}`"
