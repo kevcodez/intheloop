@@ -38,7 +38,7 @@
 
         <div>
           <p
-            class="md:text-base width-auto text-sm font-medium text-gray-700 flex-shrink pr-4 pl-14 md:pl-16"
+            class="md:text-base width-auto text-sm font-medium text-gray-700 flex-shrink pr-4 pl-14 md:pl-16 whitespace-pre-wrap"
             v-html="textToHtml(tweet.text)"
           ></p>
 
