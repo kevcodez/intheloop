@@ -6,7 +6,7 @@
         aria-label="Global"
       >
         <div class="flex items-center flex-1">
-          <div class="flex items-center justify-between w-full md:w-auto">
+          <div class="flex items-center justify-between w-full md:w-auto ml-3 xl:ml-0">
             <router-link
               to="/"
               class="text-gray-800 text-3xl font-bold flex flex-row items-center"
