@@ -1,5 +1,5 @@
 <template>
-  <div v-if="topic">
+  <div v-if="topic" class="mt-8">
     <BaseInfo class="container" :topic="topic" />
 
     <div style="height: 150px; overflow: hidden" class="mt-5">
@@ -27,7 +27,7 @@
       </svg>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 container">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 container mt-8 sm:mt-16">
       <div class="col-span-2 order-2 lg:order-1">
         <TopicNav :topic="topic" />
 
@@ -122,6 +122,6 @@ export default defineComponent({
 
 <style scoped>
 .container {
-  @apply mx-auto max-w-7xl px-4 mt-8 sm:mt-16;
+  @apply mx-auto max-w-7xl px-4;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-6">
+  <div>
     <div class="text-white bg-purple-800">
       <div class="container flex flex-col">
         <h2 class="text-3xl font-extrabold tracking-tight text-white">

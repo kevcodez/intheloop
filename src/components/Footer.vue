@@ -16,6 +16,9 @@
           <p>
             <router-link to="/imprint">Imprint</router-link>
           </p>
+          <p>
+            <router-link to="/privacy-policy">Privacy Policy</router-link>
+          </p>
         </div>
 
         <div

@@ -23,7 +23,7 @@
       </p>
     </div>
 
-    <div>
+    <div class="flex flex-col items-center justify-center">
       <topic-developers :developers="topic.developers" />
       <topic-latest-release-and-badges class="mt-8" :topic="topic" />
     </div>
