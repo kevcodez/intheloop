@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-14">
     <div class="col-span-2">
       <div class="flex flex-row items-center">
-        <img :src="topic.info.logo" class="h-16 w-16" />
+        <img :src="topic.info.logo" class="h-16 w-16 object-contain" />
         <h1 class="ml-5 text-5xl font-semibold tracking-wide">
           {{ topic.info.name }}
         </h1>

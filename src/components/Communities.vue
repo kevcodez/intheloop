@@ -25,6 +25,11 @@
             v-else-if="community.type === 'LinkedIn'"
           />
 
+           <github-icon
+            class="h-6 w-6"
+            v-else-if="community.type === 'Github'"
+          />
+
           <slack-icon class="h-6 w-6" v-else-if="community.type === 'Slack'" />
 
           <link-icon class="h-6 w-6" v-else />
@@ -51,6 +56,7 @@ import StackoverflowIcon from "../assets/icons/stackoverflow.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
 import SlackIcon from "../assets/icons/slack.svg";
 import LinkIcon from "../assets/icons/link.svg";
+import GithubIcon from "../assets/icons/github.svg";
 
 export default defineComponent({
   name: "Communities",
@@ -61,6 +67,7 @@ export default defineComponent({
     LinkedInIcon,
     SlackIcon,
     LinkIcon,
+    GithubIcon,
   },
   props: {
     communities: {
