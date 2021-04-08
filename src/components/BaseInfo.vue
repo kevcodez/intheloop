@@ -18,7 +18,7 @@
         </span>
       </div>
 
-      <p class="mt-4 text-base">
+      <p class="mt-4 text-base whitespace-pre-wrap">
         {{ topic.info.description }}
       </p>
     </div>
