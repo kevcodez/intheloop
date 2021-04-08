@@ -10,7 +10,7 @@
       >
         <div class="flex-1 min-w-0">
           <div class="flex flex-row justify-center items-center">
-            <img :src="topic.info.logo" class="h-8 w-8" />
+            <img :src="topic.info.logo" class="h-6 w-12 object-contain" />
             <h1 class="ml-5 text-2xl font-semibold tracking-wide">
               {{ topic.info.name }}
             </h1>
