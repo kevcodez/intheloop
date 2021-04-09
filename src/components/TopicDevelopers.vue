@@ -6,7 +6,7 @@
         target="_blank"
         class="flex flex-col items-center"
       >
-        <img :src="developer.logoUrl" class="h-20 w-20 mr-2 object-contain" />
+        <img :src="developer.logoUrl" class="h-20 w-40 mr-2 object-contain" />
       </a>
     </div>
   </div>

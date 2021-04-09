@@ -3,7 +3,7 @@
     <div class="col-span-2">
       <div class="flex flex-row items-center">
         <img :src="topic.info.logo" class="h-16 w-16 object-contain" />
-        <h1 class="ml-5 text-5xl font-semibold tracking-wide">
+        <h1 class="ml-5 text-5xl font-bold tracking-wide">
           {{ topic.info.name }}
         </h1>
       </div>
