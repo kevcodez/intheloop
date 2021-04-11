@@ -130,7 +130,7 @@ export default defineComponent({
 
       const entities = props.tweet.entities;
 
-      if (entities.mentions) {
+      if (entities?.mentions) {
         entities.mentions.forEach((mention: any) => {
           text = text.replaceAll(
             `@${mention.username}`,
@@ -139,7 +139,7 @@ export default defineComponent({
         });
       }
 
-      if (entities.hashtags) {
+      if (entities?.hashtags) {
         entities.hashtags.forEach((hashtag: any) => {
           text = text.replaceAll(
             `#${hashtag.tag}`,
@@ -148,7 +148,7 @@ export default defineComponent({
         });
       }
 
-      if (entities.urls) {
+      if (entities?.urls) {
         entities.urls.forEach((url: any) => {
           text = text.replaceAll(
             url.url,
