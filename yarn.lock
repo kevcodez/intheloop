@@ -286,9 +286,9 @@
     websocket "^1.0.31"
 
 "@supabase/supabase-js@^1.7.1":
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.10.0.tgz#c5dbc82a12d24d2cee86792d6b8493fdab122104"
-  integrity sha512-wOe0ywyBi9R5PYNtBUTDdJN4TTjlbyEuZjw9HoAb+Tw7Vtg1Q5WpKtvfxez7v+dRX1ireVc09d/el6lTiyuI0Q==
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.11.0.tgz#1a025cb712160398e289c0dfac4e9ca02112f9a0"
+  integrity sha512-3R6sPDilDTejZnW4Nqst0anWZx6nDWYaZA25/k7bieQDSr9CaeMWsyCw6814xJy5gL3BKdd6SV48jEKf7zxgXg==
   dependencies:
     "@supabase/gotrue-js" "^1.13.0"
     "@supabase/postgrest-js" "^0.28.0"
