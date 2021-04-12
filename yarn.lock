@@ -262,10 +262,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@supabase/gotrue-js@^1.12.4":
-  version "1.12.4"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.12.4.tgz#9ffccc9bfbe6509850f1f1ab7f07d3457dc13d7e"
-  integrity sha512-9iVGaheUie3JFlFlIkOS9SDu60BOhtcpLi20Yr7brftiyEMOcTfQ05YSL3IGnCu24agxOUbDAHkJsWpXDItYtw==
+"@supabase/gotrue-js@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.13.0.tgz#322857ce20d97270d367019bc8a1caaae873de00"
+  integrity sha512-OeN5dwH33+/eEBHdEisjTPINNSdaTpzt4jeTk1Yfk08v16pE62QsqetcucYLKT8wgED5Z2awd43VXca798PyRQ==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -286,11 +286,11 @@
     websocket "^1.0.31"
 
 "@supabase/supabase-js@^1.7.1":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.9.0.tgz#b437cc84af51331dfdd40aaf317940c93db8872a"
-  integrity sha512-nztZ/ElBxJclFgRyrQotiVtJMJd+WTIYuhg1vb5q1/83mwsAh3VUXGStheTqrEtV7mVYm3fO6rQ3qRLwK8XeEQ==
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.10.0.tgz#c5dbc82a12d24d2cee86792d6b8493fdab122104"
+  integrity sha512-wOe0ywyBi9R5PYNtBUTDdJN4TTjlbyEuZjw9HoAb+Tw7Vtg1Q5WpKtvfxez7v+dRX1ireVc09d/el6lTiyuI0Q==
   dependencies:
-    "@supabase/gotrue-js" "^1.12.4"
+    "@supabase/gotrue-js" "^1.13.0"
     "@supabase/postgrest-js" "^0.28.0"
     "@supabase/realtime-js" "^1.0.6"
     cross-fetch "^3.1.0"
@@ -1638,10 +1638,19 @@ postcss@^6.0.9:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^8.1.10, postcss@^8.1.6, postcss@^8.2.1, postcss@^8.2.4:
+postcss@^8.1.10, postcss@^8.1.6, postcss@^8.2.1:
   version "8.2.9"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.9.tgz#fd95ff37b5cee55c409b3fdd237296ab4096fba3"
   integrity sha512-b+TmuIL4jGtCHtoLi+G/PisuIl9avxs8IZMSmlABRwNz5RLUUACrC+ws81dcomz1nRezm5YPdXiMEzBEKgYn+Q==
+  dependencies:
+    colorette "^1.2.2"
+    nanoid "^3.1.22"
+    source-map "^0.6.1"
+
+postcss@^8.2.4:
+  version "8.2.10"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.10.tgz#ca7a042aa8aff494b334d0ff3e9e77079f6f702b"
+  integrity sha512-b/h7CPV7QEdrqIxtAf2j31U5ef05uBDuvoXv6L51Q4rcS1jdlXAVKJv+atCFdUXYl9dyTHGyoMzIepwowRJjFw==
   dependencies:
     colorette "^1.2.2"
     nanoid "^3.1.22"
