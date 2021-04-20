@@ -1,6 +1,6 @@
 <template>
   <h3 class="font-medium text-xl">Quick Links</h3>
-  <div class="grid grid-cols-2 gap-8 mt-4">
+  <div class="grid grid-cols-1 gap-4 mt-4">
     <div class="space-y-2">
       <div class="flex flex-row">
         <github-icon class="h-5 w-5 mr-2" />
@@ -41,8 +41,8 @@
         v-for="social in topic.info.social"
         :key="social.url"
       >
-        <twitter-icon v-if="social.type === 'Twitter'" class="h-6 w-6" />
-        <youtube-icon v-else-if="social.type === 'Youtube'" class="h-6 w-6" />
+        <twitter-icon v-if="social.type === 'Twitter'" class="h-5 w-5" />
+        <youtube-icon v-else-if="social.type === 'Youtube'" class="h-5 w-5" />
         <span class="ml-2">{{ social.label }}</span>
       </a>
     </div>

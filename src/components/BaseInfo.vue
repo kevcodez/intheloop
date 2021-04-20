@@ -33,31 +33,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import { Topic } from "../lib/Topic";
-import GithubIcon from "../assets/icons/github.svg";
-import LinkIcon from "../assets/icons/link.svg";
-import TwitterIcon from "../assets/icons/twitter.svg";
-import YoutubeIcon from "../assets/icons/youtube.svg";
-import PlayLineIcon from "../assets/icons/play-line.svg";
-import FileListIcon from "../assets/icons/file-list.svg";
-import ApacheMavenIcon from "../assets/icons/apachemaven.svg";
-import NpmIcon from "../assets/icons/npm.svg";
-import ScaleIcon from "../assets/icons/scale.svg";
-import BugIcon from "../assets/icons/bug.svg";
 
 export default defineComponent({
   name: "BaseInfo",
-  components: {
-    GithubIcon,
-    LinkIcon,
-    PlayLineIcon,
-    TwitterIcon,
-    YoutubeIcon,
-    FileListIcon,
-    ApacheMavenIcon,
-    NpmIcon,
-    ScaleIcon,
-    BugIcon,
-  },
   props: {
     topic: {
       type: Object as PropType<Topic>,
