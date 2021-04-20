@@ -262,37 +262,36 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@supabase/gotrue-js@^1.13.0":
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.13.0.tgz#322857ce20d97270d367019bc8a1caaae873de00"
-  integrity sha512-OeN5dwH33+/eEBHdEisjTPINNSdaTpzt4jeTk1Yfk08v16pE62QsqetcucYLKT8wgED5Z2awd43VXca798PyRQ==
+"@supabase/gotrue-js@^1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.13.1.tgz#01339389ff633e4ce7ba8f14b495002a3aa320f7"
+  integrity sha512-LBn1RK4UaHwy+CqO3ZJb29Z30iGI8yxyTTVZGZN9JOzS3Zr6bxgYFdBVHLkIY7jQsEur+fH6SFze+truUQIYpw==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/postgrest-js@^0.28.0":
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.28.0.tgz#6e383b451057bef4e1caf6fc75c88a935ca5524a"
-  integrity sha512-h7em0UwOy6HK+33kzTOWbOzfB9uXe7DtxNv2JLDcgj9vRN1fSIUSYKrbuwmM93zz3r6ZMpkALXND8S/4fgoXBA==
+"@supabase/postgrest-js@^0.28.1":
+  version "0.28.1"
+  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.28.1.tgz#2fb7c31c2967e99dfaddd9fec18bf45906db5cae"
+  integrity sha512-DaBsqlqWa2ru+yoUcahkeVPdi2pK1sMaWBr7ZkfkB4jFFZ2ekOvKFt11q9a3BhDAXh8x3PaBx7g76Tvd+i2lDw==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/realtime-js@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@supabase/realtime-js/-/realtime-js-1.0.6.tgz#d4cb1a9351cc8c836ee3f1392742a4466e0d7424"
-  integrity sha512-qzYYBzXteYsqQYlLzoYwee2OloWn3w8YzUFbDYFUPdkUwLs01OIqsm+lRCzKDivmyn2G0FJQjloWcF4BF5TyBg==
+"@supabase/realtime-js@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@supabase/realtime-js/-/realtime-js-1.0.8.tgz#f37096e0b21ea0ef7df55ca5a10cf20fce1b8a5b"
+  integrity sha512-QEOx5aN0Slp/s3XCbHxQHkWNSAtecDW4eilEH0gSMesyGkC+Q4xFyEX/1OJULG/61m+hySUpljLPk3fcfBDP+Q==
   dependencies:
     "@types/websocket" "^1.0.1"
-    query-string "^6.12.1"
-    websocket "^1.0.31"
+    websocket "^1.0.34"
 
-"@supabase/supabase-js@^1.7.1":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.11.0.tgz#1a025cb712160398e289c0dfac4e9ca02112f9a0"
-  integrity sha512-3R6sPDilDTejZnW4Nqst0anWZx6nDWYaZA25/k7bieQDSr9CaeMWsyCw6814xJy5gL3BKdd6SV48jEKf7zxgXg==
+"@supabase/supabase-js@^1.11.6":
+  version "1.11.6"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.11.6.tgz#0e6c46aa67b15c98fde947cf67936c99cc23546b"
+  integrity sha512-LJcM+aChrppoH4UgBm1gC+SWh0O6+MRRS9Cgh7Pj14s2HTaEtg1muxV90zKR19RNlt70vexeHfbE6UBkmc1LWA==
   dependencies:
-    "@supabase/gotrue-js" "^1.13.0"
-    "@supabase/postgrest-js" "^0.28.0"
-    "@supabase/realtime-js" "^1.0.6"
+    "@supabase/gotrue-js" "^1.13.1"
+    "@supabase/postgrest-js" "^0.28.1"
+    "@supabase/realtime-js" "^1.0.8"
     cross-fetch "^3.1.0"
 
 "@tailwindcss/typography@^0.4.0":
@@ -751,7 +750,7 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-"chokidar@>=2.0.0 <4.0.0", chokidar@^3.5.1:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.1.tgz#ee9ce7bbebd2b79f49f304799d5468e31e14e68a"
   integrity sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==
@@ -915,11 +914,6 @@ debug@^4.3.2:
   dependencies:
     ms "2.1.2"
 
-decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
-
 defined@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/defined/-/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
@@ -1037,11 +1031,6 @@ fill-range@^7.0.1:
   integrity sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==
   dependencies:
     to-regex-range "^5.0.1"
-
-filter-obj@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/filter-obj/-/filter-obj-1.1.0.tgz#9b311112bc6c6127a16e016c6c5d7f19e0805c5b"
-  integrity sha1-mzERErxsYSehbgFsbF1/GeCAXFs=
 
 fraction.js@^4.0.13:
   version "4.0.13"
@@ -1671,16 +1660,6 @@ purgecss@^3.1.3:
     postcss "^8.2.1"
     postcss-selector-parser "^6.0.2"
 
-query-string@^6.12.1:
-  version "6.14.1"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.14.1.tgz#7ac2dca46da7f309449ba0f86b1fd28255b0c86a"
-  integrity sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==
-  dependencies:
-    decode-uri-component "^0.2.0"
-    filter-obj "^1.1.0"
-    split-on-first "^1.0.0"
-    strict-uri-encode "^2.0.0"
-
 queue-microtask@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.2.tgz#abf64491e6ecf0f38a6502403d4cda04f372dfd3"
@@ -1743,12 +1722,12 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-sass@^1.32.8:
-  version "1.32.8"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.8.tgz#f16a9abd8dc530add8834e506878a2808c037bdc"
-  integrity sha512-Sl6mIeGpzjIUZqvKnKETfMf0iDAswD9TNlv13A7aAF3XZlRPMq4VvJWBC2N2DXbp94MQVdNSFG6LfF/iOXrPHQ==
+sass@^1.32.11:
+  version "1.32.11"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.11.tgz#b236b3ea55c76602c2ef2bd0445f0db581baa218"
+  integrity sha512-O9tRcob/fegUVSIV1ihLLZcftIOh0AF1VpKgusUfLqnb2jQ0GLDwI5ivv1FYWivGv8eZ/AwntTyTzjcHu0c/qw==
   dependencies:
-    chokidar ">=2.0.0 <4.0.0"
+    chokidar ">=3.0.0 <4.0.0"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
@@ -1771,16 +1750,6 @@ sourcemap-codec@^1.4.4:
   version "1.4.8"
   resolved "https://registry.yarnpkg.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
   integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
-
-split-on-first@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/split-on-first/-/split-on-first-1.1.0.tgz#f610afeee3b12bce1d0c30425e76398b78249a5f"
-  integrity sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==
-
-strict-uri-encode@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
-  integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
 string-hash@^1.1.1:
   version "1.1.3"
@@ -1940,10 +1909,10 @@ uuid@^8.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-vite-plugin-components@^0.8.3:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/vite-plugin-components/-/vite-plugin-components-0.8.3.tgz#245ebb04c22ba1a7cedba24518ef48f1436c1730"
-  integrity sha512-wqKt3DU7RzWJvE46qbZsi9E6TCaUwkOQZfRSDnRndKel72psJae02nD+qu/ObkRduqK9kdeGmAOcZw1qUkNUrg==
+vite-plugin-components@^0.8.4:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/vite-plugin-components/-/vite-plugin-components-0.8.4.tgz#158a4d69c8106c36944a2e284df3ad0169ae1017"
+  integrity sha512-h6/FNBKBXc4TIcHxnFYxa4+aBGDZusqp/6Ra3LBvwolwFuX6k8qPsBbXkBP0I+UwOkyHw9iU2xJ4rdYBGyN+0Q==
   dependencies:
     chokidar "^3.5.1"
     debug "^4.3.2"
@@ -1966,10 +1935,10 @@ vite-svg-loader@^1.4.2:
   dependencies:
     "@vue/compiler-sfc" "^3.0.5"
 
-vite@^2.1.3:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.1.5.tgz#4857da441c62f7982c83cbd5f42a00330f20c9c1"
-  integrity sha512-tYU5iaYeUgQYvK/CNNz3tiJ8vYqPWfCE9IQ7K0iuzYovWw7lzty7KRYGWwV3CQPh0NKxWjOczAqiJsCL0Xb+Og==
+vite@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.2.1.tgz#90c481f69371f32867d86a6a623bb064b876ad3d"
+  integrity sha512-KIqK90EoJJpuqE86Y9DSkZjFNGgsyZX/4I1xENIitLRd3hgRtOlIGCJYrNnBD9/eqipz0OroAiIj9/R1JcOdFA==
   dependencies:
     esbuild "^0.9.3"
     postcss "^8.2.1"
@@ -2019,10 +1988,10 @@ vue@^3.0.9:
     "@vue/runtime-dom" "3.0.11"
     "@vue/shared" "3.0.11"
 
-websocket@^1.0.31:
-  version "1.0.33"
-  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.33.tgz#407f763fc58e74a3fa41ca3ae5d78d3f5e3b82a5"
-  integrity sha512-XwNqM2rN5eh3G2CUQE3OHZj+0xfdH42+OFK6LdC2yqiC0YU8e5UK0nYre220T0IyyN031V/XOvtHvXozvJYFWA==
+websocket@^1.0.34:
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.34.tgz#2bdc2602c08bf2c82253b730655c0ef7dcab3111"
+  integrity sha512-PRDso2sGwF6kM75QykIesBijKSVceR6jL2G8NGYyq2XrItNC2P5/qL5XeR056GhA+Ly7JMFvJb9I312mJfmqnQ==
   dependencies:
     bufferutil "^4.0.1"
     debug "^2.2.0"

@@ -14,9 +14,10 @@
           >{{ course.price }}</span
         >
         <div class="flex flex-col justify-center text-center">
-          <img :src="course.image" class="object-contain w-12 h-12" />
+          <img v-if="course.image" :src="course.image" class="object-contain w-12 h-12" />
+          <academic-cap-icon v-else class="w-12 h-12" />
         </div>
-        <div class="flex flex-col ml-4">
+        <div class="flex flex-col ml-4 pr-3">
           <span>{{ course.name }}</span>
           <span class="text-sm text-gray-700"
             >by {{ course.authors.map((it) => it.name).join(", ") }}</span
@@ -31,11 +32,13 @@
 import { defineComponent, PropType } from "vue";
 import LinkIcon from "../assets/icons/link.svg";
 import { Course } from "../lib/Course";
+import AcademicCapIcon from "../assets/icons/academic-cap.svg";
 
 export default defineComponent({
   name: "Courses",
   components: {
     LinkIcon,
+    AcademicCapIcon,
   },
   props: {
     courses: {
