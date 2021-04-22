@@ -9,7 +9,7 @@
         :key="course.url"
       >
         <span
-          class="absolute right-0 px-2 py-1 mt-2 text-xs bg-gray-800 rounded-tr text-gray-50 -top-2"
+          class="absolute left-0 px-2 py-1 mt-2 text-xs bg-gray-800 rounded-tr text-gray-50 -top-2"
           :class="{ 'bg-purple-800': course.price === 'Free' }"
           >{{ course.price }}</span
         >
@@ -17,7 +17,7 @@
           <img v-if="course.image" :src="course.image" class="object-contain w-12 h-12" />
           <academic-cap-icon v-else class="w-12 h-12" />
         </div>
-        <div class="flex flex-col ml-4 pr-3">
+        <div class="flex flex-col ml-4">
           <span>{{ course.name }}</span>
           <span class="text-sm text-gray-700"
             >by {{ course.authors.map((it) => it.name).join(", ") }}</span
