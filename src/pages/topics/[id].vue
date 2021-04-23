@@ -1,5 +1,29 @@
 <template>
   <div v-if="topic" class="mt-8">
+    <teleport to="head">
+      <title>{{ topic.info.name }}</title>
+      <description
+        >Stay in the loop - See latest {{ topic.info.name }} releases, popular
+        tweets, blog posts and communities to engage with.</description
+      >
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:url"
+        :content="`https://intheloop.dev/topics/${topic.info.name}`"
+      />
+      <meta name="twitter:title" :content="topic.info.name" />
+      <meta
+        name="twitter:description"
+        :content="`Stay in the loop - See latest ${topic.info.name} releases, popular tweets, blog posts and communities to engage with.`"
+      />
+      <meta name="twitter:creator" content="@kevcodez" />
+      <meta
+        v-if="topic.info.logo"
+        name="twitter:image"
+        :content="topic.info.logo"
+      />
+    </teleport>
+
     <BaseInfo class="container" :topic="topic" />
 
     <div style="height: 150px; overflow: hidden" class="mt-5">
@@ -54,7 +78,6 @@
     </div>
   </div>
 </template>
-
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";

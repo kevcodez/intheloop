@@ -1,5 +1,14 @@
 <template>
   <div>
+    <teleport to="head">
+      <title>intheloop - Follow your favorite tech</title>
+      <description
+        >Stay in the loop - See latest releases, popular tweets, blog posts,
+        communities to engage with and much more.</description
+      >
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@kevcodez" />
+    </teleport>
     <div class="text-white bg-purple-800">
       <div class="container flex flex-col">
         <h2 class="text-3xl font-extrabold tracking-tight text-white">
