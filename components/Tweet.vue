@@ -115,7 +115,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, toRefs } from "@nuxtjs/composition-api";
+import { computed, defineComponent, toRefs } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {
@@ -126,43 +126,56 @@ export default defineComponent({
   },
   setup(props) {
     const tweetAsHtml = computed(() => {
-      let text = props.tweet.text;
+      let text = props.tweet.text
 
-      const entities = props.tweet.entities;
+      const entities = props.tweet.entities
+
+      function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // $& means the whole matched string
+      }
+      function replaceAll(str, match, replacement) {
+        return str.replace(
+          new RegExp(escapeRegExp(match), 'g'),
+          () => replacement
+        )
+      }
 
       if (entities?.mentions) {
         entities.mentions.forEach((mention: any) => {
-          text = text.replaceAll(
+          text = replaceAll(
+            text,
             `@${mention.username}`,
             `<a href="http://twitter.com/${mention.username}" target="_blank" class="text-blue-400 hover:text-blue-600">@${mention.username}</a>`
-          );
-        });
+          )
+        })
       }
 
       if (entities?.hashtags) {
         entities.hashtags.forEach((hashtag: any) => {
-          text = text.replaceAll(
+          text = replaceAll(
+            text,
             `#${hashtag.tag}`,
             `<a href="http://twitter.com/hashtag/${hashtag.tag}" target="_blank" class="text-blue-400 hover:text-blue-600">#${hashtag.tag}</a>`
-          );
-        });
+          )
+        })
       }
 
       if (entities?.urls) {
         entities.urls.forEach((url: any) => {
-          text = text.replaceAll(
+          text = replaceAll(
+            text,
             url.url,
             `<a href="${url.url}" target="_blank" class="text-blue-400 hover:text-blue-600">${url.url}</a>`
-          );
-        });
+          )
+        })
       }
 
-      return text;
-    });
+      return text
+    })
 
     return {
       tweetAsHtml,
-    };
+    }
   },
-});
+})
 </script>
