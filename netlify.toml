@@ -1,5 +1,0 @@
-[dev]
-  framework = "vue"
-  command = "yarn dev" # Command to start your dev server
-  port = 8888 # The port that the netlify dev will be accessible on
-  publish = "dist"
