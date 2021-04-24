@@ -41,4 +41,8 @@ export default {
   components: {
     prefix: false,
   },
+
+  server: {
+    host: '0.0.0.0',
+  },
 }
