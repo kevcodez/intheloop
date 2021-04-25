@@ -15,12 +15,20 @@ export default {
           'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
       },
       {
+        hid: 'og:image',
         property: 'og:image',
         content: 'https://intheloop.dev/social-image.png',
       },
       {
+        hid: 'twitter:image',
         property: 'twitter:image',
         content: 'https://intheloop.dev/social-image.png',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
       },
     ],
     link: [
