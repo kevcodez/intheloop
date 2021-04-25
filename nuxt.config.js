@@ -20,15 +20,25 @@ export default {
         content: 'https://intheloop.dev/social-image.png',
       },
       {
-        hid: 'twitter:image',
-        property: 'twitter:image',
-        content: 'https://intheloop.dev/social-image.png',
-      },
-      {
         hid: 'og:description',
         property: 'og:description',
         content:
           'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://intheloop.dev/social-image.png',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: 'intheloop-dev social media sharing image',
       },
     ],
     link: [
