@@ -56,49 +56,77 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, useRoute, inject, useFetch } from "@nuxtjs/composition-api";
-import { Topic } from "@/lib/Topic";
-import { Newsletter } from "@/lib/Newsletter";
-import { Podcast } from "@/lib/Podcast";
-import { Community } from "@/lib/Community";
-import { Blog } from "@/lib/Blog";
+import {
+  defineComponent,
+  ref,
+  useRoute,
+  inject,
+  useFetch,
+} from '@nuxtjs/composition-api'
+import { Topic } from '@/lib/Topic'
+import { Newsletter } from '@/lib/Newsletter'
+import { Podcast } from '@/lib/Podcast'
+import { Community } from '@/lib/Community'
+import { Blog } from '@/lib/Blog'
 
 export default defineComponent({
+  head() {
+    if (this.topic) {
+      const description = `Stay in the loop with ${this.topic.info.name} - Latest releases, popular tweets, blog posts, communities to engage with and much more`
+
+      return {
+        title: `Follow ${this.topic.info.name} - intheloop`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: description,
+          },
+          {
+            hid: 'og:description',
+            name: 'og:description',
+            content: description,
+          },
+        ],
+      }
+    } else {
+      return {}
+    }
+  },
   setup() {
     const route = useRoute()
     const supabase = inject('supabase')
     const topicId = route.value.params.id
 
-    const topic = ref<Topic | null>(null);
-    const newsletters = ref<Newsletter[]>([]);
-    const podcasts = ref<Podcast[]>([]);
-    const communities = ref<Community[]>([]);
-    const blogs = ref<Blog[]>([]);
+    const topic = ref<Topic | null>(null)
+    const newsletters = ref<Newsletter[]>([])
+    const podcasts = ref<Podcast[]>([])
+    const communities = ref<Community[]>([])
+    const blogs = ref<Blog[]>([])
 
     useFetch(async () => {
       const { data, error } = await supabase
-        .from("vw_topic_overview")
-        .select("*")
-        .eq("id", topicId)
-        .single();
+        .from('vw_topic_overview')
+        .select('*')
+        .eq('id', topicId)
+        .single()
 
-      topic.value = data;
+      topic.value = data
 
       if (data.podcasts) {
-        podcasts.value = data.podcasts.filter((it: Podcast) => it) || [];
+        podcasts.value = data.podcasts.filter((it: Podcast) => it) || []
       }
       if (data.newsletters) {
         newsletters.value =
-          data.newsletters.filter((it: Newsletter) => it) || [];
+          data.newsletters.filter((it: Newsletter) => it) || []
       }
       if (data.blogs) {
-        blogs.value = data.blogs.filter((it: Blog) => it) || [];
+        blogs.value = data.blogs.filter((it: Blog) => it) || []
       }
       if (data.communities) {
-        communities.value =
-          data.communities.filter((it: Community) => it) || [];
+        communities.value = data.communities.filter((it: Community) => it) || []
       }
-    });
+    })
 
     return {
       topic,
@@ -106,9 +134,9 @@ export default defineComponent({
       newsletters,
       blogs,
       communities,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped>

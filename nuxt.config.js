@@ -1,5 +1,5 @@
 export default {
-  modern: 'server',
+  modern: process.env.NODE_ENV === 'development' ? false : 'server',
   head: {
     title: 'intheloop - Follow your favorite tech',
     htmlAttrs: {
@@ -45,6 +45,11 @@ export default {
         name: 'twitter:image:alt',
         content: 'intheloop-dev social media sharing image',
       },
+      {
+        hid: 'twitter:creator',
+        name: 'twitter:creator',
+        content: '@kevcodez'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

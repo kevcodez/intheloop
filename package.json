@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.6.4",
-    "@nuxtjs/composition-api": "^0.23.2",
+    "@nuxtjs/composition-api": "^0.23.3",
     "@supabase/supabase-js": "^1.11.7",
     "@tailwindcss/typography": "^0.4.0",
     "core-js": "^3.9.1",
@@ -26,7 +26,7 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/svg": "^0.1.12",
     "@nuxtjs/tailwindcss": "^4.0.1",
-    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.3.1",
     "postcss": "^8.2.8",
     "prettier": "^2.2.1",
