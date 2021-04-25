@@ -1,14 +1,27 @@
 export default {
   modern: 'server',
   head: {
-    title: 'intheloop',
+    title: 'intheloop - Follow your favorite tech',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://intheloop.dev/social-image.png',
+      },
+      {
+        property: 'twitter:image',
+        content: 'https://intheloop.dev/social-image.png',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
