@@ -40,7 +40,7 @@
     </div>
 
     <div v-if="hasMore && !loading" class="flex justify-center">
-      <button class="button" @click="fetchBlogPosts">Load more</button>
+      <button class="button" @click="$fetch">Load more</button>
     </div>
 
     <loading-indicator v-if="loading" class="py-4 text-gray-800" />
