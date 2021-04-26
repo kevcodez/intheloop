@@ -79,6 +79,10 @@ export default {
 
   build: {},
 
+  serverMiddleware: [
+    { path: '/sitemap.xml', handler: '~/api/sitemap' },
+  ],
+
   components: {
     prefix: false,
   },
