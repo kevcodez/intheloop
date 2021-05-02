@@ -33,8 +33,9 @@ export default defineComponent({
   },
   setup() {
     const truncate = (input: string) => {
-      if (input.length > 190) {
-        return input.substring(0, 190) + "...";
+      const maxLength = 350
+      if (input.length > maxLength) {
+        return input.substring(0, maxLength) + "...";
       }
       return input;
     };
