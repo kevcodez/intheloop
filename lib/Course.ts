@@ -1,11 +1,20 @@
-import { Author } from "./Author"
+import { Author } from './Author'
 
 export interface Course {
-    name: string
-    publishedAt?: string
-    price: string
-    url: string
-    image: string
-    description: string
-    authors: Author[]
+  name: string
+  publishedAt?: string
+  price: string
+  url: string
+  image: string
+  description: string
+  authors: Author[]
+  platform: CoursePlatform
+  interactive: boolean
+  free: boolean
+}
+
+export enum CoursePlatform {
+  EGGHEAD = "EGGHEAD",
+  UDEMY = "UDEMY",
+  OTHER = "OTHER"
 }

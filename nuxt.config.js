@@ -48,8 +48,8 @@ export default {
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@kevcodez'
-      }
+        content: '@kevcodez',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -79,9 +79,7 @@ export default {
 
   build: {},
 
-  serverMiddleware: [
-    { path: '/sitemap.xml', handler: '~/api/sitemap' },
-  ],
+  serverMiddleware: [{ path: '/sitemap.xml', handler: '~/api/sitemap' }],
 
   components: {
     prefix: false,
@@ -89,5 +87,9 @@ export default {
 
   server: {
     host: '0.0.0.0',
+  },
+
+  tailwindcss: {
+    jit: true,
   },
 }
