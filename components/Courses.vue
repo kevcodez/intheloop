@@ -8,7 +8,7 @@
         v-for="course in courses"
         :key="course.url"
       >
-      <div class="flex h-40">
+      <div class="flex w-full h-40">
           <img v-if="course.image" :src="course.image" class="self-start object-contain w-full rounded-t max-h-40" />
           <academic-cap-icon v-else class="self-center w-24 h-24" />
 

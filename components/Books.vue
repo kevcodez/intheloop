@@ -4,11 +4,11 @@
       <a
         target="_blank"
         :href="book.url"
-        class="flex grow items-center rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400 px-4 py-4"
+        class="flex items-center px-4 py-4 bg-white border border-gray-300 rounded-lg shadow-sm grow hover:border-gray-400"
         v-for="book in books"
         :key="book.url"
       >
-        <img class="w-12 h-12 mr-5 object-contain" :src="book.image" />
+        <img class="object-contain w-40 h-40 mr-5" :src="book.image" />
         <div>
           <span class="font-semibold">{{ book.title }} </span>
           <span class="ml-2 text-gray-500">{{ book.publishedAt | formatDate('MMMM YYYY') }}</span>
