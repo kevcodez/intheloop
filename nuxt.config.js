@@ -60,6 +60,14 @@ export default {
           'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
       },
     ],
+    script: [
+      {
+        async: true,
+        defer: true,
+        'data-domain': 'intheloop.dev',
+        src: 'https://plausible.io/js/plausible.js',
+      },
+    ],
   },
 
   css: ['~/assets/index.scss'],
