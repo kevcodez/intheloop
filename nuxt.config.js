@@ -65,7 +65,7 @@ export default {
         async: true,
         defer: true,
         'data-domain': 'intheloop.dev',
-        src: 'https://plausible.io/js/plausible.js',
+        src: 'https://stats.intheloop.dev/js/index.js',
       },
     ],
   },
