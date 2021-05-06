@@ -41,6 +41,24 @@
         </div>
         <nav class="hidden md:flex space-x-10">
           <nuxt-link
+            to="/topics"
+            class="text-base font-medium text-gray-500 hover:text-gray-900"
+          >
+            Topics
+          </nuxt-link>
+          <nuxt-link
+            to="/courses"
+            class="text-base font-medium text-gray-500 hover:text-gray-900"
+          >
+            Courses
+          </nuxt-link>
+          <nuxt-link
+            to="/books"
+            class="text-base font-medium text-gray-500 hover:text-gray-900"
+          >
+            Books
+          </nuxt-link>
+          <nuxt-link
             to="/roadmap"
             class="text-base font-medium text-gray-500 hover:text-gray-900"
           >
@@ -60,7 +78,6 @@
   -->
     <div
       v-if="mobileMenuOpen"
-      
       class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
     >
       <div
@@ -108,6 +125,28 @@
         <div class="py-6 px-5 space-y-6">
           <div class="grid grid-cols-2 gap-y-4 gap-x-8">
             <nuxt-link
+              to="/topics"
+              @click="toggleMobileMenu"
+              class="text-base font-medium text-gray-900 hover:text-gray-700"
+            >
+              Topics
+            </nuxt-link>
+            <nuxt-link
+              to="/courses"
+              @click="toggleMobileMenu"
+              class="text-base font-medium text-gray-900 hover:text-gray-700"
+            >
+              Courses
+            </nuxt-link>
+            <nuxt-link
+              to="/books"
+              @click="toggleMobileMenu"
+              class="text-base font-medium text-gray-900 hover:text-gray-700"
+            >
+              Books
+            </nuxt-link>
+
+            <nuxt-link
               to="/roadmap"
               @click="toggleMobileMenu"
               class="text-base font-medium text-gray-900 hover:text-gray-700"
@@ -122,22 +161,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxtjs/composition-api";
-import RecordCircleLineIcon from "~/assets/icons/record-circle-line.svg?inline";
+import { defineComponent, ref } from '@nuxtjs/composition-api'
+import RecordCircleLineIcon from '~/assets/icons/record-circle-line.svg?inline'
 
 export default defineComponent({
   components: {
     RecordCircleLineIcon,
   },
   setup() {
-    const mobileMenuOpen = ref(false);
+    const mobileMenuOpen = ref(false)
     const toggleMobileMenu = () =>
-      (mobileMenuOpen.value = !mobileMenuOpen.value);
+      (mobileMenuOpen.value = !mobileMenuOpen.value)
 
     return {
       mobileMenuOpen,
       toggleMobileMenu,
-    };
+    }
   },
-});
+})
 </script>

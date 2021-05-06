@@ -1,23 +1,23 @@
-import { Blog } from "./Blog"
-import { Book } from "./Book"
-import { Community } from "./Community"
-import { Course } from "./Course"
-import { Newsletter } from "./Newsletter"
-import { Podcast } from "./Podcast"
+import { Blog, BlogInfo } from "./Blog"
+import { Book, BookInfo } from "./Book"
+import { Community, CommunityInfo } from "./Community"
+import { Course, CourseInfo } from "./Course"
+import { Newsletter, NewsletterInfo } from "./Newsletter"
+import { Podcast, PodcastInfo } from "./Podcast"
 import { SocialLink } from "./SocialLink"
 
 export interface Topic {
     id: string
     info: TopicInfo
-    developers: Developer[]
-    books: Book[]
-    blogs: Blog[]
-    newsletters: Newsletter[]
-    releases: Release[]
-    communities: Community[]
-    podcasts: Podcast[]
-    courses: Course[]
-    latestrelease: Release
+    developers: DeveloperInfo[]
+    blogs: BlogInfo[]
+    newsletters: NewsletterInfo[]
+    releases: ReleaseInfo[]
+    communities: CommunityInfo[]
+    podcasts: PodcastInfo[]
+    latestrelease: ReleaseInfo
+    book_ids: string[]
+    course_ids: string[]
 }
 
 export interface TopicInfo {
@@ -45,12 +45,22 @@ export interface Badge {
 }
 
 export interface Developer {
+    id: string
+    info: DeveloperInfo
+}
+
+export interface DeveloperInfo {
     name: string
     website: string
     logoUrl: string
 }
 
 export interface Release {
+    id: number
+    info: ReleaseInfo
+}
+
+export interface ReleaseInfo{
     version: string
     releaseNotesUrl: string | undefined
     publishedAt: string

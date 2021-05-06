@@ -20,8 +20,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { Podcast } from "../lib/Podcast";
-import MicLineIcon from '../assets/icons/mic-line.svg'
+import { PodcastInfo } from "../lib/Podcast";
+import MicLineIcon from '../assets/icons/mic-line.svg?inline'
 
 export default defineComponent({
   name: "Podcasts",
@@ -30,7 +30,7 @@ export default defineComponent({
   },
   props: {
     podcasts: {
-      type: Array as PropType<Podcast[]>,
+      type: Array as PropType<PodcastInfo[]>,
       required: true,
     },
   },

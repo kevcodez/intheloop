@@ -4,7 +4,7 @@ export default async function (req, res, next) {
   const supabaseClient = createClient(
     'https://pvnyntuqgqafdtgzucqj.supabase.co',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxMzA3MjMyMiwiZXhwIjoxOTI4NjQ4MzIyfQ.47NmRknfnVDcLDWZouiFjVErXkw15kYJrUdkXt5Ii9I'
-  )
+ )
 
   const staticUrls = [
     '',
@@ -12,6 +12,8 @@ export default async function (req, res, next) {
     'imprint',
     'privacy-policy',
     'roadmap',
+    'courses',
+    'books',
   ]
   let urls = staticUrls
     .map((staticUrl) =>
@@ -19,13 +21,21 @@ export default async function (req, res, next) {
     )
     .join('\n')
 
-  const { data: topics, error } = await supabaseClient
+  const { data: topics } = await supabaseClient
     .from('topic')
     .select('id')
 
   urls += topics
     .map((topic) =>
       sitemapUrl(`https://intheloop.dev/topics/${topic.id}`, 'daily')
+    )
+    .join('\n')
+
+  const { data: books } = await supabaseClient.from('book').select('id')
+
+  urls += books
+    .map((book) =>
+      sitemapUrl(`https://intheloop.dev/books/${book.id}`, 'weekly')
     )
     .join('\n')
 

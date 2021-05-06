@@ -16,6 +16,11 @@ import {
 } from '@nuxtjs/composition-api'
 import { Topic } from '@/lib/Topic'
 
+interface TweetsResponse {
+  hasMore: boolean
+  tweets: any[] // todo type
+}
+
 export default defineComponent({
   name: 'Tweets',
   props: {
@@ -33,7 +38,7 @@ export default defineComponent({
 
       loading.value = true
 
-      const response = await $http.$get(
+      const response = await $http.$get<TweetsResponse>(
         `https://europe-west1-intheloop-dev.cloudfunctions.net/getTweetsByTopic?topic=${props.topic.id}&page=${currentPage.value}`
       )
 

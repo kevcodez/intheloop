@@ -49,6 +49,7 @@
 
 <script lang="ts">
 import { ref, defineComponent, inject } from '@nuxtjs/composition-api'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 export default defineComponent({
   setup() {
@@ -56,7 +57,7 @@ export default defineComponent({
     const message = ref('')
     const honeyName = ref('')
     const messageSent = ref(false)
-    const supabase = inject('supabase')
+    const supabase = inject<SupabaseClient>('supabase')!
 
     const submitForm = async () => {
       if (honeyName.value) return

@@ -1,6 +1,11 @@
 import { Author } from './Author'
 
 export interface Course {
+  id: string
+  info: CourseInfo
+}
+
+export interface CourseInfo {
   name: string
   publishedAt?: string
   price: string

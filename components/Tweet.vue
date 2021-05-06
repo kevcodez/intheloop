@@ -130,10 +130,10 @@ export default defineComponent({
 
       const entities = props.tweet.entities
 
-      function escapeRegExp(string) {
+      function escapeRegExp(string: string) {
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // $& means the whole matched string
       }
-      function replaceAll(str, match, replacement) {
+      function replaceAll(str: string, match: string, replacement: string) {
         return str.replace(
           new RegExp(escapeRegExp(match), 'g'),
           () => replacement

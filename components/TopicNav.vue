@@ -11,7 +11,8 @@
         <option value="" selected>Tweets</option>
         <option value="/blog-posts">Blog Posts</option>
         <option value="/releases">Latest Releases</option>
-        <option value="/books-courses">Books &amp; Courses</option>
+        <option value="/courses" v-if="showCoursesTab">Courses</option>
+        <option value="/books" v-if="showBooksTab">Books</option>
       </select>
     </div>
     <div class="hidden sm:block">
@@ -40,11 +41,19 @@
         </nuxt-link>
         <nuxt-link
           exact-active-class="bg-gray-200 text-gray-700"
-          :to="`/topics/${topic.id}/books-courses`"
+          :to="`/topics/${topic.id}/courses`"
           class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-md rounded-md"
-          v-if="showBooksAndCoursesTab"
+          v-if="showCoursesTab"
         >
-          Books &amp; Courses
+          Courses
+        </nuxt-link>
+        <nuxt-link
+          exact-active-class="bg-gray-200 text-gray-700"
+          :to="`/topics/${topic.id}/books`"
+          class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-md rounded-md"
+          v-if="showBooksTab"
+        >
+          Books
         </nuxt-link>
       </nav>
     </div>
@@ -70,11 +79,9 @@ export default defineComponent({
   setup(props) {
     const router = useRouter()
 
-    const showBooksAndCoursesTab = computed(
-      () =>
-        (props.topic.books && props.topic.books.filter((it) => it).length) ||
-        (props.topic.courses && props.topic.courses.filter((it) => it).length)
-    )
+    const showBooksTab = computed(() => props.topic.book_ids && props.topic.book_ids.length)
+
+    const showCoursesTab = computed(() => props.topic.course_ids && props.topic.course_ids.length)
 
     const changeNav = (e: any) => {
       const navigateTo = e.target.value
@@ -82,7 +89,8 @@ export default defineComponent({
     }
 
     return {
-      showBooksAndCoursesTab,
+      showBooksTab,
+      showCoursesTab,
       changeNav,
     }
   },

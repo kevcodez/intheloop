@@ -27,7 +27,7 @@
       "@nuxt/types",
       "@types/node",
       "@nuxt/http",
-      "@nuxtjs/composition-api/module"
+      "@nuxtjs/composition-api"
     ]
   },
   "exclude": [

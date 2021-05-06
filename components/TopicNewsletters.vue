@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { Newsletter } from "../lib/Newsletter";
+import { NewsletterInfo } from "../lib/Newsletter";
 import MailIcon from "../assets/icons/mail.svg?inline";
 
 export default defineComponent({
@@ -30,7 +30,7 @@ export default defineComponent({
   },
   props: {
     newsletters: {
-      type: Array as PropType<Newsletter[]>,
+      type: Array as PropType<NewsletterInfo[]>,
       required: true,
     },
   },

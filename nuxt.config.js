@@ -74,8 +74,6 @@ export default {
 
   plugins: ['~/plugins/supabase', '~/plugins/dayjs'],
 
-  components: true,
-
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
@@ -90,6 +88,7 @@ export default {
   serverMiddleware: [{ path: '/sitemap.xml', handler: '~/api/sitemap' }],
 
   components: {
+    enabled: true,
     prefix: false,
   },
 

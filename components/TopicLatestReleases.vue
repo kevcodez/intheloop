@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { Release, Topic } from "../lib/Topic";
+import { ReleaseInfo, Topic } from "../lib/Topic";
 import TagIcon from "../assets/icons/tag.svg?inline";
 
 export default defineComponent({
@@ -40,7 +40,7 @@ export default defineComponent({
       required: true
     },
     releases: {
-      type: Array as PropType<Release[]>,
+      type: Array as PropType<ReleaseInfo[]>,
       required: true,
     },
   }

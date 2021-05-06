@@ -38,9 +38,8 @@
         </div>
       </a>
     </div>
-
     <div v-if="hasMore && !loading" class="flex justify-center">
-      <button class="button" @click="$fetch">Load more</button>
+      <button class="button mt-5" @click="$fetch">Load more</button>
     </div>
 
     <loading-indicator v-if="loading" class="py-4 text-gray-800" />
@@ -51,12 +50,13 @@
 import {
   defineComponent,
   PropType,
-  ref,
   inject,
-  useFetch,
 } from '@nuxtjs/composition-api'
-import { Topic } from '@/lib/Topic'
+import { Topic } from '~/lib/Topic'
 import GhostIcon from '@/assets/icons/ghost.svg?inline'
+import usePagedList from '~/composables/usePagedList'
+import { BlogPost } from '~/lib/Blog'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 export default defineComponent({
   name: 'TopicBlogPosts',
@@ -64,32 +64,24 @@ export default defineComponent({
     GhostIcon,
   },
   props: {
-    topic: Object as PropType<Topic>,
+    topic: {
+      required: true,
+      type: Object as PropType<Topic>,
+    }
   },
-  setup(props: any) {
-    const currentPage = ref(0)
-    const blogPosts = ref<any>([])
-    const hasMore = ref(true)
-    const loading = ref(true)
+  setup(props) {
+    const supabase = inject<SupabaseClient>('supabase')!
 
-    const supabase = inject('supabase')
-
-    useFetch(async () => {
-      currentPage.value++
-      const pageSize = 10
-      const pageStart = (currentPage.value - 1) * pageSize
-      loading.value = true
-
-      const { data, error, count } = await supabase
+    const {dataList: blogPosts, loading, hasMore} = usePagedList<BlogPost>({
+      pageSize: 10,
+      fetch: (rangeStart, rangeEnd ) => {
+        return supabase
         .from('vw_topic_blog_posts')
         .select('*', { count: 'exact' })
         .eq('topic_id', props.topic.id)
         .eq('language', 'en')
-        .range(pageStart, pageStart + pageSize - 1)
-
-      loading.value = false
-      blogPosts.value = blogPosts.value.concat(data)
-      hasMore.value = count!! > blogPosts.value.length
+        .range(rangeStart, rangeEnd)
+      }
     })
 
     return {

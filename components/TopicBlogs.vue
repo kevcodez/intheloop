@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { Blog } from "../lib/Blog";
+import { BlogInfo } from "../lib/Blog";
 import DevDotToIcon from "../assets/icons/dev-dot-to.svg?inline";
 import MediumIcon from "../assets/icons/medium.svg?inline";
 import LinkIcon from "../assets/icons/link.svg?inline";
@@ -49,7 +49,7 @@ export default defineComponent({
   },
   props: {
     blogs: {
-      type: Array as PropType<Blog[]>,
+      type: Array as PropType<BlogInfo[]>,
       required: true,
     },
   },

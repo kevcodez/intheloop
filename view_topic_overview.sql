@@ -1,13 +1,16 @@
 drop view vw_topic_overview;
 CREATE VIEW vw_topic_overview as
+
 SELECT
   topic.id AS id,
   topic.info AS info,
   array_agg(DISTINCT developer.info) AS developers,
-  array_agg(DISTINCT book.info) AS books,
-  array_agg(DISTINCT podcast.info) AS podcasts,
-  array_agg(DISTINCT newsletter.info) AS newsletters,
-  array_agg(DISTINCT course.info) AS courses,
+  array_agg(DISTINCT podcast.info) FILTER (WHERE podcast.id is not null) AS podcasts,
+  array_agg(DISTINCT newsletter.info) FILTER (WHERE newsletter.id is not null) AS newsletters,
+-- TODO filter out null [null]
+  array_agg(distinct book.id)  FILTER (WHERE book.id is not null) as book_ids,
+  -- TODO filter out null [null]
+  array_agg(distinct course.id) FILTER (WHERE course.id is not null) as course_ids,
   (
     WITH r AS (
       SELECT

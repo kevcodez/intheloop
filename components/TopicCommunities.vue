@@ -54,7 +54,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { Community } from "../lib/Community";
+import { CommunityInfo } from "../lib/Community";
 import RedditIcon from "../assets/icons/reddit.svg?inline";
 import DiscordIcon from "../assets/icons/discord.svg?inline";
 import StackoverflowIcon from "../assets/icons/stackoverflow.svg?inline";
@@ -78,7 +78,7 @@ export default defineComponent({
   },
   props: {
     communities: {
-      type: Array as PropType<Community[]>,
+      type: Array as PropType<CommunityInfo[]>,
       required: true,
     },
   },

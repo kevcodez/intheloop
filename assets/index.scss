@@ -5,5 +5,17 @@
 @import 'buttons';
 @import 'form';
 
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.02); }
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.02);
+}
+
+.container {
+  @apply max-w-7xl mx-auto py-12 lg:py-12 px-4 xl:px-0;
+}
+
+.link {
+  @apply text-purple-800 hover:text-purple-600;
+}

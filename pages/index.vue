@@ -130,6 +130,11 @@
     </div>
 
     <div class="container">
+      <div class="flex flex-row justify-between mb-6">
+        <p class="text-2xl tracking-wide font-medium">Discover topics</p>
+        <nuxt-link class="button" to="/topics">See all</nuxt-link>
+      </div>
+
       <topic-list :topics="topics" />
     </div>
   </div>
@@ -137,18 +142,14 @@
 
 <script lang="ts">
 import { Topic } from '@/lib/Topic'
-import {
-  defineComponent,
-  ref,
-  inject,
-  useFetch,
-} from '@nuxtjs/composition-api'
+import { defineComponent, ref, inject, useFetch } from '@nuxtjs/composition-api'
 import LinkIcon from '@/assets/icons/link.svg?inline'
 import TwitterIcon from '@/assets/icons/twitter.svg?inline'
 import TagIcon from '@/assets/icons/tag.svg?inline'
 import BookIcon from '@/assets/icons/book.svg?inline'
 import RssIcon from '@/assets/icons/rss.svg?inline'
 import RobotIcon from '@/assets/icons/robot.svg?inline'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 export default defineComponent({
   components: {
@@ -161,13 +162,14 @@ export default defineComponent({
   },
   setup() {
     const topics = ref<Topic[]>([])
-    const supabase = inject('supabase')
+    const supabase = inject<SupabaseClient>('supabase')!
 
     useFetch(async () => {
       const { data } = await supabase
         .from('topic')
         .select('*')
         .eq('info->>live', 'true')
+        .limit(6)
 
       topics.value = data!
     })
@@ -178,9 +180,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style>
-.container {
-  @apply max-w-7xl mx-auto py-12 lg:py-12 px-4 xl:px-0;
-}
-</style>

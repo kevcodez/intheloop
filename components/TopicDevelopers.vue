@@ -14,11 +14,11 @@
 
 <script lang="ts">
 import { PropType, defineComponent } from "@nuxtjs/composition-api";
-import { Developer } from "@/lib/Topic";
+import { DeveloperInfo } from "@/lib/Topic";
 
 export default defineComponent({
   props: {
-    developers: Array as PropType<Developer[]>,
+    developers: Array as PropType<DeveloperInfo[]>,
   },
 });
 </script>

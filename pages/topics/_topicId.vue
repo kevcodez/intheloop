@@ -1,6 +1,6 @@
 <template>
   <div v-if="topic" class="mt-8">
-    <BaseInfo class="container" :topic="topic" />
+    <topic-base-info class="container" :topic="topic" />
 
     <div style="height: 150px; overflow: hidden" class="mt-5">
       <svg
@@ -29,7 +29,7 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 container mt-8 sm:mt-16">
       <div class="col-span-2 order-2 lg:order-1">
-        <TopicNav :topic="topic" />
+        <topic-nav :topic="topic" />
 
         <nuxt-child class="pt-10" :topic="topic" />
       </div>
@@ -37,9 +37,9 @@
       <div class="order-1 lg:order-2">
         <topic-quick-links :topic="topic" />
 
-        <communities class="mt-8" :communities="communities" />
+        <topic-communities class="mt-8" :communities="communities" />
 
-        <blogs class="mt-8" :blogs="blogs" />
+        <topic-blogs class="mt-8" :blogs="blogs" />
 
         <h3
           class="font-medium text-xl mt-8"
@@ -47,9 +47,9 @@
         >
           Newsletters &amp; Podcasts
         </h3>
-        <newsletters :newsletters="newsletters" />
+        <topic-newsletters :newsletters="newsletters" />
 
-        <podcasts :podcasts="podcasts" />
+        <topic-podcasts :podcasts="podcasts" />
       </div>
     </div>
   </div>
@@ -68,6 +68,7 @@ import { Newsletter } from '@/lib/Newsletter'
 import { Podcast } from '@/lib/Podcast'
 import { Community } from '@/lib/Community'
 import { Blog } from '@/lib/Blog'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 export default defineComponent({
   head() {
@@ -95,8 +96,8 @@ export default defineComponent({
   },
   setup() {
     const route = useRoute()
-    const supabase = inject('supabase')
-    const topicId = route.value.params.id
+    const supabase = inject<SupabaseClient>('supabase')!
+    const topicId = route.value.params.topicId
 
     const topic = ref<Topic | null>(null)
     const newsletters = ref<Newsletter[]>([])
@@ -104,6 +105,7 @@ export default defineComponent({
     const communities = ref<Community[]>([])
     const blogs = ref<Blog[]>([])
 
+    // TODO handle 404
     useFetch(async () => {
       const { data, error } = await supabase
         .from('vw_topic_overview')
