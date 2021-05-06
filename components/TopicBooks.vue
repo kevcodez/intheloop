@@ -4,7 +4,7 @@
       :to="`/books/${book.id}`"
       class="flex items-center px-4 py-4 bg-white border border-gray-300 rounded-lg shadow-sm grow hover:border-gray-400"
       v-for="book in books"
-      :key="book.info.url"
+      :key="book.id"
     >
       <img class="object-contain w-40 h-40 mr-5" :src="book.info.image" />
       <div>
