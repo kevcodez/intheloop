@@ -1,20 +1,20 @@
-# intheloop-nuxt
+# Intheloop
 
-## Build Setup
+[Intheloop](https://intheloop.dev) helps stay up-to-date with the technologies you're interested in.
 
-```bash
-# install dependencies
-$ yarn install
+## Webapp
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+This repository contains the web app that powers [Intheloop](https://intheloop.dev).
+Nuxt with SSR is used, small endpoints can also be implemented in the `api` directory.
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+The app is hosted on [render](render.com).
 
-# generate static project
-$ yarn generate
-```
+## Roadmap
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+The rough roadmap can be found [here](https://intheloop.dev/roadmap) and is powered by [productstash.io](productstash.io).
+
+## Repositories
+
+- [Web](https://github.com/kevcodez/intheloop) - Nuxt.js web app that powers [Intheloop](https://intheloop.dev)
+- [Functions](https://github.com/kevcodez/intheloop-functions) - Firebase functions for API endpoints/scheduled functions
+- [Admin](https://github.com/kevcodez/intheloop-admin) - Nuxt.js admin interface for adding/editing topics
