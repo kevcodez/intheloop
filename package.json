@@ -15,21 +15,21 @@
   "dependencies": {
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/composition-api": "^0.23.4",
-    "@supabase/supabase-js": "^1.11.9",
+    "@supabase/supabase-js": "^1.11.14",
     "@tailwindcss/typography": "^0.4.0",
-    "core-js": "^3.11.1",
+    "core-js": "^3.12.1",
     "dayjs": "^1.10.4",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.6"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.3",
+    "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/tailwindcss": "^4.0.1",
+    "@nuxtjs/tailwindcss": "^4.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "postcss": "^8.2.13",
-    "prettier": "^2.2.1",
-    "sass": "^1.32.12"
+    "postcss": "^8.3.0",
+    "prettier": "^2.3.0",
+    "sass": "^1.33.0"
   }
 }
