@@ -2,9 +2,9 @@ import { createClient } from '@supabase/supabase-js'
 
 export default async function (req, res, next) {
   const supabaseClient = createClient(
-    'https://pvnyntuqgqafdtgzucqj.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxMzA3MjMyMiwiZXhwIjoxOTI4NjQ4MzIyfQ.47NmRknfnVDcLDWZouiFjVErXkw15kYJrUdkXt5Ii9I'
- )
+    process.env.NUXT_ENV_SUPABASE_URL,
+    process.env.NUXT_ENV_SUPABASE_KEY
+  )
 
   const staticUrls = [
     '',
@@ -21,9 +21,7 @@ export default async function (req, res, next) {
     )
     .join('\n')
 
-  const { data: topics } = await supabaseClient
-    .from('topic')
-    .select('id')
+  const { data: topics } = await supabaseClient.from('topic').select('id')
 
   urls += topics
     .map((topic) =>

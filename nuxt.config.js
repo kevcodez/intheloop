@@ -84,7 +84,10 @@ export default {
 
   build: {},
 
-  serverMiddleware: [{ path: '/sitemap.xml', handler: '~/api/sitemap' }],
+  serverMiddleware: [
+    { path: '/sitemap.xml', handler: '~/api/sitemap' },
+    { path: '/api', handler: '~/api/api.js' }
+  ],
 
   components: [
     { path: '~/components/courses', pathPrefix: false },
@@ -101,4 +104,8 @@ export default {
   tailwindcss: {
     jit: true,
   },
+
+  router: {
+    middleware: ['user-auth']
+  }
 }
