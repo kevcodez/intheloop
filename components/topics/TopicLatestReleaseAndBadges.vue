@@ -40,9 +40,9 @@
 <script lang="ts">
 import { Topic } from "@/lib/Topic";
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import ApacheMavenIcon from "../assets/icons/apachemaven.svg?inline";
-import NpmIcon from "../assets/icons/npm.svg?inline";
-import ScaleIcon from "../assets/icons/scale.svg?inline";
+import ApacheMavenIcon from "~/assets/icons/apachemaven.svg?inline";
+import NpmIcon from "~/assets/icons/npm.svg?inline";
+import ScaleIcon from "~/assets/icons/scale.svg?inline";
 
 export default defineComponent({
   components: {

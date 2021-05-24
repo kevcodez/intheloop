@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { Topic } from '../lib/Topic'
+import { Topic } from '~/lib/Topic'
 
 export default defineComponent({
   name: 'BaseInfo',

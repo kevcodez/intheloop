@@ -40,10 +40,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
 import { Book } from '~/lib/Book'
-import ScrollableContainer from './ScrollableContainer.vue'
 
 export default defineComponent({
-  components: { ScrollableContainer },
   props: {
     book: {
       required: true,

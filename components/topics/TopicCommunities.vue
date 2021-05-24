@@ -54,15 +54,15 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { CommunityInfo } from "../lib/Community";
-import RedditIcon from "../assets/icons/reddit.svg?inline";
-import DiscordIcon from "../assets/icons/discord.svg?inline";
-import StackoverflowIcon from "../assets/icons/stackoverflow.svg?inline";
-import LinkedInIcon from "../assets/icons/linkedin.svg?inline";
-import SlackIcon from "../assets/icons/slack.svg?inline";
-import LinkIcon from "../assets/icons/link.svg?inline";
-import GithubIcon from "../assets/icons/github.svg?inline";
-import GitterIcon from "../assets/icons/gitter.svg?inline";
+import { CommunityInfo } from "~/lib/Community";
+import RedditIcon from "~/assets/icons/reddit.svg?inline";
+import DiscordIcon from "~/assets/icons/discord.svg?inline";
+import StackoverflowIcon from "~/assets/icons/stackoverflow.svg?inline";
+import LinkedInIcon from "~/assets/icons/linkedin.svg?inline";
+import SlackIcon from "~/assets/icons/slack.svg?inline";
+import LinkIcon from "~/assets/icons/link.svg?inline";
+import GithubIcon from "~/assets/icons/github.svg?inline";
+import GitterIcon from "~/assets/icons/gitter.svg?inline";
 
 export default defineComponent({
   name: "Communities",

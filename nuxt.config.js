@@ -56,8 +56,7 @@ export default {
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
       },
     ],
     script: [
@@ -87,10 +86,13 @@ export default {
 
   serverMiddleware: [{ path: '/sitemap.xml', handler: '~/api/sitemap' }],
 
-  components: {
-    enabled: true,
-    prefix: false,
-  },
+  components: [
+    { path: '~/components/courses', pathPrefix: false },
+    { path: '~/components/footer', pathPrefix: false },
+    { path: '~/components/topics', pathPrefix: false },
+    { path: '~/components/books', pathPrefix: false },
+    { path: '~/components', pathPrefix: false },
+  ],
 
   server: {
     host: '0.0.0.0',

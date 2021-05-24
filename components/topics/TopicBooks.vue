@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { Book } from '../lib/Book'
+import { Book } from '~/lib/Book'
 
 export default defineComponent({
   name: 'Books',

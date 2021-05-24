@@ -54,14 +54,14 @@
 <script lang="ts">
 import { Topic } from '@/lib/Topic'
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import GithubIcon from '../assets/icons/github.svg?inline'
-import LinkIcon from '../assets/icons/link.svg?inline'
-import TwitterIcon from '../assets/icons/twitter.svg?inline'
-import YoutubeIcon from '../assets/icons/youtube.svg?inline'
-import PlayLineIcon from '../assets/icons/play-line.svg?inline'
-import FileListIcon from '../assets/icons/file-list.svg?inline'
-import BugIcon from '../assets/icons/bug.svg?inline'
-import AcademicCapIcon from '../assets/icons/academic-cap.svg?inline'
+import GithubIcon from '~/assets/icons/github.svg?inline'
+import LinkIcon from '~/assets/icons/link.svg?inline'
+import TwitterIcon from '~/assets/icons/twitter.svg?inline'
+import YoutubeIcon from '~/assets/icons/youtube.svg?inline'
+import PlayLineIcon from '~/assets/icons/play-line.svg?inline'
+import FileListIcon from '~/assets/icons/file-list.svg?inline'
+import BugIcon from '~/assets/icons/bug.svg?inline'
+import AcademicCapIcon from '~/assets/icons/academic-cap.svg?inline'
 
 export default defineComponent({
   components: {

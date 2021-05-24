@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { Course } from '../lib/Course'
+import { Course } from '~/lib/Course'
 import AcademicCapIcon from '~/assets/icons/academic-cap.svg?inline'
 
 export default defineComponent({

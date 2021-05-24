@@ -20,8 +20,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { NewsletterInfo } from "../lib/Newsletter";
-import MailIcon from "../assets/icons/mail.svg?inline";
+import { NewsletterInfo } from "~/lib/Newsletter";
+import MailIcon from "~/assets/icons/mail.svg?inline";
 
 export default defineComponent({
   name: "Newsletters",

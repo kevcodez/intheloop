@@ -33,11 +33,11 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { BlogInfo } from "../lib/Blog";
-import DevDotToIcon from "../assets/icons/dev-dot-to.svg?inline";
-import MediumIcon from "../assets/icons/medium.svg?inline";
-import LinkIcon from "../assets/icons/link.svg?inline";
-import HashnodeIcon from "../assets/icons/hashnode.svg?inline";
+import { BlogInfo } from "~/lib/Blog";
+import DevDotToIcon from "~/assets/icons/dev-dot-to.svg?inline";
+import MediumIcon from "~/assets/icons/medium.svg?inline";
+import LinkIcon from "~/assets/icons/link.svg?inline";
+import HashnodeIcon from "~/assets/icons/hashnode.svg?inline";
 
 export default defineComponent({
   name: "Blogs",

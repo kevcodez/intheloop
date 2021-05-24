@@ -20,8 +20,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { PodcastInfo } from "../lib/Podcast";
-import MicLineIcon from '../assets/icons/mic-line.svg?inline'
+import { PodcastInfo } from "~/lib/Podcast";
+import MicLineIcon from '~/assets/icons/mic-line.svg?inline'
 
 export default defineComponent({
   name: "Podcasts",

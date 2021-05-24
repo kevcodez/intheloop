@@ -26,8 +26,8 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "@nuxtjs/composition-api";
-import { ReleaseInfo, Topic } from "../lib/Topic";
-import TagIcon from "../assets/icons/tag.svg?inline";
+import { ReleaseInfo, Topic } from "~/lib/Topic";
+import TagIcon from "~/assets/icons/tag.svg?inline";
 
 export default defineComponent({
   name: "LatestReleases",
