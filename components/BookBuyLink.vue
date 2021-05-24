@@ -1,6 +1,6 @@
 <template>
   <a
-    class="button dark flex flex-row justify-center items-center"
+    class="button text-lg dark flex flex-row justify-center items-center"
     target="_blank"
     :href="buyLink.url"
   >
@@ -31,13 +31,15 @@ export default defineComponent({
       const url = new URL(props.buyLink.url)
       const host = url.host
       if (host.includes('amazon')) {
-        return 'Amazon'
+        return 'Buy on Amazon'
       } else if (host.includes('oreilly')) {
-        return 'Oreilly'
+        return "Buy from O'REILLY"
       } else if (host.includes('leanpub')) {
-        return 'Leanpub'
+        return 'Buy on Leanpub'
       } else if (host.includes('manning')) {
-        return 'Manning'
+        return 'Buy on Manning'
+      } else if (host.includes('packtpub')) {
+        return 'Buy on Packt'
       } else {
         return url.host
       }

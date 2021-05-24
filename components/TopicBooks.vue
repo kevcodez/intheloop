@@ -12,7 +12,7 @@
         <span class="ml-2 text-gray-500">{{
           book.info.publishedAt | formatDate('MMMM YYYY')
         }}</span>
-        <p class="">{{ truncate(book.info.description) }}</p>
+        <p>{{ truncate(book.info.description) }}</p>
       </div>
     </nuxt-link>
   </div>

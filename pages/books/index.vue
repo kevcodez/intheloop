@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2 class="text-2xl font-medium tracking-wide">Find books</h2>
-    <form @submit.prevent="reset" class="flex mt-2">
+    <form v-on:submit.prevent="reset" class="flex mt-2">
       <input
         v-model="searchTerm"
         class="input w-full"

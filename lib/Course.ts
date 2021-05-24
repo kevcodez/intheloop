@@ -3,6 +3,7 @@ import { Author } from './Author'
 export interface Course {
   id: string
   info: CourseInfo
+  topics: string[]
 }
 
 export interface CourseInfo {

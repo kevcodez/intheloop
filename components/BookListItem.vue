@@ -6,10 +6,9 @@
     <img class="object-contain w-full max-h-40 mr-5" :src="book.info.image" />
     <div class="text-left self-start mt-3">
       <span class="font-semibold">{{ book.info.title }} </span>
-      <span class="ml-2 text-gray-500 block">{{
+      <span class="text-gray-500 block">{{
         book.info.publishedAt | formatDate('MMMM YYYY')
       }}</span>
-      <p class="mt-2">{{ truncate(book.info.description) }}</p>
     </div>
   </nuxt-link>
 </template>

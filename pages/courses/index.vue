@@ -48,7 +48,7 @@ export default defineComponent({
       reset,
       error,
     } = usePagedList<Course>({
-      pageSize: 15,
+      pageSize: 16,
       fetch: (rangeStart, rangeEnd) => {
         return supabase
           .from<Course>('course')

@@ -1,0 +1,129 @@
+{
+  "topics": [
+    {
+      "id": "kotlin",
+      "info": {
+        "scm": {
+          "url": "https://github.com/JetBrains/kotlin",
+          "meta": { "stars": 35000 },
+          "type": "Github",
+          "displayName": "JetBrains/kotlin"
+        },
+        "live": true,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/06/Kotlin_Icon.svg",
+        "name": "Kotlin",
+        "tags": [
+          "Programming Language",
+          "Compiler",
+          "Maven-Plugin",
+          "Gradle-Plugin",
+          "Intellij-Plugin"
+        ],
+        "color": "#ea9035",
+        "badges": [
+          {
+            "url": "https://search.maven.org/search?q=g:org.jetbrains.kotlin",
+            "type": "MavenCentral"
+          }
+        ],
+        "social": [
+          {
+            "url": "https://twitter.com/kotlin",
+            "type": "Twitter",
+            "label": "Kotlin"
+          },
+          {
+            "url": "https://twitter.com/jetbrains",
+            "type": "Twitter",
+            "label": "JetBrains"
+          },
+          {
+            "url": "https://www.youtube.com/channel/UCP7uiEZIqci43m22KDl0sNw",
+            "type": "Youtube",
+            "label": "Kotlin by JetBrains"
+          }
+        ],
+        "license": {
+          "url": "https://github.com/JetBrains/kotlin/blob/master/license/LICENSE.txt",
+          "name": "Apache 2"
+        },
+        "website": "https://kotlinlang.org",
+        "playground": "https://play.kotlinlang.org/",
+        "description": "Kotlin is an open-source statically typed programming language that targets the JVM, Android, JavaScript and Native. The project started in 2010 and was open source from very early on. The first official 1.0 release was in February 2016.",
+        "issueTracker": "https://youtrack.jetbrains.com/issues/KT",
+        "documentation": "https://kotlinlang.org/docs/reference/",
+        "fetchReleases": {
+          "via": "Github",
+          "meta": { "repo": "kotlin", "owner": "JetBrains" }
+        },
+        "latestVersion": "1.5.0",
+        "shortDescription": "Kotlin is an open-source statically typed programming language that targets the JVM, Android, JavaScript and Native."
+      },
+      "developers": ["jetbrains"],
+      "books": [
+        "kotlin-in-action",
+        "head-first-kotlin",
+        "kotlin-for-android-developers"
+      ],
+      "blogs": [
+        "dev-to-kotlin",
+        "jetbrains-kotlin",
+        "medium-kotlin",
+        "hashnode-kotlin"
+      ],
+      "newsletters": ["kotlin-weekly"],
+      "communities": [
+        "kotlin-discussions-forum",
+        "kotlinlang-slack",
+        "kotlin-discord",
+        "kotlin-stackoverflow",
+        "kotlin-reddit",
+        "kotlin-linkedin"
+      ],
+      "podcasts": ["talking-kotlin"],
+      "courses": [
+        "introduction-to-kotlin-programming",
+        "jetbrains-hyperskill-academy-kotlin",
+        "advanced-kotlin-programming",
+        "android-kotlin-fundamentals",
+        "google-kotlin-codelab",
+        "introduction-to-kotlin-programming"
+      ]
+    }
+  ],
+  "books": [
+    {
+      "id": "head-first-kotlin",
+      "info": {
+        "url": "https://www.oreilly.com/library/view/head-first-kotlin/9781491996683/",
+        "image": "https://learning.oreilly.com/library/cover/9781491996683/250w/",
+        "title": "Head First Kotlin",
+        "authors": [
+          { "name": "Dawn Griffiths" },
+          { "name": "David Griffiths" }
+        ],
+        "description": "Head First Kotlin is a complete introduction to coding in Kotlin. This hands-on book helps you learn the Kotlin language with a unique method that goes beyond syntax and how-to manuals and teaches you how to think like a great Kotlin developer. You’ll learn everything from language fundamentals to collections, generics, lambdas, and higher-order functions. Along the way, you’ll get to play with both object-oriented and functional programming. If you want to really understand Kotlin, this is the book for you.",
+        "publishedAt": "2019-02-01",
+        "buyLinks": [{ "url": "https://amazon.de/some-link" }]
+      },
+      "topics": ["kotlin"]
+    }
+  ],
+  "courses": [
+    {
+      "id": "advanced-kotlin-programming",
+      "info": {
+        "url": "https://www.oreilly.com/library/view/advanced-kotlin-programming/9781491964149/",
+        "free": false,
+        "name": "Advanced Kotlin Programming",
+        "image": "https://learning.oreilly.com/library/cover/9781491964149/",
+        "price": "$50",
+        "authors": [{ "name": "Hadi Hariri" }],
+        "platform": "OREILLY",
+        "description": "Designed for developers who already have a basic understanding of Kotlin, this video course examines some of the additional major features that make the language highly extensible and unique compared to other JVM languages. You'll learn about more advanced uses for functions, class scenarios, and delegation, along with best practices for working with generics, metaprogramming, and asynchronous programming. Once you've added the skills in this video to your programming tool belt, you'll be fully proficient in Kotlin as well as a more well-rounded Java developer.",
+        "interactive": false
+      },
+      "topics": ["kotlin"]
+    }
+  ]
+}

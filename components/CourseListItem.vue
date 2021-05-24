@@ -7,7 +7,7 @@
       <img
         v-if="course.info.image"
         :src="course.info.image"
-        class="self-center object-contain w-full rounded-t max-h-44"
+        class="self-center object-contain w-full rounded-t max-h-40"
       />
       <academic-cap-icon v-else class="self-center w-24 h-24" />
     </div>

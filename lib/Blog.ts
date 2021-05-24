@@ -1,6 +1,7 @@
 export interface Blog {
     id: number
     info: BlogInfo
+    topics: string[]
 }
 
 export interface BlogInfo {

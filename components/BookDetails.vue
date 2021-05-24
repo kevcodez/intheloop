@@ -1,18 +1,16 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="order-2 md:order-1">
-      <h2 class="text-2xl font-medium tracking-wide">
-        {{ book.info.title }}
-      </h2>
-      <div class="prose" v-html="book.info.description"></div>
-    </div>
-    <div class="flex flex-col items-center order-1 md:order-2">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="md:col-span-1 items-center flex justify-center">
       <img
         :src="book.info.image"
         class="self-center object-contain max-h-40 md:max-h-60"
       />
-
-      <div class="my-4 text-center text-sm text-gray-700">
+    </div>
+    <div class="md:col-span-3">
+      <h2 class="text-2xl font-medium tracking-wide">
+        {{ book.info.title }}
+      </h2>
+      <div class="py-2 text-sm text-gray-700">
         <span class="mt-1 block"
           >Written by
           {{ book.info.authors.map((it) => it.name).join(', ') }}</span
@@ -21,8 +19,14 @@
           >Published {{ book.info.publishedAt | formatDate('MMMM YYYY') }}</span
         >
       </div>
+      <scrollable-container class="py-2 w-full" :max-height="320">
+        <div
+          class="prose p-0 w-full max-w-full"
+          v-html="book.info.description"
+        ></div>
+      </scrollable-container>
 
-      <div class="flex flex-col space-y-3">
+      <div class="flex flex-row space-x-3 mt-4">
         <book-buy-link
           v-for="buyLink in book.info.buyLinks"
           :buy-link="buyLink"
@@ -36,8 +40,10 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
 import { Book } from '~/lib/Book'
+import ScrollableContainer from './ScrollableContainer.vue'
 
 export default defineComponent({
+  components: { ScrollableContainer },
   props: {
     book: {
       required: true,
