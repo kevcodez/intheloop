@@ -15,11 +15,11 @@
   "dependencies": {
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/composition-api": "^0.23.4",
-    "@supabase/supabase-js": "^1.11.14",
-    "@tailwindcss/typography": "^0.4.0",
+    "@supabase/supabase-js": "^1.12.0",
+    "@tailwindcss/typography": "^0.4.1",
     "cookie-parser": "^1.4.5",
-    "core-js": "^3.12.1",
-    "dayjs": "^1.10.4",
+    "core-js": "^3.13.1",
+    "dayjs": "^1.10.5",
     "express": "^4.17.1",
     "nuxt": "^2.15.6",
     "v-click-outside": "^3.1.2"

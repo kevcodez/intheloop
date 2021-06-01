@@ -6,7 +6,7 @@
         <div class="flex">
           <div class="flex-shrink-0 flex items-center">
             <nuxt-link to="/" class="flex flex-row items-center">
-              <record-circle-line-icon class="w-6 h-6 mr-2" />
+              <record-circle-line-icon class="w-6 h-6 mr-2 text-purple-800" />
               <span class="sr-only">In The Loop</span>
               intheloop
             </nuxt-link>
@@ -87,14 +87,6 @@
               v-if="profileDropdownOpen"
               v-click-outside="onClickOutside"
             >
-              <nuxt-link
-                to="/me/settings"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-1"
-                >Settings</nuxt-link
-              >
               <a
                 @click="signOut"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
@@ -239,11 +231,6 @@
           </button-->
         </div>
         <div class="mt-3 space-y-1">
-          <nuxt-link
-            to="/me/settings"
-            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
-            >Settings</nuxt-link
-          >
           <a
             @click="signOut"
             class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 cursor-pointer"

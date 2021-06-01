@@ -1510,17 +1510,17 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.12.tgz#431ec342a7195622f86688bbda82e3166ce8cb28"
   integrity sha512-6RglhutqrGFMO1MNUXp95RBuYIuc8wTnMAV5MUhLmjTOy78ncwOw7RgeQ/HeymkKXRhZd0s2DNrM1rL7unk3MQ==
 
-"@supabase/gotrue-js@^1.15.1":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.15.1.tgz#f9ae8552a52b0177cabc28941ff3c4f216fcdd0d"
-  integrity sha512-d3UP+UCaakP2wMxe9KzM4Ig0w2P+EifWPVzXXWgnly0jeX1XppIm7OzQveqiTucuIKb/5ZUYjtXBYrry4dlBFw==
+"@supabase/gotrue-js@^1.16.1":
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-1.16.2.tgz#38fc262ddbcdb6020109cef2ed7e6f2770365ad9"
+  integrity sha512-zIVPYTN2f4rDQA/6nK9OPxzWNZ0N9gJzd/U1cu2ugZnwM0L7oiqk3/3ijxC2huLYveTOwqC9NMpKYWsQsLf6Bg==
   dependencies:
     cross-fetch "^3.0.6"
 
-"@supabase/postgrest-js@^0.28.4":
-  version "0.28.4"
-  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.28.4.tgz#6696cc55ed16c024e7c08d8b9c62cdad45837b5f"
-  integrity sha512-WTjkq6Nl/BBwBApmXEywEqE972qJiLF7Ct36do+u3zePhLqod9vO/7g6dpU4VTFb0+8VmloaVFK7FhY7EUPfiQ==
+"@supabase/postgrest-js@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@supabase/postgrest-js/-/postgrest-js-0.29.0.tgz#3d49b6675930b5010c7f36f0844f5797ce4d1d14"
+  integrity sha512-QvpzatmcOwPTbgCJacLqpwPPsbJ2erEA2ysS4+7avJIXT8C/WbmsM7KsQHD9JcEc6fqocMpqCm7YXJIFfUZTBw==
   dependencies:
     cross-fetch "^3.0.6"
 
@@ -1532,27 +1532,27 @@
     "@types/websocket" "^1.0.1"
     websocket "^1.0.34"
 
-"@supabase/storage-js@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@supabase/storage-js/-/storage-js-1.0.3.tgz#aa6c9c22d0ca973ceb17d8ee7db70ede8254cb7b"
-  integrity sha512-Pe4lYtZfHX6UGitsYIgHD5M7Qixmtb6bUWNqaUPmqQXxBqZR/G0Md2mv9zWL2Agg3wuvXTvlWuQdxf94R4ql6g==
+"@supabase/storage-js@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@supabase/storage-js/-/storage-js-1.0.4.tgz#12ede57c85d3d2fbd5707d0e3a050ec868d3fa93"
+  integrity sha512-la4YAqTpuBiIwqEPhe60a0N64Qd3I/TI1ls3cfhECmi3i4et2T8XeSrqnfZkzXmrBqh6p88Sru0e9KdwWSbw9g==
   dependencies:
     cross-fetch "^3.1.0"
 
-"@supabase/supabase-js@^1.11.14":
-  version "1.11.15"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.11.15.tgz#649fa926b35b27ec14c953b5947908182c91f994"
-  integrity sha512-Yns4ba4WC1BoWpCnaQnm+oIs32xYAx3+S/5ua6BprAGHO4f2fx44l6zGElNMJ8da4M6C02uC8o+dA4zfFITwhg==
+"@supabase/supabase-js@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.12.0.tgz#4d1d50e0c8d676c26e3e3dc4e7f237f2d77b3602"
+  integrity sha512-WTnevfkRgM5N594deKPjIxUmXKS14o9yipYt2PHvrwTew2fNBuhRHR8XaJ1SuVPfF3uCeZJucQ836DOY+QhAbA==
   dependencies:
-    "@supabase/gotrue-js" "^1.15.1"
-    "@supabase/postgrest-js" "^0.28.4"
+    "@supabase/gotrue-js" "^1.16.1"
+    "@supabase/postgrest-js" "^0.29.0"
     "@supabase/realtime-js" "^1.0.9"
-    "@supabase/storage-js" "^1.0.3"
+    "@supabase/storage-js" "^1.0.4"
 
-"@tailwindcss/typography@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.4.0.tgz#b80974ad6af93df7b06e1981cb4d79698b6ad5c7"
-  integrity sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
+"@tailwindcss/typography@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.4.1.tgz#51ddbceea6a0ee9902c649dbe58871c81a831212"
+  integrity sha512-ovPPLUhs7zAIJfr0y1dbGlyCuPhpuv/jpBoFgqAc658DWGGrOBWBMpAWLw2KlzbNeVk4YBJMzue1ekvIbdw6XA==
   dependencies:
     lodash.castarray "^4.4.0"
     lodash.isplainobject "^4.0.6"
@@ -3287,10 +3287,10 @@ core-js@^2.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.12.1:
-  version "3.12.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.12.1.tgz#6b5af4ff55616c08a44d386f1f510917ff204112"
-  integrity sha512-Ne9DKPHTObRuB09Dru5AjwKjY4cJHVGu+y5f7coGn1E9Grkc3p2iBwE9AI/nJzsE29mQF7oq+mhYYRqOMFN1Bw==
+core-js@^3.13.1:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.13.1.tgz#30303fabd53638892062d8b4e802cac7599e9fb7"
+  integrity sha512-JqveUc4igkqwStL2RTRn/EPFGBOfEZHxJl/8ej1mXJR75V3go2mFF4bmUYkEIT1rveHKnkUlcJX/c+f1TyIovQ==
 
 core-util-is@~1.0.0:
   version "1.0.2"
@@ -3640,10 +3640,10 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
-dayjs@^1.10.4:
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.4.tgz#8e544a9b8683f61783f570980a8a80eaf54ab1e2"
-  integrity sha512-RI/Hh4kqRc1UKLOAf/T5zdMMX5DQIlDxwUe3wSyMMnEbGunnpENCdbUgM+dW7kXidZqCttBrmw7BhN4TMddkCw==
+dayjs@^1.10.5:
+  version "1.10.5"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.5.tgz#5600df4548fc2453b3f163ebb2abbe965ccfb986"
+  integrity sha512-BUFis41ikLz+65iH6LHQCDm4YPMj5r1YFLdupPIyM4SGcXMmtiLQ7U37i+hGS8urIuqe7I/ou3IS1jVc4nbN4g==
 
 de-indent@^1.0.2:
   version "1.0.2"

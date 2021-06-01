@@ -4,5 +4,9 @@ export default async function ({ $http, redirect, store }) {
 
   if (!store.state.auth.user !== user) {
     store.commit('auth/set', user)
+
+    if (user) {
+      await store.dispatch('follow/loadTopics', { userId: user.id })
+    }
   }
 }
