@@ -244,8 +244,8 @@
 
 <script lang="ts">
 import {
+  computed,
   defineComponent,
-  inject,
   ref,
   useRouter,
   useStore,
@@ -276,24 +276,35 @@ export default defineComponent({
       router.push('/')
     }
 
-    const navItems = [
-      {
-        label: 'Topics',
-        path: '/topics',
-      },
-      {
-        label: 'Books',
-        path: '/books',
-      },
-      {
-        label: 'Courses',
-        path: '/courses',
-      },
-      {
-        label: 'Roadmap',
-        path: '/roadmap',
-      },
-    ]
+    const navItems = computed(() => {
+      const entries = [
+        {
+          label: 'Topics',
+          path: '/topics',
+        },
+        {
+          label: 'Books',
+          path: '/books',
+        },
+        {
+          label: 'Courses',
+          path: '/courses',
+        },
+        {
+          label: 'Roadmap',
+          path: '/roadmap',
+        },
+      ]
+
+      if (store.state.auth.isAuthenticated) {
+        entries.unshift({
+          label: 'Your Loop',
+          path: '/loop',
+        })
+      }
+
+      return entries
+    })
 
     return {
       mobileMenuOpen,
