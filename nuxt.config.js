@@ -86,7 +86,7 @@ export default {
 
   serverMiddleware: [
     { path: '/sitemap.xml', handler: '~/api/sitemap' },
-    { path: '/api', handler: '~/api/api.js' }
+    { path: '/api', handler: '~/api/api.js' },
   ],
 
   components: [
@@ -106,6 +106,10 @@ export default {
   },
 
   router: {
-    middleware: ['user-auth']
-  }
+    middleware: ['user-auth'],
+  },
+
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  },
 }

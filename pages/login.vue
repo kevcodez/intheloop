@@ -192,7 +192,7 @@ export default Vue.extend({
   },
   created() {
     this.$supabase.auth.onAuthStateChange(async (event, session) => {
-      await this.$http.$post('/api/auth', { event, session })
+      await this.$http.$post(this.$config.baseUrl + '/api/auth', { event, session })
       this.$router.push('/')
     })
   },
