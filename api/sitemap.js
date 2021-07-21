@@ -22,11 +22,11 @@ export default async function (req, res, next) {
     .join('\n')
 
   const [{ data: topics }, { data: books }, { data: courses }] =
-    await Promise.all(
+    await Promise.all([
       supabaseClient.from('topic').select('id'),
       supabaseClient.from('book').select('id'),
-      supabaseClient.from('course').select('id')
-    )
+      supabaseClient.from('course').select('id'),
+    ])
 
   urls += topics
     .map((topic) =>
