@@ -20,12 +20,12 @@ export const actions = {
     return { user, session, error }
   },
 
-  async login({ commit, rootStore }, { email, password }) {
+  async login({ commit, dispatch }, { email, password }) {
     const { user, error, session } = await this.$supabase.auth.signIn({ email, password })
 
     commit('set', user)
     if (user) {
-      await rootStore.dispatch('follow/loadTopics', { userId: user.id })
+      await dispatch('follow/loadTopics', { userId: user.id }, {root: true})
     }
     return { user, error, session }
   },

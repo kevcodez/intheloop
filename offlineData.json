@@ -125,5 +125,103 @@
       },
       "topics": ["kotlin"]
     }
+  ],
+  "releases": [
+    {
+      "id": 1,
+      "info": {
+        "version": "1.5.20",
+        "releaseNotesUrl": "https://kotlin.com",
+        "publishedAt": "2021-02-02T15:12:10.000Z",
+        "topic": "kotlin",
+        "logo": "/vercel.svg",
+        "name": "Kotlin"
+      }
+    },
+    {
+      "id": 2,
+      "info": {
+        "version": "1.5.21",
+        "releaseNotesUrl": "https://kotlin.com",
+        "publishedAt": "2021-03-02T15:12:10.000Z",
+        "topic": "kotlin",
+        "logo": "/vercel.svg",
+        "name": "Kotlin"
+      }
+    },
+    {
+      "id": 3,
+      "info": {
+        "version": "5.0.0",
+        "releaseNotesUrl": "https://mongodb.com",
+        "publishedAt": "2021-03-02T15:12:10.000Z",
+        "topic": "mongodb",
+        "logo": "/vercel.svg",
+        "name": "MongoDb"
+      }
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "info": {
+        "title": "Dennis hat wieder 50 Euro Verlust mit MSCI World gemacht",
+        "link": "https://foo.bar",
+        "image": "/social-image.png",
+        "publishedAt": "2021-02-05T10:00:00.000Z"
+      }
+    },
+    {
+      "id": 1,
+      "info": {
+        "title": "XTrackers stinkt hart ab gegen iShares",
+        "link": "https://foo.bar",
+        "image": "/social-image.png",
+        "publishedAt": "2021-02-04T10:00:00.000Z"
+      }
+    },
+    {
+      "id": 1,
+      "info": {
+        "title": "Blackrock to the Moon",
+        "link": "https://foo.bar",
+        "image": "/social-image.png",
+        "publishedAt": "2021-02-03T10:00:00.000Z"
+      }
+    }
+  ],
+  "tweets": [
+    {
+      "text": "Hello this was such as great tweet oh my god",
+      "entities": [],
+      "created_at": "2021-03-04T10:00:00.000Z",
+      "user": {
+        "profile_image_url": "/vercel.svg",
+        "name": "Kevin",
+        "username": "kevcodez"
+      },
+      "public_metrics": {
+        "reply_count": 5,
+        "retweet_count": 7,
+        "quote_count": 3,
+        "like_count": 50
+      }
+    },
+    {
+      "text": "Yoooo\n\nThis guy can tweet\n\nIsn't that crazy",
+      "entities": [],
+      "created_at": "2021-03-03T10:00:00.000Z",
+      "user": {
+        "profile_image_url": "/vercel.svg",
+        "name": "Kevin",
+        "username": "kevcodez"
+      },
+      "public_metrics": {
+        "reply_count": 30,
+        "retweet_count": 12,
+        "quote_count": 1,
+        "like_count": 150
+      }
+    }
   ]
 }

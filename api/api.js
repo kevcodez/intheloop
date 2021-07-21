@@ -1,6 +1,7 @@
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import { createClient } from '@supabase/supabase-js';
+import cors from 'cors'
 
 const app = express();
 
@@ -11,6 +12,7 @@ const supabase = createClient(URL, KEY);
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.post('/auth', async (req, res) => {
   await supabase.auth.api.setAuthCookie(req, res);

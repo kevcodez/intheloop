@@ -21,7 +21,12 @@ export default async function (req, res, next) {
     )
     .join('\n')
 
-  const { data: topics } = await supabaseClient.from('topic').select('id')
+  const [{ data: topics }, { data: books }, { data: courses }] =
+    await Promise.all(
+      supabaseClient.from('topic').select('id'),
+      supabaseClient.from('book').select('id'),
+      supabaseClient.from('course').select('id')
+    )
 
   urls += topics
     .map((topic) =>
@@ -29,11 +34,15 @@ export default async function (req, res, next) {
     )
     .join('\n')
 
-  const { data: books } = await supabaseClient.from('book').select('id')
-
   urls += books
     .map((book) =>
       sitemapUrl(`https://intheloop.dev/books/${book.id}`, 'weekly')
+    )
+    .join('\n')
+
+  urls += courses
+    .map((course) =>
+      sitemapUrl(`https://intheloop.dev/courses/${course.id}`, 'weekly')
     )
     .join('\n')
 

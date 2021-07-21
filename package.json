@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.13.1",
+    "cors": "^2.8.5",
     "dayjs": "^1.10.5",
     "express": "^4.17.1",
     "nuxt": "^2.15.6",

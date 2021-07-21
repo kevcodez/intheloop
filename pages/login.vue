@@ -181,7 +181,9 @@ export default Vue.extend({
           password: this.password,
         }
         const { error } = await this.$store.dispatch('auth/login', data)
-        this.error = error.error_description || error.message
+        if (error) {
+          this.error = error.error_description || error.message
+        }
       } catch (err) {
         console.log(err)
       }
