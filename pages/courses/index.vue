@@ -8,7 +8,7 @@
         placeholder="Enter a search term"
       />
 
-      <button type="submit" class="button primary ml-3" :disabled="loading">
+      <button type="submit" class="button dark ml-3" :disabled="loading">
         Search
       </button>
     </form>

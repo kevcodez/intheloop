@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="`/books/${book.id}`"
-    class="flex flex-col items-center px-4 py-4 bg-white border border-gray-300 rounded-lg shadow-sm grow hover:border-gray-400"
+    class="flex flex-col items-center px-4 py-4 bg-white border-b border-gray-300 grow hover:border-gray-400"
   >
     <img class="object-contain w-full max-h-40 mr-5" :src="book.info.image" />
     <div class="text-left self-start mt-3">

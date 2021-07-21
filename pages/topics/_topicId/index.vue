@@ -16,7 +16,7 @@ import {
 } from '@nuxtjs/composition-api'
 import { Topic } from '@/lib/Topic'
 
-interface TweetsResponse {
+export interface TweetsResponse {
   hasMore: boolean
   tweets: any[] // todo type
 }

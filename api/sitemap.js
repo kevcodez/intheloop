@@ -2,9 +2,9 @@ import { createClient } from '@supabase/supabase-js'
 
 export default async function (req, res, next) {
   const supabaseClient = createClient(
-    'https://pvnyntuqgqafdtgzucqj.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYxMzA3MjMyMiwiZXhwIjoxOTI4NjQ4MzIyfQ.47NmRknfnVDcLDWZouiFjVErXkw15kYJrUdkXt5Ii9I'
- )
+    process.env.NUXT_ENV_SUPABASE_URL,
+    process.env.NUXT_ENV_SUPABASE_KEY
+  )
 
   const staticUrls = [
     '',
@@ -21,9 +21,12 @@ export default async function (req, res, next) {
     )
     .join('\n')
 
-  const { data: topics } = await supabaseClient
-    .from('topic')
-    .select('id')
+  const [{ data: topics }, { data: books }, { data: courses }] =
+    await Promise.all(
+      supabaseClient.from('topic').select('id'),
+      supabaseClient.from('book').select('id'),
+      supabaseClient.from('course').select('id')
+    )
 
   urls += topics
     .map((topic) =>
@@ -31,11 +34,15 @@ export default async function (req, res, next) {
     )
     .join('\n')
 
-  const { data: books } = await supabaseClient.from('book').select('id')
-
   urls += books
     .map((book) =>
       sitemapUrl(`https://intheloop.dev/books/${book.id}`, 'weekly')
+    )
+    .join('\n')
+
+  urls += courses
+    .map((course) =>
+      sitemapUrl(`https://intheloop.dev/courses/${course.id}`, 'weekly')
     )
     .join('\n')
 

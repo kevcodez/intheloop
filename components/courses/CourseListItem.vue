@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="`/courses/${course.id}`"
-    class="relative flex flex-col items-center bg-white border border-gray-300 rounded-lg shadow-sm hover:border-gray-400"
+    class="relative flex flex-col items-center bg-white border-b border-gray-300 hover:border-gray-400"
   >
     <div class="flex w-full justify-center h-40">
       <img

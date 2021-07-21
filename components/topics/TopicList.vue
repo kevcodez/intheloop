@@ -7,8 +7,16 @@
         v-for="topic in topics"
         :key="topic.id"
       >
-        <div class="flex justify-center ">
-          <img :src="topic.info.logo" class="h-10 object-contain" />
+        <div
+          class="grid justify-items-center w-full"
+          style="grid-template-columns: 1fr repeat(1, auto) 1fr"
+        >
+          <img
+            :src="topic.info.logo"
+            class="h-10 col-start-2"
+          />
+
+          <follow-button class="ml-auto" :topic-id="topic.id" />
         </div>
         <p class="mt-4 text-base">
           {{ topic.info.shortDescription }}
@@ -24,8 +32,8 @@
 </template>
 
 <script lang="ts">
-import { Topic } from "@/lib/Topic";
-import { defineComponent, PropType } from "@nuxtjs/composition-api";
+import { Topic } from '@/lib/Topic'
+import { defineComponent, PropType } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   props: {
@@ -34,5 +42,5 @@ export default defineComponent({
       required: true,
     },
   },
-});
+})
 </script>

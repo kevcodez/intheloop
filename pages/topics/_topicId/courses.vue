@@ -27,7 +27,6 @@ export default defineComponent({
   setup(props) {
     const courses = ref<Course[]>([])
     const supabase = inject<SupabaseClient>('supabase')!
-    console.log(props.topic.course_ids)
     useFetch(async () => {
       const { data } = await supabase
         .from<Course>('course')
