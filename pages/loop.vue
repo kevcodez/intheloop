@@ -73,7 +73,7 @@ export default defineComponent({
     return {
       tabs: [
         { name: 'Overview', to: '/loop/' },
-        { name: 'Releases', to: '/loop/releases/' },
+        //  { name: 'Releases', to: '/loop/releases/' },
       ],
     }
   },

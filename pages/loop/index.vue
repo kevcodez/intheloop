@@ -1,80 +1,102 @@
 <template>
   <div>
-    <div class="flex flex-col space-y-8">
-      <div>
-        <h2 class="heading">Recent Releases</h2>
+    <div v-if="hasTopics">
+      <div class="flex flex-col space-y-8">
+        <div>
+          <h2 class="heading">Recent Releases</h2>
 
-        <release-list :releases="releases" />
-      </div>
+          <span v-if="!releases.length">No recent releases.</span>
 
-      <div>
-        <h2 class="heading">Recent Blog Posts</h2>
+          <release-list v-else :releases="releases" />
+        </div>
 
-        <blog-post-list :blog-posts="blogPosts" />
-      </div>
+        <div>
+          <h2 class="heading">Recent Blog Posts</h2>
 
-      <div>
-        <h2 class="heading">Recent Tweets</h2>
+          <span v-if="!blogPosts.length">No recent blog posts.</span>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4">
-          <div v-for="tweet in tweets" :key="tweet.id">
-            <tweet :tweet="tweet" />
+          <blog-post-list v-else :blog-posts="blogPosts" />
+        </div>
+
+        <div>
+          <h2 class="heading">Recent Tweets</h2>
+
+          <span v-if="!tweets.length">No recent tweets.</span>
+
+          <div
+            v-else
+            class="flex flex-wrap flex-col" :style="`height: ${tweets.length * 8}em`">
+            <div v-for="tweet in tweets" :key="tweet.id" class="md:w-1/2 lg:w-1/3 mb-4 mr-4">
+              <tweet :tweet="tweet" />
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div v-else>
+      You have not followed any topics yet. Start following topics to see an
+      overview.
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { useFetch, useStore } from '@nuxtjs/composition-api'
+import { useContext, useFetch, useStore } from '@nuxtjs/composition-api'
 import { SupabaseClient } from '@supabase/supabase-js'
-import { computed, defineComponent, inject, ref } from '@vue/composition-api'
+import { defineComponent, inject, ref } from '@vue/composition-api'
 import { BlogPost } from '~/lib/Blog'
-import { Release, ReleaseInfo } from '~/lib/Topic'
+import { ReleaseWithTopic } from '~/lib/Topic'
 import dayjs from 'dayjs'
-import offlineData from '~/offlineData.json'
+import { TweetsResponse } from '../topics/_topicId/index.vue'
 
 export default defineComponent({
   setup() {
     const supabase = inject<SupabaseClient>('supabase')!
     const store = useStore()
+    const { $http } = useContext()
     const topicIds = store.state.follow.topicIds
 
-    const releases = ref<Release[]>([
-      ...offlineData.releases,
-      ...offlineData.releases,
-    ])
-    const blogPosts = ref<BlogPost[]>([
-      ...offlineData.blogPosts,
-      ...offlineData.blogPosts,
-    ])
+    const releases = ref<ReleaseWithTopic[]>([])
+    const blogPosts = ref<BlogPost[]>([])
 
-    const tweets = ref<Object[]>([...offlineData.tweets, ...offlineData.tweets])
+    const tweets = ref<Object[]>([])
 
     useFetch(async () => {
-      /* const { data: releasesFromSupabase } = await supabase
-        .from('release')
-        .select('*')
+      if (!topicIds.length) return
+
+      const { data: releasesFromSupabase } = await supabase
+        .from('vw_releases')
+        .select(`*`)
         .in('topic', topicIds)
         .gte('published_at', dayjs().subtract(7, 'days'))
         .order('published_at', { ascending: false })
+        .limit(40)
 
-      const { data: blogPostsFromSupabase } = await supabase
-        .from('blog_posts')
+      const { data: blogPostsFromSupabase, error } = await supabase
+        .from('vw_topic_blog_posts')
         .select('*')
-        .containedBy('topics', topicIds)
+        .in('topic_id', topicIds)
         .gte('published_at', dayjs().subtract(5, 'days'))
         .eq('language', 'en')
-        .order('published_at', { ascending: false })*/
-      //releases.value = releasesFromSupabase!
-      //blogPosts.value = blogPostsFromSupabase!
+        .order('published_at', { ascending: false })
+        .limit(20)
+
+      const tweetsResponse = await $http.$get<TweetsResponse>(
+        `https://europe-west1-intheloop-dev.cloudfunctions.net/getTweetsByTopic?topic=${topicIds.join(
+          ','
+        )}&page=1`
+      )
+
+      tweets.value = tweetsResponse.tweets
+      releases.value = releasesFromSupabase!
+      blogPosts.value = blogPostsFromSupabase!
     })
 
     return {
       releases,
       blogPosts,
       tweets,
+      hasTopics: topicIds.length !== 0,
     }
   },
 })

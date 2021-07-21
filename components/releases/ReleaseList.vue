@@ -14,13 +14,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
-import { Release } from '~/lib/Topic'
+import { ReleaseWithTopic } from '~/lib/Topic'
 
 export default defineComponent({
   props: {
     releases: {
       required: true,
-      type: Array as PropType<Release[]>,
+      type: Array as PropType<ReleaseWithTopic[]>,
     },
   },
 })

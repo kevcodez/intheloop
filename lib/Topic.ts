@@ -1,9 +1,7 @@
-import { Blog, BlogInfo } from "./Blog"
-import { Book, BookInfo } from "./Book"
-import { Community, CommunityInfo } from "./Community"
-import { Course, CourseInfo } from "./Course"
-import { Newsletter, NewsletterInfo } from "./Newsletter"
-import { Podcast, PodcastInfo } from "./Podcast"
+import { BlogInfo } from "./Blog"
+import { CommunityInfo } from "./Community"
+import { NewsletterInfo } from "./Newsletter"
+import { PodcastInfo } from "./Podcast"
 import { SocialLink } from "./SocialLink"
 
 export interface Topic {
@@ -60,7 +58,11 @@ export interface Release {
     info: ReleaseInfo
 }
 
-export interface ReleaseInfo{
+export interface ReleaseWithTopic extends Release {
+    topic_info: TopicInfo
+}
+
+export interface ReleaseInfo {
     version: string
     releaseNotesUrl: string | undefined
     publishedAt: string

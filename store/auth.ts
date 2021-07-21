@@ -25,7 +25,7 @@ export const actions = {
 
     commit('set', user)
     if (user) {
-      await dispatch('follow/loadTopics', { userId: user.id }, {root: true})
+      await dispatch('follow/loadTopics', { userId: user.id }, { root: true })
     }
     return { user, error, session }
   },
