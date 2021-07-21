@@ -1,5 +1,5 @@
-export default async function ({ $http, redirect, store }) {
-  const data = await $http.$post('/api/user')
+export default async function ({ $http, redirect, store, $config }) {
+  const data = await $http.$post($config.baseUrl + '/api/user')
   const { user = null } = data
 
   if (!store.state.auth.user !== user) {
