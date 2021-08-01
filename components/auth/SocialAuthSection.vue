@@ -47,12 +47,14 @@
 </template>
 
 <script lang="ts">
+import { useContext } from '@nuxtjs/composition-api'
 import { Provider, SupabaseClient } from '@supabase/supabase-js'
 import { defineComponent, inject } from '@vue/composition-api'
 
 export default defineComponent({
   setup() {
     const supabase = inject<SupabaseClient>('supabase')!
+    const { $config } = useContext()
 
     const socialLogin = async (provider: Provider) => {
       const { user, session, error } = await supabase.auth.signIn(
@@ -60,7 +62,7 @@ export default defineComponent({
           provider,
         },
         {
-          redirectTo: 'http://localhost:3000',
+          redirectTo: $config.baseUrl,
         }
       )
     }
