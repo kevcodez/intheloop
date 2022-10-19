@@ -39,7 +39,7 @@ export default defineComponent({
       loading.value = true
 
       const response = await $http.$get<TweetsResponse>(
-        `https://europe-west1-intheloop-dev.cloudfunctions.net/getTweetsByTopic?topic=${props.topic.id}&page=${currentPage.value}`
+        `https://europe-west1-intheloop-d4940.cloudfunctions.net/getTweetsByTopic?topic=${props.topic.id}&page=${currentPage.value}`
       )
 
       loading.value = false

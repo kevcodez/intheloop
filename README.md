@@ -9,10 +9,6 @@ Nuxt with SSR is used, small endpoints can also be implemented in the `api` dire
 
 The app is hosted on [render](render.com).
 
-## Roadmap
-
-The rough roadmap can be found [here](https://intheloop.dev/roadmap) and is powered by [productstash.io](productstash.io).
-
 ## Repositories
 
 - [Web](https://github.com/kevcodez/intheloop) - Nuxt.js web app that powers [Intheloop](https://intheloop.dev)

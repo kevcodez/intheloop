@@ -29,10 +29,7 @@
     </div>
 
     <div class="mt-8" v-if="!loading">
-      Missing your favorite tech? Head over to the
-      <nuxt-link to="/roadmap" class="link">Roadmap</nuxt-link> to see if your
-      topic is up next. If it's not on the list, submit it as an idea via the
-      <nuxt-link to="/roadmap" class="link">Roadmap</nuxt-link>.
+      Missing your favorite tech? DM me on <a class="link" href="https://twitter.com/kevcodez">Twitter</a>.
     </div>
   </div>
 </template>

@@ -11,7 +11,6 @@ export default async function (req, res, next) {
     'contact',
     'imprint',
     'privacy-policy',
-    'roadmap',
     'courses',
     'books',
   ]

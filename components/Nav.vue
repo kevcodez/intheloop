@@ -46,7 +46,7 @@
           </button-->
 
           <div v-if="!$store.state.auth.user">
-            <nuxt-link to="/login">Login</nuxt-link>
+            <!--nuxt-link to="/login">Login</nuxt-link-->
           </div>
 
           <!-- Profile dropdown -->
@@ -289,10 +289,6 @@ export default defineComponent({
         {
           label: 'Courses',
           path: '/courses',
-        },
-        {
-          label: 'Roadmap',
-          path: '/roadmap',
         },
       ]
 

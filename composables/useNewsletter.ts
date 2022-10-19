@@ -16,7 +16,7 @@ export default function useNewsletter() {
     error.value = null
     loading.value = true
 
-    const url = `https://europe-west1-intheloop-dev.cloudfunctions.net/subscribeToNewsletter`
+    const url = `https://europe-west1-intheloop-d4940.cloudfunctions.net/subscribeToNewsletter`
 
     try {
       await $http.post(url, {

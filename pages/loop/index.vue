@@ -82,7 +82,7 @@ export default defineComponent({
         .limit(20)
 
       const tweetsResponse = await $http.$get<TweetsResponse>(
-        `https://europe-west1-intheloop-dev.cloudfunctions.net/getTweetsByTopic?topic=${topicIds.join(
+        `https://europe-west1-intheloop-d4940.cloudfunctions.net/getTweetsByTopic?topic=${topicIds.join(
           ','
         )}&page=1`
       )
