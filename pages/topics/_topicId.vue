@@ -3,27 +3,15 @@
     <topic-base-info class="container" :topic="topic" />
 
     <div style="height: 150px; overflow: hidden" class="mt-5">
-      <svg
-        viewBox="0 0 500 150"
-        preserveAspectRatio="none"
-        style="height: 100%; width: 100%"
-      >
-        <path
-          d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-          :style="`stroke: none; fill: ${topic.info.color}`"
-        ></path>
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          :style="`stroke: none; fill: ${topic.info.color}`"></path>
       </svg>
     </div>
     <div style="height: 100px; overflow: hidden">
-      <svg
-        viewBox="0 0 500 100"
-        preserveAspectRatio="none"
-        style="height: 100%; width: 100%"
-      >
-        <path
-          d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,-150.00 L0.00,-150.00 Z"
-          :style="`stroke: none; fill: ${topic.info.color}`"
-        ></path>
+      <svg viewBox="0 0 500 100" preserveAspectRatio="none" style="height: 100%; width: 100%">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,-150.00 L0.00,-150.00 Z"
+          :style="`stroke: none; fill: ${topic.info.color}`"></path>
       </svg>
     </div>
 
@@ -41,10 +29,7 @@
 
         <topic-blogs class="mt-8" :blogs="blogs" />
 
-        <h3
-          class="font-medium text-xl mt-8"
-          v-if="newsletters.length || podcasts.length"
-        >
+        <h3 class="font-medium text-xl mt-8" v-if="newsletters.length || podcasts.length">
           Newsletters &amp; Podcasts
         </h3>
         <topic-newsletters :newsletters="newsletters" />
@@ -120,13 +105,13 @@ export default defineComponent({
       }
       if (data.newsletters) {
         newsletters.value =
-          data.newsletters.filter((it: Newsletter) => it) || []
+          (data.newsletters.filter((it: Newsletter) => it) || []).sort((a, b) => Number(b.official) - Number(a.official))
       }
       if (data.blogs) {
-        blogs.value = data.blogs.filter((it: Blog) => it) || []
+        blogs.value = (data.blogs.filter((it: Blog) => it) || []).sort((a, b) => Number(b.official) - Number(a.official))
       }
       if (data.communities) {
-        communities.value = data.communities.filter((it: Community) => it) || []
+        communities.value = (data.communities.filter((it: Community) => it) || []).sort((a, b) => Number(b.official) - Number(a.official))
       }
     })
 
