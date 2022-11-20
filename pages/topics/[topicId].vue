@@ -1,5 +1,4 @@
 <template>
-  {{fullTopic?.topic?.id}}
   <loading-indicator v-if="loadingTopic" />
   <div v-else-if="fullTopic.topic" class="mt-8">
     <topic-base-info class="container" :topic="fullTopic.topic" />
@@ -59,12 +58,12 @@ const { data: fullTopic, pending: loadingTopic } = useAsyncData('topic', async (
   }
 })
 
-/*useHead(() => {
-  if (data?.topic?.value) {
-    const description = `Stay in the loop with ${data.topic.value.info.name} - Latest releases, popular tweets, blog posts, communities to engage with and much more`
+useHead(() => {
+  if (fullTopic?.value?.topic) {
+    const description = `Stay in the loop with ${fullTopic.value.topic.info.name} - Latest releases, popular tweets, blog posts, communities to engage with and much more`
 
     return {
-      title: `Follow ${data.topic.value.info.name} - intheloop`,
+      title: `Follow ${fullTopic.value.topic.info.name} - intheloop`,
       meta: [
         {
           hid: 'description',
@@ -81,7 +80,7 @@ const { data: fullTopic, pending: loadingTopic } = useAsyncData('topic', async (
   } else {
     return {}
   }
-})*/
+})
 </script>
 
 <style scoped>
