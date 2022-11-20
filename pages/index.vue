@@ -13,13 +13,10 @@
           interested in.
         </p>
         <div
-          class="grid grid-cols-1 mt-12 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16"
-        >
+          class="grid grid-cols-1 mt-12 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
           <div>
             <div>
-              <span
-                class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
-              >
+              <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <link-icon class="w-6 h-6 text-white" />
               </span>
             </div>
@@ -36,9 +33,7 @@
 
           <div>
             <div>
-              <span
-                class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
-              >
+              <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <twitter-icon class="w-6 h-6 text-white" />
               </span>
             </div>
@@ -52,9 +47,7 @@
 
           <div>
             <div>
-              <span
-                class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
-              >
+              <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <tag-icon class="w-6 h-6 text-white" />
               </span>
             </div>
@@ -68,9 +61,7 @@
 
           <div>
             <div>
-              <span
-                class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
-              >
+              <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <rss-icon class="w-6 h-6 text-white" />
               </span>
             </div>
@@ -84,9 +75,7 @@
 
           <div>
             <div>
-              <span
-                class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
-              >
+              <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <book-icon class="w-6 h-6 text-white" />
               </span>
             </div>
@@ -102,14 +91,10 @@
 
           <div>
             <div class="flex flex-row justify-between">
-              <span
-                class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
-              >
+              <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <robot-icon class="w-6 h-6 text-white" />
               </span>
-              <span class="float-right px-2 bg-purple-900 self-start"
-                >SOON</span
-              >
+              <span class="float-right px-2 bg-purple-900 self-start">SOON</span>
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-medium text-white">
@@ -135,48 +120,29 @@
         <nuxt-link class="button" to="/topics">See all</nuxt-link>
       </div>
 
-      <topic-list :topics="topics" />
+      <topic-list v-if="topics" :topics="topics" />
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Topic } from '@/lib/Topic'
-import { defineComponent, ref, inject, useFetch } from '@nuxtjs/composition-api'
-import LinkIcon from '@/assets/icons/link.svg?inline'
-import TwitterIcon from '@/assets/icons/twitter.svg?inline'
-import TagIcon from '@/assets/icons/tag.svg?inline'
-import BookIcon from '@/assets/icons/book.svg?inline'
-import RssIcon from '@/assets/icons/rss.svg?inline'
-import RobotIcon from '@/assets/icons/robot.svg?inline'
-import { SupabaseClient } from '@supabase/supabase-js'
+<script lang="ts" setup>
+import LinkIcon from '@/assets/icons/link.svg?component'
+import TwitterIcon from '@/assets/icons/twitter.svg?component'
+import TagIcon from '@/assets/icons/tag.svg?component'
+import BookIcon from '@/assets/icons/book.svg?component'
+import RssIcon from '@/assets/icons/rss.svg?component'
+import RobotIcon from '@/assets/icons/robot.svg?component'
+import { Database } from '@/lib/database.types'
 
-export default defineComponent({
-  components: {
-    LinkIcon,
-    TwitterIcon,
-    TagIcon,
-    BookIcon,
-    RssIcon,
-    RobotIcon,
-  },
-  setup() {
-    const topics = ref<Topic[]>([])
-    const supabase = inject<SupabaseClient>('supabase')!
+const supabase = useSupabaseClient<Database>()
 
-    useFetch(async () => {
-      const { data } = await supabase
-        .from('topic')
-        .select('*')
-        .eq('info->>live', 'true')
-        .limit(6)
+const { data: topics } = useAsyncData('topics', async () => {
+  const { data } = await supabase
+    .from('topic')
+    .select('*')
+    .eq('info->>live', 'true')
+    .limit(6)
 
-      topics.value = data!
-    })
-
-    return {
-      topics,
-    }
-  },
+  return data
 })
 </script>

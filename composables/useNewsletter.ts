@@ -1,18 +1,17 @@
-import { ref, useContext } from '@nuxtjs/composition-api'
 
 export default function useNewsletter() {
   const email = ref('')
   const success = ref(false)
   const error = ref<string | null>(null)
   const loading = ref(false)
-  const { $http } = useContext()
+  const { $http } = useNuxtApp()
 
   const subscribe = async (): Promise<void> => {
     if (email.value === null || loading.value) {
       return
     }
 
-    success.value = false
+    success.value = false;
     error.value = null
     loading.value = true
 

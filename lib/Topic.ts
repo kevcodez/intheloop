@@ -60,6 +60,7 @@ export interface Release {
 
 export interface ReleaseWithTopic extends Release {
     topic_info: TopicInfo
+    topic: string;
 }
 
 export interface ReleaseInfo {
@@ -78,4 +79,8 @@ export interface Scm {
 export interface License {
     name: string
     url: string
+}
+
+export interface TopicFollow {
+    topic_id: string
 }

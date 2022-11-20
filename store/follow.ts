@@ -1,37 +1,46 @@
-export const state = () => ({
-    topicIds: [],
+import { acceptHMRUpdate, defineStore } from 'pinia'
+import { TopicFollow } from '~/lib/Topic'
+import { Database } from '~/lib/database.types'
+
+export const useFollow = defineStore('follow', {
+    state: () => ({
+        topicIds: [] as string[],
+    }),
+    actions: {
+        async loadTopics(userId: string) {
+            const supabase = useSupabaseClient<Database>()
+            const { data } = await supabase.from("topic_follow")
+                .select("*")
+                .eq('user_id', userId)
+
+            this.topicIds = (data ?? []).map((it) => (it as TopicFollow).topic_id)
+        },
+        async follow(topicId: string) {
+            const supabaseUser = useSupabaseUser()
+            if (!supabaseUser.value) return;
+
+            const supabase = await useSupabaseClient<Database>()
+
+            await supabase.from("topic_follow").upsert({ user_id: supabaseUser.value.id, topic_id: topicId })
+
+
+            if (!this.topicIds.includes(topicId)) {
+                this.topicIds.push(topicId)
+            }
+        },
+        async unfollow(topicId: string) {
+            const supabaseUser = useSupabaseUser()
+            if (!supabaseUser.value) return;
+
+            const supabase = await useSupabaseClient<Database>()
+
+            await supabase.from("topic_follow").delete().eq('user_id', supabaseUser.value.id).eq('topic_id', topicId)
+
+            this.topicIds = this.topicIds.filter(it => it !== topicId)
+        }
+    }
 })
 
-export const mutations = {
-    addTopic(state, topicId) {
-        if (!state.topicIds.includes(topicId)) {
-            state.topicIds.push(topicId)
-        }
-    },
-    removeTopic(state, topicId) {
-        state.topicIds = state.topicIds.filter(it => it !== topicId)
-    },
-    setTopicsIds(state, topicIds) {
-        state.topicIds = topicIds
-    }
-}
-
-export const actions = {
-    async loadTopics({ commit }, { userId }) {
-        const { data } = await this.$supabase.from("topic_follow")
-            .select("*")
-            .eq('user_id', userId)
-
-        commit('setTopicsIds', data.map(it => it.topic_id))
-    },
-    async follow({ commit, rootState }, { topicId }) {
-        await this.$supabase.from("topic_follow").upsert({ user_id: rootState.auth.user.id, topic_id: topicId })
-
-        commit('addTopic', topicId)
-    },
-    async unfollow({ commit, rootState }, { topicId }) {
-        await this.$supabase.from("topic_follow").delete({ user_id: rootState.auth.user.id, topic_id: topicId })
-
-        commit('removeTopic', topicId)
-    }
+if (import.meta.hot) {
+    import.meta.hot.accept(acceptHMRUpdate(useFollow, import.meta.hot))
 }

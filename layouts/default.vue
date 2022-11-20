@@ -2,7 +2,7 @@
   <div>
     <Nav />
 
-    <Nuxt />
+    <slot />
 
     <Footer />
   </div>
