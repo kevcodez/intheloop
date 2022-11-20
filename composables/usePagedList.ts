@@ -9,7 +9,7 @@ export default function usePagedList<T>({
   const dataList = ref<T[]>([])
   const hasMore = ref(false)
   const error = ref(null)
-  const loading = ref(false)
+  const loading = ref(true)
 
   const loadData = async () => {
     currentPage.value++
@@ -24,7 +24,6 @@ export default function usePagedList<T>({
     loading.value = false
 
     dataList.value.push(...data)
-    console.log(dataList.value)
     hasMore.value = count!! > dataList.value.length
 
     return dataList.value
@@ -36,6 +35,10 @@ export default function usePagedList<T>({
     dataList.value = []
     return loadData()
   }
+
+  useAsyncData(async () => {
+    return loadData()
+  })
 
   return {
     data: dataList,

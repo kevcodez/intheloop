@@ -9,11 +9,11 @@
       </button>
     </form>
 
-    <LoadingIndicator v-if="loading" />
+    <book-list v-if="!loading" :books="books" />
 
-    <book-list v-else :books="books" />
+    <LoadingIndicator v-if="loading" class="mt-5" />
 
-    <div v-if="hasMore" class="flex justify-center mt-5">
+    <div v-else-if="hasMore" class="flex justify-center ">
       <button class="button" @click="loadData()">Load more</button>
     </div>
     <div v-else-if="!books.length">
@@ -39,6 +39,7 @@ const {
   reset,
   loadData,
   error,
+  loading,
   data: books,
 } = usePagedList<Book>({
   pageSize: 15,
@@ -52,10 +53,5 @@ const {
       .range(rangeStart, rangeEnd)
   },
 })
-
-const { pending: loading } = useAsyncData(async () => {
-  return loadData()
-})
-
 </script>
 

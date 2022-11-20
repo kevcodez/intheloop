@@ -1,42 +1,34 @@
 <template>
   <div class="container">
-    <div v-if="pending">
-      <loading-indicator />
-    </div>
+    <loading-indicator v-if="pending" />
     <div v-else-if="error">An error occured while fetching</div>
 
-    <div v-else>
-      <course-details :course="course" />
+    <div v-else-if="data.course">
+      <course-details :course="data.course" />
 
-      <div v-if="relatedCourses && relatedCourses.length" class="mt-8 md:mt-12">
+      <div v-if="data.relatedCourses && data.relatedCourses.length" class="mt-8 md:mt-12">
         <h3 class="text-lg text-medium tracking-wide mb-2">Related Courses</h3>
-        <course-list :courses="relatedCourses" />
+        <course-list :courses="data.relatedCourses" />
       </div>
 
-      <div v-if="topics && topics.length" class="mt-8 md:mt-12">
+      <div v-if="data.topics && data.topics.length" class="mt-8 md:mt-12">
         <h3 class="text-lg text-medium tracking-wide mb-2">Related Topics</h3>
-        <topic-list :topics="topics" />
+        <topic-list :topics="data.topics" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Course } from '~/lib/Course'
-import { Topic } from '~/lib/Topic'
 import { Database } from '~/lib/database.types'
 
 const route = useRoute()
 const supabase = useSupabaseClient<Database>()
 const courseId = route.params.courseId
 
-const course = ref<Course | null>()
-const topics = ref<Topic[]>([])
-const relatedCourses = ref<Course[]>([])
-
 // TODO seo
 // TODO handle 404
-const { pending, error } = useAsyncData('courses', async () => {
+const { pending, error, data } = useAsyncData('courses', async () => {
   const { data } = await supabase
     .from('course')
     .select('*')
@@ -61,9 +53,12 @@ const { pending, error } = useAsyncData('courses', async () => {
       { data: topicsFromDb },
       { data: relatedCoursesFromDb },
     ] = await Promise.all([fetchTopics, fetchRelatedCourses])
-    course.value = data
-    topics.value = topicsFromDb || []
-    relatedCourses.value = relatedCoursesFromDb || []
+
+    return {
+      course: data,
+      topics: topicsFromDb,
+      relatedCourses: relatedCoursesFromDb
+    }
   }
 })
 </script>

@@ -8,13 +8,11 @@
   </div>
 </template>
 
-<script lang="ts" sezup>
+<script lang="ts" setup>
 import { DeveloperInfo } from "@/lib/Topic";
 import { PropType } from "vue";
 
 const props = defineProps({
-  props: {
-    developers: Array as PropType<DeveloperInfo[]>,
-  },
+  developers: Array as PropType<DeveloperInfo[]>,
 })
 </script>

@@ -1,41 +1,33 @@
 <template>
   <div class="container">
-    <div v-if="pending">
-      <loading-indicator />
-    </div>
+    <loading-indicator v-if="pending" />
     <div v-else-if="error">An error occured while fetching</div>
     <div v-else>
-      <book-details :book="book" />
+      <book-details :book="data.book" />
 
-      <div v-if="relatedBooks && relatedBooks.length" class="mt-8 md:mt-12">
+      <div v-if="data.relatedBooks && data.relatedBooks.length" class="mt-8 md:mt-12">
         <h3 class="text-lg text-medium tracking-wide mb-2">Related Books</h3>
-        <book-list :books="relatedBooks" />
+        <book-list :books="data.relatedBooks" />
       </div>
 
-      <div v-if="topics && topics.length" class="mt-8 md:mt-12">
+      <div v-if="data.topics && data.topics.length" class="mt-8 md:mt-12">
         <h3 class="text-lg text-medium tracking-wide mb-2">Related Topics</h3>
-        <topic-list :topics="topics" />
+        <topic-list :topics="data.topics" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Book } from '~/lib/Book'
-import { Topic } from '~/lib/Topic'
 import { Database } from '~/lib/database.types'
 
 const route = useRoute()
 const supabase = useSupabaseClient<Database>()
 const bookId = route.params.bookId
 
-const book = ref<Book | null>()
-const topics = ref<Topic[]>([])
-const relatedBooks = ref<Book[]>([])
-
 // TODO seo
 // TODO handle 404
-const { pending, error } = useAsyncData(async () => {
+const { pending, error, data } = useAsyncData(async () => {
   const { data } = await supabase
     .from('book')
     .select('*')
@@ -61,9 +53,11 @@ const { pending, error } = useAsyncData(async () => {
       { data: relatedBooksFromDb },
     ] = await Promise.all([fetchTopics, fetchRelatedBooks])
 
-    book.value = data
-    relatedBooks.value = relatedBooksFromDb || []
-    topics.value = topicsFromDb || []
+    return {
+      book: data,
+      relatedBooks: relatedBooksFromDb,
+      topics: topicsFromDb
+    }
   }
 })
 </script>

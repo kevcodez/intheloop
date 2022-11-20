@@ -52,36 +52,36 @@ import { PropType } from 'vue'
 import { Database } from '~/lib/database.types'
 
 const props = defineProps({
-    topic: {
-      type: Object as PropType<Topic>,
-      required: true,
-    },
-  })
+  topic: {
+    type: Object as PropType<Topic>,
+    required: true,
+  },
+})
 
-    const supabase = useSupabaseClient<Database>()
+const supabase = useSupabaseClient<Database>()
 
-    const official = ref(true)
+const official = ref(true)
 
-    const { data: blogPosts, loading, hasMore, reset } = usePagedList({
-      pageSize: 10,
-      fetch: (rangeStart, rangeEnd) => {
-        let query = supabase
-          .from('vw_topic_blog_posts')
-          .select('*', { count: 'exact' })
-          .eq('topic_id', props.topic.id)
-          .eq('language', 'en')
-          .range(rangeStart, rangeEnd)
+const { data: blogPosts, loading, hasMore, reset } = usePagedList({
+  pageSize: 10,
+  fetch: (rangeStart, rangeEnd) => {
+    let query = supabase
+      .from('vw_topic_blog_posts')
+      .select('*', { count: 'exact' })
+      .eq('topic_id', props.topic.id)
+      .eq('language', 'en')
+      .range(rangeStart, rangeEnd)
 
-          if (official.value) {
-            query = query.eq('official', official.value)
-          }
-
-          return query
-      }
-    });
-
-    async function switchOfficialOnly(newValue: boolean) {
-      official.value = newValue;
-      reset()
+    if (official.value) {
+      query = query.eq('official', official.value)
     }
+
+    return query
+  }
+});
+
+async function switchOfficialOnly(newValue: boolean) {
+  official.value = newValue;
+  reset()
+}
 </script>

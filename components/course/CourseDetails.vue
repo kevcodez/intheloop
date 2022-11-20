@@ -11,7 +11,7 @@
         <span class="mt-1 block">Written by
           {{ course.info.authors.map((it) => it.name).join(', ') }}</span>
         <span class="mt-1 block">Published
-          {{ $formatDate(course.info.publishedAt, 'MMMM YYYY') }}</span>
+          {{ $formatDate(course.info.publishedAt!, 'MMMM YYYY') }}</span>
       </div>
       <scrollable-container class="py-2 w-full" :max-height="320">
         <div class="prose p-0 w-full max-w-full" v-html="course.info.description"></div>
