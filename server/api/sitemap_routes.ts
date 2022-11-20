@@ -1,3 +1,4 @@
+import { serverSupabaseClient } from '#supabase/server';
 import { eventHandler } from 'h3'
 import { Database } from '~/lib/database.types';
 
@@ -11,7 +12,7 @@ export default eventHandler(async (event) => {
         return
     }
 
-    const supabaseClient = useSupabaseClient<Database>()
+    const supabaseClient = serverSupabaseClient<Database>(event)
 
     const blogs = await supabaseClient.from('blog').select('*')
 
@@ -23,11 +24,7 @@ export default eventHandler(async (event) => {
         'courses',
         'books',
     ]
-    let urls = staticUrls
-        .map((staticUrl) =>
-            `https://intheloop.dev/${staticUrl}`
-        )
-        .join('\n')
+    let urls: string[] = staticUrls;
 
     const [{ data: topics }, { data: books }, { data: courses }] =
         await Promise.all([
@@ -36,23 +33,23 @@ export default eventHandler(async (event) => {
             supabaseClient.from('course').select('id'),
         ])
 
-    urls += topics
+    topics!
         .map((topic) =>
-            `https://intheloop.dev/topics/${topic.id}`
+            `/topics/${topic.id}`
         )
-        .join('\n')
+        .forEach(it => urls.push(it))
 
-    urls += books
+    books!
         .map((book) =>
-            `https://intheloop.dev/books/${book.id}`
+            `/books/${book.id}`
         )
-        .join('\n')
+        .forEach(it => urls.push(it))
 
-    urls += courses
+    courses!
         .map((course) =>
-            `https://intheloop.dev/courses/${course.id}`
+            `/courses/${course.id}`
         )
-        .join('\n');
+        .forEach(it => urls.push(it))
 
     return urls
 })
