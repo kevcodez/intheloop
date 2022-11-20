@@ -9,7 +9,7 @@
     </div>
 
     <div class="space-y-6 mt-4">
-      <div v-for="post in blogPosts" :key="post.link">
+      <div v-for="post in blogPosts.list" :key="post.link">
         <a :href="post.blog_post_info.link" target="_blank"
           class="grid grid-cols-5 grow items-center rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
           <div class="px-4 py-2 col-span-1 flex justify-center items-center">
@@ -34,7 +34,7 @@
           </div>
         </a>
       </div>
-      <div v-if="hasMore && !loading" class="flex justify-center">
+      <div v-if="blogPosts.hasMore && !loading" class="flex justify-center">
         <button class="button mt-5" @click="reset()">Load more</button>
       </div>
 
@@ -62,7 +62,7 @@ const supabase = useSupabaseClient<Database>()
 
 const official = ref(true)
 
-const { data: blogPosts, loading, hasMore, reset } = usePagedList({
+const { data: blogPosts, loading, reset } = await usePagedList({
   pageSize: 10,
   fetch: (rangeStart, rangeEnd) => {
     let query = supabase

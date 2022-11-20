@@ -11,12 +11,12 @@
 
     <loading-indicator class="my-4" v-if="loading" />
 
-    <topic-list class="mt-8" :topics="topics" />
+    <topic-list class="mt-8" :topics="topics.list" />
 
-    <div v-if="hasMore && !loading" class="flex justify-center mt-5">
-      <button class="button" @click="loadData()">Load more</button>
+    <div v-if="topics.hasMore && !loading" class="flex justify-center mt-5">
+      <button class="button" @click="refreshNuxtData()">Load more</button>
     </div>
-    <div v-else-if="!loading && !topics.length">
+    <div v-else-if="!loading && !topics.list.length">
       No results found. Please try a different search.
     </div>
     <div v-else-if="error">
@@ -41,11 +41,9 @@ const searchTerm = ref<string>('')
 const {
   data: topics,
   loading,
-  hasMore,
   reset,
-  loadData,
   error,
-} = usePagedList<Topic>({
+} = await usePagedList<Topic>({
   pageSize: 15,
   fetch: (rangeStart, rangeEnd) => {
     // TODO make sure the query is correct (live filter should be and, rest should be or)

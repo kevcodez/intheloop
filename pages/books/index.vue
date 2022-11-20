@@ -9,12 +9,12 @@
       </button>
     </form>
 
-    <book-list v-if="!loading" :books="books" />
+    <book-list v-if="!loading" :books="books.list" />
 
     <LoadingIndicator v-if="loading" class="mt-5" />
 
-    <div v-else-if="hasMore" class="flex justify-center ">
-      <button class="button" @click="loadData()">Load more</button>
+    <div v-else-if="books.hasMore" class="flex justify-center ">
+      <button class="button" @click="refreshNuxtData()">Load more</button>
     </div>
     <div v-else-if="!books.length">
       No results found. Please try a different search.
@@ -35,13 +35,11 @@ const supabase = useSupabaseClient<Database>()
 const searchTerm = ref<string>('')
 
 const {
-  hasMore,
   reset,
-  loadData,
   error,
   loading,
   data: books,
-} = usePagedList<Book>({
+} = await usePagedList<Book>({
   pageSize: 15,
   fetch: (rangeStart, rangeEnd) => {
     return supabase

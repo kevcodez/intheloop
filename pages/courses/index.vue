@@ -11,12 +11,12 @@
 
     <loading-indicator class="my-4" v-if="loading" />
 
-    <course-list v-else class="mt-8" :courses="courses" />
+    <course-list v-else class="mt-8" :courses="data.list" />
 
-    <div v-if="hasMore && !loading" class="flex justify-center mt-5">
-      <button class="button" @click="loadData()">Load more</button>
+    <div v-if="data.hasMore && !loading" class="flex justify-center mt-5">
+      <button class="button" @click="refreshNuxtData()">Load more</button>
     </div>
-    <div v-else-if="!loading && !courses.length">
+    <div v-if="!loading && !data.list.length">
       No results found. Please try a different search.
     </div>
     <div v-else-if="error">
@@ -35,13 +35,11 @@ const supabase = useSupabaseClient<Database>()
 const searchTerm = ref<string>('')
 
 const {
-  data: courses,
+  data,
   loading,
-  hasMore,
   reset,
   error,
-  loadData,
-} = usePagedList<Course>({
+} = await usePagedList<Course>({
   pageSize: 16,
   fetch: (rangeStart, rangeEnd) => {
     return supabase

@@ -1,4 +1,4 @@
-export default function usePagedList<T>({
+export default async function usePagedList<T>({
   pageSize = 10,
   fetch,
 }: {
@@ -24,28 +24,28 @@ export default function usePagedList<T>({
     loading.value = false
 
     dataList.value.push(...data)
-    hasMore.value = count!! > dataList.value.length
 
-    return dataList.value
+    return {
+      list: dataList.value,
+      hasMore: count!! > dataList.value.length
+    }
   }
 
   const reset = function () {
     currentPage.value = 0
     hasMore.value = false
     dataList.value = []
-    return loadData()
+    return refreshNuxtData('pagedList')
   }
 
-  useAsyncData(async () => {
+  const { data, pending } = await useAsyncData('pagedList', async () => {
     return loadData()
   })
 
   return {
-    data: dataList,
+    data,
     reset,
-    loading,
-    hasMore,
+    loading: pending,
     error,
-    loadData,
   }
 }
