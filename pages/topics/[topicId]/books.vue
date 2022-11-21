@@ -1,6 +1,7 @@
 <template>
   <div class="space-y-5">
-    <topic-books v-if="!pending" :books="books" />
+    <loading-indicator v-if="pending" />
+    <topic-books v-else :books="books" />
   </div>
 </template>
 

@@ -4,7 +4,6 @@ export default function useNewsletter() {
   const success = ref(false)
   const error = ref<string | null>(null)
   const loading = ref(false)
-  const { $http } = useNuxtApp()
 
   const subscribe = async (): Promise<void> => {
     if (email.value === null || loading.value) {

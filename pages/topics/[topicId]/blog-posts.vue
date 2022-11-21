@@ -8,7 +8,9 @@
         :class="[!official ? 'bg-gray-700 text-gray-50' : 'bg-gray-200 text-gray-700']">Show all</button>
     </div>
 
-    <div class="space-y-6 mt-4">
+    <loading-indicator class="mt-4" v-if="loading" />
+
+    <div class="space-y-6 mt-4" v-else>
       <div v-for="post in blogPosts.list" :key="post.link">
         <a :href="post.blog_post_info.link" target="_blank"
           class="grid grid-cols-5 grow items-center rounded-lg border border-gray-300 bg-white shadow-sm hover:border-gray-400">
@@ -81,7 +83,9 @@ const { data: blogPosts, loading, reset } = await usePagedList({
 });
 
 async function switchOfficialOnly(newValue: boolean) {
-  official.value = newValue;
-  reset()
+  if (newValue !== official.value) {
+    official.value = newValue;
+    reset()
+  }
 }
 </script>
