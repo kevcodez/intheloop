@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+  <loc>https://intheloop.dev/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/contact</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/imprint</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/privacy-policy</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books</loc>
+  <changefreq>weekly</changefreq>
+</url><url>
+  <loc>https://intheloop.dev/topics/cypress</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/kotlin</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/laravel</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/mongodb</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/nextjs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/nodejs</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/nuxt</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/react</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/spring-boot</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/supabase</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/svelte</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/tailwindcss</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/typescript</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/topics/vite</loc>
+  <changefreq>daily</changefreq>
+</url><url>
+  <loc>https://intheloop.dev/books/kotlin-for-android-developers</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/hands-on-nuxtjs</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/svelte-and-sapper-in-action</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/head-first-kotlin</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/beginning-php-laravel</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/domain-driven-laravel</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/kotlin-in-action</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/books/laravel-up-and-running</loc>
+  <changefreq>weekly</changefreq>
+</url><url>
+  <loc>https://intheloop.dev/courses/kotlin-for-java-developers</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/svelte-free-code-camp-full-course</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/svelte-the-complete-guide-incl-sapper</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/google-kotlin-codelab</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/jetbrains-hyperskill-academy-kotlin</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/svelte-getting-started</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/tailwindcss-zero-to-production</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-cypress-tutorial</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/nuxtjs-vuejs-on-steroids</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/android-kotlin-fundamentals</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-test-automation-with-cypress-basic</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/advanced-kotlin-programming</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-test-automation-with-cypress-intermediate</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-visual-regression-testing-with-cypress-percy-basic</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-e2e-cypress</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/egghead-end-to-end-testing-with-cypress</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-cypress-v6-frameworks-cicd-two-react-applications</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/egghead-test-production-ready-apps-with-cypress</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-developing-restful-java-web-services-using-spring-boot</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-javascript-based-website-in-minutes-using-the-mean-stack</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-node-js-api-tutorial</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-oauth2-in-spring-boot-applications</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-rest-api-security-with-java-spring-boot-what-how</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-typescript-the-complete-developers-guide</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-understanding-typescript</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-the-complete-web-development-bootcamp</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-the-complete-nodejs-developer-course-2</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-the-web-developer-bootcamp</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-spring-boot-2</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-grpc-the-complete-guide-for-java-developers</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-spring-boot-2-introduction</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/introduction-to-kotlin-programming</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/mastering-nuxt</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/egghead-add-e2e-tests-with-cypress-to-a-react-application-7691</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-typescript-with-react-hooks-and-context</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-automated-testing-with-cypress</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-typescript</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-understand-nodejs</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-test-driven-web-application-development-with-spring-react</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-php-with-laravel-for-beginners-become-a-master-in-laravel</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-laravel-beginner-to-advance-with-complete-news-portal</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-restful-api-with-laravel-php-homestead-passport-hateoas</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-laravel-masterclass-build-web-apps-with-laravel-7-php</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://intheloop.dev/courses/udemy-laravel-beginner-fundamentals</loc>
+  <changefreq>weekly</changefreq>
+</url>
+    </urlset> 
+    

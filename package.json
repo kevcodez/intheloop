@@ -9,7 +9,6 @@
     "supabase:gen-types": "supabase gen types typescript --linked > lib/database.types.ts"
   },
   "devDependencies": {
-    "@funken-studio/sitemap-nuxt-3": "^4.0.4",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/supabase": "^0.2.5",
     "@nuxtjs/tailwindcss": "^6.1.3",

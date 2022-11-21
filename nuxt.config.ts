@@ -1,5 +1,4 @@
 import svgLoader from 'vite-svg-loader'
-import dynamicRoutes from './helpers/dynamicRoutes'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -78,21 +77,7 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',
-
-
-    ['@funken-studio/sitemap-nuxt-3', {
-      generateOnBuild: true,
-      hostname: 'https://intheloop.dev',
-      cacheTime: 1,
-      routes: dynamicRoutes,
-      defaults: {
-        changefreq: 'daily',
-        priority: 1,
-        lastmod: new Date().toISOString(),
-      },
-    }]
   ],
-
 
   googleFonts: {
     download: true,
