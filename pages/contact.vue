@@ -1,17 +1,11 @@
 <template>
   <div class="px-4 py-12 mx-auto max-w-7xl lg:py-12">
-    <form
-      class="max-w-3xl mb-32 space-y-4"
-      name="contact"
-      @submit.prevent="submitForm"
-    >
+    <form class="max-w-3xl mb-32 space-y-4" name="contact" @submit.prevent="submitForm">
       <div>
         If you see any invalid information, would like to see another topic or
         have suggestions on how to improve this page, let me know. You can also
         DM me on
-        <a class="text-indigo-500" href="https://twitter.com/kevcodez"
-          >Twitter</a
-        >.
+        <a class="text-indigo-500" href="https://twitter.com/kevcodez">Twitter</a>.
       </div>
       <div>
         <label class="form-label">Email (optional)</label>
@@ -19,77 +13,48 @@
       </div>
       <div>
         <label class="form-label">Text</label>
-        <textarea
-          v-model="message"
-          class="h-40 input"
-          style="min-height: 150px"
-          required
-          :minlength="20"
-        />
+        <textarea v-model="message" class="h-40 input" style="min-height: 150px" required :minlength="20" />
       </div>
       <label class="ohnohoney" for="name"></label>
-      <input
-        class="ohnohoney"
-        autocomplete="off"
-        v-model="honeyName"
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your name here"
-      />
+      <input class="ohnohoney" autocomplete="off" v-model="honeyName" type="text" id="name" name="name"
+        placeholder="Your name here" />
       <div>
-        <Alert v-if="messageSent" severity="success"
-          >Successfully submitted form. Thanks for contacting me!</Alert
-        >
+        <Alert v-if="messageSent" severity="success">Successfully submitted form. Thanks for contacting me!</Alert>
         <button v-else class="button" type="submit">Send message</button>
       </div>
     </form>
   </div>
 </template>
 
-<script lang="ts">
-import { ref, defineComponent, inject } from '@nuxtjs/composition-api'
-import { SupabaseClient } from '@supabase/supabase-js'
+<script lang="ts" setup>
+import { Database } from '~/lib/database.types'
 
-export default defineComponent({
-  setup() {
-    const email = ref('')
-    const message = ref('')
-    const honeyName = ref('')
-    const messageSent = ref(false)
-    const supabase = inject<SupabaseClient>('supabase')!
+const email = ref('')
+const message = ref('')
+const honeyName = ref('')
+const messageSent = ref(false)
+const supabase = useSupabaseClient<Database>()
 
-    const submitForm = async () => {
-      if (honeyName.value) return
-      const formData = new FormData()
-      formData.set('email', email.value)
-      formData.set('message', message.value)
+const submitForm = async () => {
+  if (honeyName.value) return
+  const formData = new FormData()
+  formData.set('email', email.value)
+  formData.set('message', message.value)
 
-      const { error } = await supabase.from('contact').insert(
-        {
-          email: email.value,
-          message: message.value,
-        },
-        { returning: 'minimal' }
-      )
-      email.value = ''
-      message.value = ''
-      if (error) {
-        console.log(error)
-      } else {
-        messageSent.value = true
-      }
-    }
-
-    return {
-      email,
-      message,
-      honeyName,
-      messageSent,
-      submitForm,
-    }
-  },
-})
+  const { error } = await supabase.from('contact').insert(
+    {
+      email: email.value,
+      message: message.value,
+    },
+  )
+  email.value = ''
+  message.value = ''
+  if (error) {
+    console.log(error)
+  } else {
+    messageSent.value = true
+  }
+}
 </script>
 
 <style>

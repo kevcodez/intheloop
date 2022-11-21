@@ -2,11 +2,7 @@
   <div class="container">
     <h2 class="text-2xl font-medium tracking-wide">Find courses</h2>
     <form @submit.prevent="reset" class="flex mt-2">
-      <input
-        v-model="searchTerm"
-        class="input w-full"
-        placeholder="Enter a search term"
-      />
+      <input v-model="searchTerm" class="input w-full" placeholder="Enter a search term" />
 
       <button type="submit" class="button dark ml-3" :disabled="loading">
         Search
@@ -15,12 +11,12 @@
 
     <loading-indicator class="my-4" v-if="loading" />
 
-    <course-list class="mt-8" :courses="courses" />
+    <course-list v-else class="mt-8" :courses="data.list" />
 
-    <div v-if="hasMore && !loading" class="flex justify-center mt-5">
-      <button class="button" @click="$fetch">Load more</button>
+    <div v-if="data.hasMore && !loading" class="flex justify-center mt-5">
+      <button class="button" @click="refreshNuxtData()">Load more</button>
     </div>
-    <div v-else-if="!loading && !courses.length">
+    <div v-if="!loading && !data.list.length">
       No results found. Please try a different search.
     </div>
     <div v-else-if="error">
@@ -30,44 +26,29 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, inject } from '@nuxtjs/composition-api'
-import { SupabaseClient } from '@supabase/supabase-js'
+<script lang="ts" setup>
 import { Course } from '~/lib/Course'
+import { Database } from '~/lib/database.types'
 import usePagedList from '../../composables/usePagedList'
 
-export default defineComponent({
-  setup() {
-    const supabase = inject<SupabaseClient>('supabase')!
-    const searchTerm = ref<string>('')
+const supabase = useSupabaseClient<Database>()
+const searchTerm = ref<string>('')
 
-    const {
-      dataList: courses,
-      loading,
-      hasMore,
-      reset,
-      error,
-    } = usePagedList<Course>({
-      pageSize: 16,
-      fetch: (rangeStart, rangeEnd) => {
-        return supabase
-          .from<Course>('course')
-          .select('*', { count: 'exact' })
-          .ilike('info->>description', `%${searchTerm.value}%`)
-          .ilike('info->>name', `%${searchTerm.value}%`)
-          .order('id')
-          .range(rangeStart, rangeEnd)
-      },
-    })
-
-    return {
-      searchTerm,
-      courses,
-      loading,
-      hasMore,
-      reset,
-      error,
-    }
+const {
+  data,
+  loading,
+  reset,
+  error,
+} = await usePagedList<Course>({
+  pageSize: 16,
+  fetch: (rangeStart, rangeEnd) => {
+    return supabase
+      .from('course')
+      .select('*', { count: 'exact' })
+      .ilike('info->>description', `%${searchTerm.value}%`)
+      .ilike('info->>name', `%${searchTerm.value}%`)
+      .order('id')
+      .range(rangeStart, rangeEnd)
   },
 })
 </script>

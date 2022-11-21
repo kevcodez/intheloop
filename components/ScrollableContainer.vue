@@ -4,16 +4,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/composition-api'
-
-export default defineComponent({
-  setup() {},
-  props: {
-    maxHeight: {
-      type: Number,
-      required: true,
-    },
+<script lang="ts" setup>
+const props = defineProps({
+  maxHeight: {
+    type: Number,
+    required: true,
   },
 })
 </script>

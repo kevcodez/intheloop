@@ -2,11 +2,7 @@
   <div class="container">
     <h2 class="text-2xl font-medium tracking-wide">Find topics to follow</h2>
     <form @submit.prevent="reset" class="flex mt-2">
-      <input
-        v-model="searchTerm"
-        class="input w-full"
-        placeholder="Enter a search term"
-      />
+      <input v-model="searchTerm" class="input w-full" placeholder="Enter a search term" />
 
       <button type="submit" class="button dark ml-3" :disabled="loading">
         Search
@@ -15,12 +11,12 @@
 
     <loading-indicator class="my-4" v-if="loading" />
 
-    <topic-list class="mt-8" :topics="topics" />
+    <topic-list class="mt-8" :topics="topics.list" />
 
-    <div v-if="hasMore && !loading" class="flex justify-center mt-5">
-      <button class="button" @click="$fetch">Load more</button>
+    <div v-if="topics.hasMore && !loading" class="flex justify-center mt-5">
+      <button class="button" @click="refreshNuxtData()">Load more</button>
     </div>
-    <div v-else-if="!loading && !topics.length">
+    <div v-else-if="!loading && !topics.list.length">
       No results found. Please try a different search.
     </div>
     <div v-else-if="error">
@@ -34,47 +30,31 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, inject } from '@nuxtjs/composition-api'
-import { SupabaseClient } from '@supabase/supabase-js'
+<script lang="ts" setup>
 import { Topic } from '~/lib/Topic'
 import usePagedList from '~/composables/usePagedList'
+import { Database } from '~/lib/database.types'
 
-export default defineComponent({
-  setup() {
-    const supabase = inject<SupabaseClient>('supabase')!
-    const searchTerm = ref<string>('')
+const supabase = useSupabaseClient<Database>()
+const searchTerm = ref<string>('')
 
-    const {
-      dataList: topics,
-      loading,
-      hasMore,
-      reset,
-      error,
-    } = usePagedList<Topic>({
-      pageSize: 15,
-      fetch: (rangeStart, rangeEnd) => {
-        // TODO make sure the query is correct (live filter should be and, rest should be or)
-        return supabase
-          .from<Topic>('topic')
-          .select('*', { count: 'exact' })
-          .ilike('info->>description', `%${searchTerm.value}%`)
-          .ilike('info->>name', `%${searchTerm.value}%`)
-          .eq('info->>live', 'true')
-          .order('id')
-          .range(rangeStart, rangeEnd)
-      },
-    })
-
-    return {
-      searchTerm,
-      topics,
-      loading,
-      hasMore,
-      reset,
-      error,
-    }
+const {
+  data: topics,
+  loading,
+  reset,
+  error,
+} = await usePagedList<Topic>({
+  pageSize: 15,
+  fetch: (rangeStart, rangeEnd) => {
+    // TODO make sure the query is correct (live filter should be and, rest should be or)
+    return supabase
+      .from('topic')
+      .select('*', { count: 'exact' })
+      .ilike('info->>description', `%${searchTerm.value}%`)
+      .ilike('info->>name', `%${searchTerm.value}%`)
+      .eq('info->>live', 'true')
+      .order('id')
+      .range(rangeStart, rangeEnd)
   },
 })
 </script>
-
