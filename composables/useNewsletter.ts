@@ -18,15 +18,18 @@ export default function useNewsletter() {
     const url = `https://europe-west1-intheloop-d4940.cloudfunctions.net/subscribeToNewsletter`
 
     try {
-      await $http.post(url, {
-        email: email.value,
+      await useFetch(url, {
+        method: 'POST',
+        body: {
+          email: email.value,
+        }
       })
 
       success.value = true
       email.value = ''
     } catch (err) {
       console.log(err)
-      error.value = 'Ohn o'
+      error.value = 'Oh no'
     } finally {
       loading.value = false
     }
