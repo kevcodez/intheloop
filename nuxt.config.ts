@@ -3,7 +3,13 @@ import svgLoader from 'vite-svg-loader'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
-    preset: 'node-server'
+    preset: 'vercel-edge'
+  },
+
+  routeRules: {
+    '/': { static: true },
+    '/courses/**': { static: true },
+    '/books/**': { static: true },
   },
 
   app: {

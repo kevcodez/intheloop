@@ -401,7 +401,7 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/kit@3.0.0", "@nuxt/kit@^3.0.0", "@nuxt/kit@^3.0.0-rc.11", "@nuxt/kit@^3.0.0-rc.12", "@nuxt/kit@^3.0.0-rc.13", "@nuxt/kit@^3.0.0-rc.14":
+"@nuxt/kit@3.0.0", "@nuxt/kit@^3.0.0", "@nuxt/kit@^3.0.0-rc.11", "@nuxt/kit@^3.0.0-rc.12", "@nuxt/kit@^3.0.0-rc.14":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0.tgz#ae49b4e27b15285556cb88f35a56309c5ca0dd79"
   integrity sha512-7ZsOLt5s9a0ZleAIzmoD70JwkZf5ti6bDdxl6f8ew7Huxz+ni/oRfTPTX9TrORXsgW5CvDt6Q9M7IJNPkAN/Iw==
@@ -536,15 +536,15 @@
     google-fonts-helper "^3.2.1"
     pathe "^0.3.9"
 
-"@nuxtjs/supabase@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/supabase/-/supabase-0.2.5.tgz#6308ff4d1e0c2737d1ab64d48f4b5e0109573623"
-  integrity sha512-nNpd7e64jre6U8NWjPI+geCaub6EZB0/tIVhF6d08/LAd3w/kJj3wYU8yxZbUrJsaAmhoguceywI34+bxDkn2g==
+"@nuxtjs/supabase@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/supabase/-/supabase-0.3.0.tgz#65d3cf86e2ac8ab069a51b2311e810241629205a"
+  integrity sha512-fSZVv7WQ8QqoZ/Ap9zQoM9UOyGaHgC2FdndkZB2IZU3e0kVobdt+MxAEbe8SjzK89/eqBs/bbvbxNJHarc6PfQ==
   dependencies:
-    "@nuxt/kit" "^3.0.0-rc.13"
-    "@supabase/supabase-js" "2.0.6"
-    defu "^6.1.0"
-    pathe "^0.3.9"
+    "@nuxt/kit" "^3.0.0"
+    "@supabase/supabase-js" "2.1.0"
+    defu "^6.1.1"
+    pathe "^1.0.0"
 
 "@nuxtjs/tailwindcss@^6.1.3":
   version "6.1.3"
@@ -566,13 +566,13 @@
     tailwindcss "^3.2.0"
     ufo "^0.8.6"
 
-"@pinia/nuxt@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.4.4.tgz#933ce57919c7c46e7c8d6281e3ae8e6796db59d4"
-  integrity sha512-8C9Vv/Mx+IMZFnWTX0nFGW+pXk6hF4Ibgc0OZqlI6/Ii26/Do+gfEQLC/0J/7gFFe/VFhwLMlrK8WEL6oIRdmA==
+"@pinia/nuxt@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.4.6.tgz#ce83714f700594187d8a29e8f4bdaf31abe0bef1"
+  integrity sha512-HjrYEfLdFpmsjhicPJgL36jVhzHWukIQPFFHGTSF84Cplu+f2nY2XHKqe9ToHzE9rLee2RjLOwAzOnXa/I/u6A==
   dependencies:
     "@nuxt/kit" "^3.0.0"
-    pinia ">=2.0.24"
+    pinia ">=2.0.27"
 
 "@rollup/plugin-alias@^4.0.2":
   version "4.0.2"
@@ -650,10 +650,10 @@
   dependencies:
     cross-fetch "^3.1.5"
 
-"@supabase/gotrue-js@^2.2.4":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-2.3.0.tgz#3e11900d464c9dba8c95a11fd91c3663af18cdd1"
-  integrity sha512-e50w8LkfbxtI2SJxUbuQNM7pN+Yu3HYkvCLsidwBgivTdcoFOkhFodwLvWSVdeaxY1mH6Gm66RiKeUMn1+BAow==
+"@supabase/gotrue-js@^2.3.0":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@supabase/gotrue-js/-/gotrue-js-2.4.2.tgz#bc9b6078f64df355d3cbc7032a3355595e077155"
+  integrity sha512-OjonGyH0DvFcLAM9QrX73hSM6qXBAvgnISyOvjidUUIh9GgcYAJRWWysjN7Rn3QVpKNGQ65JE6gkuXBIGz1gcg==
   dependencies:
     cross-fetch "^3.1.5"
 
@@ -679,13 +679,13 @@
   dependencies:
     cross-fetch "^3.1.5"
 
-"@supabase/supabase-js@2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-2.0.6.tgz#b516e062e4cdf75558a1881691e0fa9567ce64c9"
-  integrity sha512-S8oTHq8Z915X5PevxTeoiqnZZvZ8J4Np2uNmsFarMAjP+6FygMMMpdsicgaWtxr+6isrZ7SMpTkWtUSwxo0MFg==
+"@supabase/supabase-js@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-2.1.0.tgz#1ae369b8bb828e1d037f709e173fb932cf04cfae"
+  integrity sha512-hODrAUDSC6RV6EhwuSMyhaQCF32gij0EBTceuDR+8suJsg7XcyUG0fYgeYecWIvt0nz61xAMY6E+Ywb0tJaAng==
   dependencies:
     "@supabase/functions-js" "^2.0.0"
-    "@supabase/gotrue-js" "^2.2.4"
+    "@supabase/gotrue-js" "^2.3.0"
     "@supabase/postgrest-js" "^1.1.0"
     "@supabase/realtime-js" "^2.1.0"
     "@supabase/storage-js" "^2.0.0"
@@ -3843,10 +3843,10 @@ pify@^2.3.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
 
-pinia@>=2.0.24:
-  version "2.0.24"
-  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.24.tgz#babf12207931f85b31d7451b55c0d76785b91b51"
-  integrity sha512-DDLd4Iphyc+6PYYYbx7jkb6WP9gecgu9bz9huyB5rb7CdJI3DhzYiZI+/Ih8MLewRrP9DSpslF/BgSNrJtZU7A==
+pinia@>=2.0.27:
+  version "2.0.27"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.27.tgz#cf13a8dca2792a613c1d8bb8ef50707756e5a6ef"
+  integrity sha512-nOnXP0OFeL8R4WjAHsterU+11vptda643gH02xKNtSCDPiRzVfRYodOLihLDoa0gL1KKuQKV+KOzEgdt3YvqEw==
   dependencies:
     "@vue/devtools-api" "^6.4.5"
     vue-demi "*"
@@ -4701,10 +4701,10 @@ stylehacks@^5.1.1:
     browserslist "^4.21.4"
     postcss-selector-parser "^6.0.4"
 
-supabase@^1.14.3:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/supabase/-/supabase-1.14.3.tgz#deb0dc997c7395749568363470499169b496176c"
-  integrity sha512-2FzA+mxI4XzNfkzz7XEY1ldv+r8XPZifL7aWQsE5soSzI7QfldHCZoIh/tBV8mOgZCbTYWiZNsC8OUVm/Iaihg==
+supabase@^1.17.4:
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/supabase/-/supabase-1.17.4.tgz#1b3426448c6bb4de73ede53e34f16d4ae1adb234"
+  integrity sha512-xOrSZA2nyqGadDNgjXPTXk/ZvM5EE6DXf2xXbDmsnpNpTF7DUEVprNfpWPWRV02uh8YxNSkR2qL4Z/tkPXA0lA==
   dependencies:
     node-fetch "^3.2.10"
     tar "6.1.12"
