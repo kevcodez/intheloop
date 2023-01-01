@@ -2,13 +2,9 @@ import svgLoader from 'vite-svg-loader'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  /*  routeRules: {
-    '/courses/**': { static: true },
-    '/books/**': { static: true },
-    '/topics/**': {
-      swr: 3600
-    },
-  },*/
+  nitro: {
+    preset: 'node-server'
+  },
 
   app: {
     head: {
@@ -22,7 +18,8 @@ export default defineNuxtConfig({
         {
           hid: 'description',
           name: 'description',
-          content: 'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
+          content:
+            'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
         },
         {
           hid: 'og:title',
@@ -37,7 +34,8 @@ export default defineNuxtConfig({
         {
           hid: 'og:description',
           property: 'og:description',
-          content: 'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
+          content:
+            'Stay in the loop - See latest releases, popular tweets, blog posts, communities to engage with and much more.',
         },
         {
           hid: 'twitter:image',
@@ -60,7 +58,9 @@ export default defineNuxtConfig({
           content: '@kevcodez',
         },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
       script: [
         {
           async: true,
@@ -69,13 +69,16 @@ export default defineNuxtConfig({
           src: 'https://stats.intheloop.dev/js/index.js',
         },
       ],
-    },
+    }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/supabase', '@pinia/nuxt'
-  /*, '@nuxtjs/google-fonts'*/
-],
-/*
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/supabase',
+    '@pinia/nuxt',
+    '@nuxtjs/google-fonts',
+  ],
+
   googleFonts: {
     download: true,
     display: 'swap',
@@ -84,17 +87,23 @@ export default defineNuxtConfig({
     families: {
       Inter: true,
     },
-  },*/
+  },
+
 
   css: ['~/assets/index.scss'],
 
   runtimeConfig: {
     public: {
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    },
+    }
   },
 
   vite: {
-    plugins: [svgLoader({})],
+    plugins: [
+      svgLoader({
+        /* ... */
+      })
+    ]
   },
+
 })
