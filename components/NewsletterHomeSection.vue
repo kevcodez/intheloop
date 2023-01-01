@@ -1,5 +1,5 @@
 <template>
-  <div class="grid lg:grid-cols-2 container">
+  <div class="grid lg:grid-cols-2 page-container">
     <div class="flex flex-col items-center text-center">
       <h2 class="text-2xl font-extrabold tracking-tight text-gray-800 sm:text-3xl">
         Want product updates and new topics?

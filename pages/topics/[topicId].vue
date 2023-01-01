@@ -1,40 +1,22 @@
 <template>
   <loading-indicator v-if="loadingTopic" />
   <div v-else-if="fullTopic.topic" class="mt-8">
-    <topic-base-info class="container" :topic="fullTopic.topic" />
+    <topic-base-info class="page-container" :topic="fullTopic.topic" />
 
     <div class="mt-3 h-3 w-full" :style="`background-color: ${fullTopic.topic.info.color}`" />
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 container mt-4">
+    <div class="page-container mt-4">
       <div class="col-span-2 order-2 lg:order-1">
         <topic-nav :topic="fullTopic.topic" />
 
         <NuxtPage class="pt-10" :topic="fullTopic.topic" />
       </div>
 
-      <div class="order-1 lg:order-2">
-        <topic-quick-links :topic="fullTopic.topic" />
-
-        <topic-communities class="mt-8" :communities="fullTopic.communities" />
-
-        <topic-blogs class="mt-8" :blogs="fullTopic.blogs" />
-
-        <h3 class="font-medium text-xl mt-8" v-if="fullTopic.newsletters.length || fullTopic.podcasts.length">
-          Newsletters &amp; Podcasts
-        </h3>
-        <topic-newsletters :newsletters="fullTopic.newsletters" />
-
-        <topic-podcasts :podcasts="fullTopic.podcasts" />
-      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { Newsletter } from '@/lib/Newsletter'
-import { Podcast } from '@/lib/Podcast'
-import { Community } from '@/lib/Community'
-import { Blog } from '@/lib/Blog'
 import { Database } from '~/lib/database.types';
 
 const route = useRoute()
@@ -84,7 +66,7 @@ useHead(() => {
 </script>
 
 <style scoped>
-.container {
+.page-container {
   @apply mx-auto max-w-7xl px-4;
 }
 </style>

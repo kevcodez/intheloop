@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page-container">
     <h2 class="text-2xl font-medium tracking-wide">Find books</h2>
     <form v-on:submit.prevent="reset" class="flex mt-2">
       <input v-model="searchTerm" class="input w-full" placeholder="Enter a search term" />
