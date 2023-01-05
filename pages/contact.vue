@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 py-12 mx-auto max-w-7xl lg:py-12">
+  <div class="px-4 py-12 mx-auto max-w-7xl 2xl:max-w-[120rem] lg:py-12">
     <form class="max-w-3xl mb-32 space-y-4" name="contact" @submit.prevent="submitForm">
       <div>
         If you see any invalid information, would like to see another topic or

@@ -29,12 +29,12 @@
           <a :href="badge.url" target="_blank" v-for="badge in topic.info.badges" :key="badge.url">
             <npm-icon v-if="badge.type === 'NPM'" class="grow h-6 w-6" />
 
-            <apache-maven-icon v-else-if="badge.type === 'MavenCentral'" class="grow h-6 w-6" />
+            <apache-maven-icon v-else-if="badge.type === 'MavenCentral'" class="h-6 w-6" />
           </a>
-          <a :href="topic.info.scm.url" target="_blank"> <github-icon class="h-5 w-5 object-contain" /></a>
+          <a :href="topic.info.scm.url" target="_blank"> <github-icon class="h-5 object-contain" /></a>
           <a class="flex flex-row" :href="social.url" v-for="social in topic.info.social" :key="social.url">
-            <twitter-icon v-if="social.type === 'Twitter'" class="h-5 w-5" />
-            <youtube-icon v-else-if="social.type === 'Youtube'" class="h-5 w-5" />
+            <twitter-icon v-if="social.type === 'Twitter'" class="h-5" />
+            <youtube-icon v-else-if="social.type === 'Youtube'" class="h-5" />
           </a>
 
         </div>

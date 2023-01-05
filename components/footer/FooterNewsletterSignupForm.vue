@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="subscribe">
     <div v-if="success !== true" class="flex flex-row">
-      <input class="input" placeholder="E-Mail" type="email" autocomplete="email" @input="setEmail" />
+      <input class="input" placeholder="E-Mail" type="email" autocomplete="email" @input="setEmail" required />
 
       <button class="button ml-2" type="submit" :class="{ 'cursor-wait': loading }" :disabled="loading">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="text-black h-5 w-5" viewBox="0 0 24 24"

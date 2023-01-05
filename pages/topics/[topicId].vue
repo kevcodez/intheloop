@@ -67,6 +67,6 @@ useHead(() => {
 
 <style scoped>
 .page-container {
-  @apply mx-auto max-w-7xl px-4;
+  @apply mx-auto max-w-7xl 2xl:max-w-[120rem] px-4;
 }
 </style>
