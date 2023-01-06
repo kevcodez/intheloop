@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page-container">
     <loading-indicator v-if="pending" />
     <div v-else-if="error">An error occured while fetching</div>
 

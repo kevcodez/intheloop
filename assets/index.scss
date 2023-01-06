@@ -12,10 +12,14 @@
   transform: scale(1.02);
 }
 
-.container {
-  @apply max-w-7xl mx-auto py-6 lg:py-8 px-4 xl:px-0;
+.page-container {
+  @apply max-w-7xl 2xl:max-w-[120rem] mx-auto py-6 lg:py-8 px-4 xl:px-0;
 }
 
 .link {
   @apply text-purple-800 hover:text-purple-600;
+}
+
+.link-default {
+  @apply hover:text-purple-600;
 }

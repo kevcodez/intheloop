@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="text-white bg-purple-800">
-      <div class="container flex flex-col">
-        <h2 class="text-3xl font-extrabold tracking-tight text-white">
+      <div class="page-container flex flex-col">
+        <h2 class="text-3xl font-extrabold tracking-tight text-white mt-6">
           Stay in the loop
         </h2>
         <p class="max-w-3xl mt-4 text-lg">
@@ -89,7 +89,7 @@
             </div>
           </div>
 
-          <div>
+          <div class="mb-6">
             <div class="flex flex-row justify-between">
               <span class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10">
                 <robot-icon class="w-6 h-6 text-white" />
@@ -114,7 +114,7 @@
       <newsletter-home-section />
     </div>
 
-    <div class="container">
+    <div class="page-container">
       <div class="flex flex-row justify-between mb-6">
         <p class="text-2xl tracking-wide font-medium">Discover topics</p>
         <nuxt-link class="button" to="/topics">See all</nuxt-link>

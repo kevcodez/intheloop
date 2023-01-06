@@ -1,6 +1,11 @@
 <template>
   <div class="space-y-6">
-    <tweet v-if="!pending" v-for="tweet in data.tweets" :key="tweet.id" :tweet="tweet" />
+    <div class="tweets" v-if="!pending">
+      <div class="tweet" v-for="tweet in data.tweets" :key="tweet.id">
+        <tweet :tweet="tweet" />
+      </div>
+
+    </div>
 
     <loading-indicator v-if="pending" class="py-4 text-gray-800" />
   </div>
@@ -35,4 +40,57 @@ const { pending, data } = useAsyncData('tweets', async () => {
 
   return body
 })
+
+watch(
+  pending,
+  async () => {
+    await nextTick();
+    resizeAllGridItems();
+  },
+  { deep: true }
+);
+
+function resizeGridItem(item: any) {
+  const grid = document.getElementsByClassName("tweets")[0];
+  const rowHeight = parseInt(
+    window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+  );
+  const rowGap = parseInt(
+    window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+  );
+  const rowSpan = Math.ceil(
+    (item.children[0].getBoundingClientRect().height + rowGap) /
+    (rowHeight + rowGap)
+  );
+  item.style.gridRowEnd = "span " + rowSpan;
+}
+
+function resizeAllGridItems() {
+  const allItems = document.getElementsByClassName("tweet");
+  console.log(allItems.length)
+  for (let x = 0; x < allItems.length; x++) {
+    resizeGridItem(allItems[x]);
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("resize", resizeAllGridItems);
+  resizeAllGridItems()
+})
 </script>
+
+<style>
+.tweets {
+  display: grid;
+  grid-gap: 20px;
+
+  @screen sm {
+    grid-auto-rows: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @screen md {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+}
+</style>

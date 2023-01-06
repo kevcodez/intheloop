@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+  <div class="grid sm:grid-cols-2 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
     <nuxt-link :to="`/courses/${course.id}`"
       class="relative flex flex-col items-center bg-white border border-gray-300 rounded-lg shadow-sm hover:border-gray-400"
       v-for="course in courses" :key="course.info.url">

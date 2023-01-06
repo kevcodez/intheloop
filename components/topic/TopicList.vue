@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid md:grid-cols-3 gap-4 md:gap-8">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-8">
       <nuxt-link :to="`/topics/${topic.id}`"
         class="relative rounded-lg border border-gray-300 bg-white px-4 py-5 shadow-sm flex flex-col items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
         v-for="topic in topics" :key="topic.id">
