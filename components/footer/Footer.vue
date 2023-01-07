@@ -1,6 +1,6 @@
 <template>
   <footer class="mt-20 bg-gray-800">
-    <div class="px-4 py-12 mx-auto max-w-7xl 2xl:max-w-[120rem] sm:px-6 lg:py-12 lg:px-8">
+    <div class="px-4 py-12 mx-auto max-w-7xl 2xl:max-w-[110rem] sm:px-6 lg:py-12 lg:px-8">
       <div class="md:flex md:items-center md:justify-between">
         <div class="self-start text-white md:order-2">
           <p>Be notified about updates and new topics</p>
