@@ -33,10 +33,6 @@ const { data: fullTopic, pending: loadingTopic } = useAsyncData('topic', async (
 
   return {
     topic: data,
-    podcasts: (data!.podcasts || []).filter((it) => it) || [],
-    newsletters: (data!.newsletters || []).filter((it) => it).sort((a, b) => Number(b.official) - Number(a.official)),
-    blogs: (data!.blogs || []).filter((it) => it).sort((a, b) => Number(b.official) - Number(a.official)),
-    communities: (data!.communities || []).filter((it) => it).sort((a, b) => Number(b.official) - Number(a.official))
   }
 })
 
